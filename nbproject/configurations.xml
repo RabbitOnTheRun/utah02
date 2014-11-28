@@ -2,11 +2,15 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
+      <itemPath>State.cpp</itemPath>
       <itemPath>Symbol.cpp</itemPath>
+      <itemPath>Transition.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles" displayName="ヘッダー・ファイル" projectFiles="true">
+      <itemPath>State.h</itemPath>
       <itemPath>Symbol.h</itemPath>
+      <itemPath>Transition.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles" displayName="リソース・ファイル" projectFiles="true">
     </logicalFolder>
@@ -40,9 +44,17 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="State.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="State.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Symbol.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Symbol.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Transition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Transition.h" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles/f1">
         <cTool>
@@ -88,9 +100,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="State.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="State.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Symbol.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Symbol.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Transition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Transition.h" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles/f1">
         <cTool>
