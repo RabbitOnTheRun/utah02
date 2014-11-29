@@ -16,19 +16,26 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/StateMappertestclass.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/JsonMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/StateMappertestclass.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/data/myone.txt</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/data/StatePart.txt</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/.gitignore</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/State.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Transition.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageReception.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MessageReceptionMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Symbol.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/PicoJsonIF.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/FileIOException.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/FileIOException.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/StatePartMappertestclass.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/main.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/StatePartMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/README.md</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StateMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/TransitionMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/TransitionMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StatePartMapper.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageReception.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/TransitionMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/State.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/Symboltestclass.cpp</file>
@@ -36,6 +43,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StateMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StatePartMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/JsonFormatException.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MessageReceptionMapper.h</file>
         </group>
     </open-files>
 </project-private>

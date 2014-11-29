@@ -8,6 +8,8 @@
       <itemPath>jsonMapper/JsonFormatException.h</itemPath>
       <itemPath>jsonMapper/JsonMapper.cpp</itemPath>
       <itemPath>jsonMapper/JsonMapper.h</itemPath>
+      <itemPath>jsonMapper/MessageReceptionMapper.cpp</itemPath>
+      <itemPath>jsonMapper/MessageReceptionMapper.h</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.cpp</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.h</itemPath>
       <itemPath>jsonMapper/StateMapper.cpp</itemPath>
@@ -19,12 +21,14 @@
       <itemPath>jsonMapper/picojson.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
+      <itemPath>MessageReception.cpp</itemPath>
       <itemPath>State.cpp</itemPath>
       <itemPath>Symbol.cpp</itemPath>
       <itemPath>Transition.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles" displayName="ヘッダー・ファイル" projectFiles="true">
+      <itemPath>MessageReception.h</itemPath>
       <itemPath>State.h</itemPath>
       <itemPath>Symbol.h</itemPath>
       <itemPath>Transition.h</itemPath>
@@ -104,6 +108,10 @@
           <standard>8</standard>
         </ccTool>
       </compileType>
+      <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="State.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="State.h" ex="false" tool="3" flavor2="0">
@@ -212,6 +220,16 @@
       <item path="jsonMapper/JsonMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/JsonMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/MessageReceptionMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/MessageReceptionMapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="jsonMapper/PicoJsonIF.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -296,6 +314,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="State.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="State.h" ex="false" tool="3" flavor2="0">
@@ -404,6 +426,16 @@
       <item path="jsonMapper/JsonMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/JsonMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/MessageReceptionMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/MessageReceptionMapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="jsonMapper/PicoJsonIF.cpp" ex="false" tool="1" flavor2="0">
       </item>
