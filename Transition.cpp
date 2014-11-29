@@ -9,7 +9,8 @@
 
 namespace utah {
 
-    Transition::Transition() {
+    Transition::Transition(const std::string from_, const std::string to_) :
+        from(Symbol::create(from_)), to(Symbol::create(to_)) {
     }
 
     //Transition::Transition(const Transition& orig) {

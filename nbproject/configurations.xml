@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f1" displayName="jsonMapper" projectFiles="true">
+      <itemPath>jsonMapper/FileIOException.cpp</itemPath>
+      <itemPath>jsonMapper/FileIOException.h</itemPath>
+      <itemPath>jsonMapper/JsonFormatException.cpp</itemPath>
+      <itemPath>jsonMapper/JsonFormatException.h</itemPath>
+      <itemPath>jsonMapper/JsonMapper.cpp</itemPath>
+      <itemPath>jsonMapper/JsonMapper.h</itemPath>
+      <itemPath>jsonMapper/PicoJsonIF.cpp</itemPath>
+      <itemPath>jsonMapper/PicoJsonIF.h</itemPath>
+      <itemPath>jsonMapper/TransitionMapper.cpp</itemPath>
+      <itemPath>jsonMapper/TransitionMapper.h</itemPath>
+      <itemPath>jsonMapper/picojson.h</itemPath>
+    </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
       <itemPath>State.cpp</itemPath>
       <itemPath>Symbol.cpp</itemPath>
@@ -26,6 +39,22 @@
         <itemPath>tests/Symboltestclass.h</itemPath>
         <itemPath>tests/Symboltestrunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f3"
+                     displayName="TransitionMapperTest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/TransitionMappertestclass.cpp</itemPath>
+        <itemPath>tests/TransitionMappertestclass.h</itemPath>
+        <itemPath>tests/TransitionMappertestrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2"
+                     displayName="TransitionTest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/Transitiontestclass.cpp</itemPath>
+        <itemPath>tests/Transitiontestclass.h</itemPath>
+        <itemPath>tests/Transitiontestrunner.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="重要なファイル"
@@ -43,6 +72,9 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
       </compileType>
       <item path="State.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -71,6 +103,56 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/JsonFormatException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/JsonFormatException.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/JsonMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/JsonMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/PicoJsonIF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/PicoJsonIF.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/TransitionMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/TransitionMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/picojson.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/Symboltestclass.cpp" ex="false" tool="1" flavor2="0">
@@ -78,6 +160,24 @@
       <item path="tests/Symboltestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/Symboltestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/TransitionMappertestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/TransitionMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/TransitionMappertestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/Transitiontestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Transitiontestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/Transitiontestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -127,6 +227,56 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/JsonFormatException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/JsonFormatException.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/JsonMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/JsonMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/PicoJsonIF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/PicoJsonIF.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/TransitionMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/TransitionMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/picojson.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/Symboltestclass.cpp" ex="false" tool="1" flavor2="0">
@@ -134,6 +284,24 @@
       <item path="tests/Symboltestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/Symboltestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/TransitionMappertestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/TransitionMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/TransitionMappertestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/Transitiontestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Transitiontestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/Transitiontestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

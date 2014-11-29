@@ -7,15 +7,27 @@
 
 #ifndef STATE_H
 #define	STATE_H
-namespace utah {
-class State {
-public:
-    State();
-    //State(const State& orig);
-    virtual ~State();
-private:
 
-};
+#include <string>
+#include <map>
+#include "Symbol.h"
+#include "Transition.h"
+namespace utah {
+
+    class State {
+    public:
+        State(const std::string &name_);
+        State(const std::string &name_,  State *parent_);
+        //State(const State& orig);
+        void setParent(State *parent_);
+        void addTranstion(Transition* transition);
+        //std::vector<Transition*> getTransitions();
+        virtual ~State();
+    private:
+        State *parent;
+        const Symbol& name;
+        std::vector<Transition *> transitions;
+    };
 }
 #endif	/* STATE_H */
 
