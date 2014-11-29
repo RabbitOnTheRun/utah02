@@ -11,12 +11,13 @@
 #include "Symbol.h"
 #include "tests/Transitiontestclass.h"
 #include "tests/TransitionMappertestclass.h"
-
+#include "tests/Statetestclass.h"
 namespace utah {
 
     class Transition {
         friend Transitiontestclass;
                 friend TransitionMappertestclass;
+                                friend Statetestclass;
     public:
         Transition(const std::string from_, const std::string to_) ;
         //Transition(const Transition& orig);

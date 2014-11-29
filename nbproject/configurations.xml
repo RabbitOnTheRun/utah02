@@ -10,6 +10,10 @@
       <itemPath>jsonMapper/JsonMapper.h</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.cpp</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.h</itemPath>
+      <itemPath>jsonMapper/StateMapper.cpp</itemPath>
+      <itemPath>jsonMapper/StateMapper.h</itemPath>
+      <itemPath>jsonMapper/StatePartMapper.cpp</itemPath>
+      <itemPath>jsonMapper/StatePartMapper.h</itemPath>
       <itemPath>jsonMapper/TransitionMapper.cpp</itemPath>
       <itemPath>jsonMapper/TransitionMapper.h</itemPath>
       <itemPath>jsonMapper/picojson.h</itemPath>
@@ -31,6 +35,30 @@
                    displayName="テスト・ファイル"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f5"
+                     displayName="StateMapper"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/StateMappertestclass.cpp</itemPath>
+        <itemPath>tests/StateMappertestclass.h</itemPath>
+        <itemPath>tests/StateMappertestrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6"
+                     displayName="StatePartMappertest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/StatePartMappertestclass.cpp</itemPath>
+        <itemPath>tests/StatePartMappertestclass.h</itemPath>
+        <itemPath>tests/StatePartMappetestrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4"
+                     displayName="StateTest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/Statetestclass.cpp</itemPath>
+        <itemPath>tests/Statetestclass.h</itemPath>
+        <itemPath>tests/Statetestrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1"
                      displayName="Symboltest"
                      projectFiles="true"
@@ -131,6 +159,48 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f4">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
@@ -147,6 +217,14 @@
       </item>
       <item path="jsonMapper/PicoJsonIF.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="jsonMapper/StateMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/StateMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/StatePartMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/StatePartMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/TransitionMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/TransitionMapper.h" ex="false" tool="3" flavor2="0">
@@ -154,6 +232,24 @@
       <item path="jsonMapper/picojson.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StateMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StateMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/StateMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StatePartMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StatePartMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/StatePartMappetestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Statetestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Statetestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/Statetestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/Symboltestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -255,6 +351,48 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f4">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
@@ -271,6 +409,14 @@
       </item>
       <item path="jsonMapper/PicoJsonIF.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="jsonMapper/StateMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/StateMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/StatePartMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/StatePartMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/TransitionMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/TransitionMapper.h" ex="false" tool="3" flavor2="0">
@@ -278,6 +424,24 @@
       <item path="jsonMapper/picojson.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StateMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StateMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/StateMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StatePartMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StatePartMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/StatePartMappetestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Statetestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Statetestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/Statetestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/Symboltestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>

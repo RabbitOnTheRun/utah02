@@ -27,7 +27,7 @@ namespace utah {
     }
 
     void State::setParent(State *parent_) {
-        assert(this->parent != NULL);
+        assert(this->parent == NULL);
         assert(parent_ != NULL);
         parent = parent_;
     }
@@ -36,4 +36,10 @@ namespace utah {
         assert(transition != NULL);
         transitions.push_back(transition);
     }
+     void State::addChild(State *child_) {
+         children.push_back(child_);
+     }
+      Symbol& State::getNameSymbol(){
+          return name;
+      }
 }

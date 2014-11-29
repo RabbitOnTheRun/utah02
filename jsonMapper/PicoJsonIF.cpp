@@ -85,4 +85,13 @@ namespace jsonMapper {
             throw JsonFormatException("PicoJsonIF::getArray() found illegal format : property name = " + name);
         }
     }
+    
+    picojson::array PicoJsonIF::toArray(const picojson::value& obj) {
+        if (obj.is<picojson::array>()) {
+            picojson::array arrayObj = obj.get<picojson::array>();
+            return arrayObj;
+        } else {
+            throw JsonFormatException("PicoJsonIF::toArray() found illegal format ");
+        }
+    }
 }

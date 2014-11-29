@@ -22,6 +22,7 @@ namespace jsonMapper {
         static std::string getString(const picojson::value& value, std::string name);
         static picojson::value getObject(const picojson::value& value, std::string name);
         static picojson::array getArray(const picojson::value& value, std::string name);
+        static picojson::array toArray(const picojson::value& obj) ;
     private:
         //const picojson::value& value;
     };
