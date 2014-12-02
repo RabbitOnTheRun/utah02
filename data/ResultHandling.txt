@@ -1,0 +1,8 @@
+[ 
+	{"resultCode" : "success", "messageEmission" : 
+		{"port" : "z" ,"messageName" : "work" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+	} ,
+	{"resultCode" : "fail", "messageEmission" : 
+		{"port" : "w" ,"messageName" : "joy" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+	}
+ ] 

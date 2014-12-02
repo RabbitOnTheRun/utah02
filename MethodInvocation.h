@@ -16,6 +16,7 @@ namespace utah {
 
     class MethodInvocation {
         friend MethodInvocationMappertestclass;
+        friend TransitionMappertestclass;
     public:
         MethodInvocation();
         MethodInvocation(std::string methodName_, std::string methodArgument_);

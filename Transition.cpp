@@ -32,4 +32,12 @@ namespace utah {
     void Transition::setGuard(Guard guard_) {
         guard = guard_;
     }
+
+    void Transition::setMethodInvocation(MethodInvocation methodInvocation_) {
+        methodInvocation = methodInvocation_;
+    }
+
+    void Transition::addExternalEffect(ExternalEffect externalEffect) {
+        resultHandling.addExternalEffect(externalEffect);
+    }
 }

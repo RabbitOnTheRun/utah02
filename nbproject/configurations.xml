@@ -20,6 +20,8 @@
       <itemPath>jsonMapper/MethodInvocationMapper.h</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.cpp</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.h</itemPath>
+      <itemPath>jsonMapper/ResultHandlingMapper.cpp</itemPath>
+      <itemPath>jsonMapper/ResultHandlingMapper.h</itemPath>
       <itemPath>jsonMapper/StateMapper.cpp</itemPath>
       <itemPath>jsonMapper/StateMapper.h</itemPath>
       <itemPath>jsonMapper/StatePartMapper.cpp</itemPath>
@@ -32,8 +34,10 @@
       <itemPath>ExternalEffect.cpp</itemPath>
       <itemPath>Guard.cpp</itemPath>
       <itemPath>MessageEmission.cpp</itemPath>
+      <itemPath>MessageProcessing.cpp</itemPath>
       <itemPath>MessageReception.cpp</itemPath>
       <itemPath>MethodInvocation.cpp</itemPath>
+      <itemPath>ResultHandling.cpp</itemPath>
       <itemPath>State.cpp</itemPath>
       <itemPath>Symbol.cpp</itemPath>
       <itemPath>Transition.cpp</itemPath>
@@ -43,8 +47,10 @@
       <itemPath>ExternalEffect.h</itemPath>
       <itemPath>Guard.h</itemPath>
       <itemPath>MessageEmission.h</itemPath>
+      <itemPath>MessageProcessing.h</itemPath>
       <itemPath>MessageReception.h</itemPath>
       <itemPath>MethodInvocation.h</itemPath>
+      <itemPath>ResultHandling.h</itemPath>
       <itemPath>State.h</itemPath>
       <itemPath>Symbol.h</itemPath>
       <itemPath>Transition.h</itemPath>
@@ -94,6 +100,14 @@
         <itemPath>tests/MethodInvocationMappertestclass.cpp</itemPath>
         <itemPath>tests/MethodInvocationMappertestclass.h</itemPath>
         <itemPath>tests/MethodInvocationMappertestrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f12"
+                     displayName="ResultHandling"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/ResultHandlingtestclass.cpp</itemPath>
+        <itemPath>tests/ResultHandlingtestclass.h</itemPath>
+        <itemPath>tests/ResultHandlingtestrunner.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f5"
                      displayName="StateMapper"
@@ -176,6 +190,10 @@
       </item>
       <item path="MessageEmission.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="MessageProcessing.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageProcessing.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
@@ -183,6 +201,10 @@
       <item path="MethodInvocation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MethodInvocation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ResultHandling.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ResultHandling.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="State.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -236,6 +258,20 @@
           <output>${TESTDIR}/TestFiles/f11</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f12">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f12</output>
+          <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
@@ -406,6 +442,13 @@
       </item>
       <item path="jsonMapper/PicoJsonIF.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="jsonMapper/ResultHandlingMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/ResultHandlingMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/StateMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/StateMapper.h" ex="false" tool="3" flavor2="0">
@@ -481,6 +524,12 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="tests/ResultHandlingtestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ResultHandlingtestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ResultHandlingtestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/StateMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -557,6 +606,10 @@
       </item>
       <item path="MessageEmission.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="MessageProcessing.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageProcessing.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
@@ -564,6 +617,10 @@
       <item path="MethodInvocation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MethodInvocation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ResultHandling.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ResultHandling.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="State.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -617,6 +674,20 @@
           <output>${TESTDIR}/TestFiles/f11</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f12">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f12</output>
+          <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
@@ -787,6 +858,13 @@
       </item>
       <item path="jsonMapper/PicoJsonIF.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="jsonMapper/ResultHandlingMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/ResultHandlingMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/StateMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/StateMapper.h" ex="false" tool="3" flavor2="0">
@@ -862,6 +940,12 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="tests/ResultHandlingtestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ResultHandlingtestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ResultHandlingtestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/StateMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -21,7 +21,7 @@ namespace jsonMapper {
     }
 
     void StatePartMapper::create(const picojson::value& obj, std::map<std::string, utah::State*>& stateMap) {
-       picojson::array arrayObj = PicoJsonIF::toArray(obj);
+        picojson::array arrayObj = PicoJsonIF::toArray(obj);
         for (picojson::value obj2 : arrayObj) {
             utah::State* newState = StateMapper::create(obj2);
             stateMap[newState->getNameSymbol()->getName()] = newState;

@@ -38,8 +38,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/ExternalEffect.o \
 	${OBJECTDIR}/Guard.o \
 	${OBJECTDIR}/MessageEmission.o \
+	${OBJECTDIR}/MessageProcessing.o \
 	${OBJECTDIR}/MessageReception.o \
 	${OBJECTDIR}/MethodInvocation.o \
+	${OBJECTDIR}/ResultHandling.o \
 	${OBJECTDIR}/State.o \
 	${OBJECTDIR}/Symbol.o \
 	${OBJECTDIR}/Transition.o \
@@ -52,6 +54,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/jsonMapper/MessageReceptionMapper.o \
 	${OBJECTDIR}/jsonMapper/MethodInvocationMapper.o \
 	${OBJECTDIR}/jsonMapper/PicoJsonIF.o \
+	${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o \
 	${OBJECTDIR}/jsonMapper/StateMapper.o \
 	${OBJECTDIR}/jsonMapper/StatePartMapper.o \
 	${OBJECTDIR}/jsonMapper/TransitionMapper.o \
@@ -67,6 +70,7 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f10 \
 	${TESTDIR}/TestFiles/f7 \
 	${TESTDIR}/TestFiles/f9 \
+	${TESTDIR}/TestFiles/f12 \
 	${TESTDIR}/TestFiles/f5 \
 	${TESTDIR}/TestFiles/f6 \
 	${TESTDIR}/TestFiles/f4 \
@@ -113,6 +117,11 @@ ${OBJECTDIR}/MessageEmission.o: MessageEmission.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageEmission.o MessageEmission.cpp
 
+${OBJECTDIR}/MessageProcessing.o: MessageProcessing.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageProcessing.o MessageProcessing.cpp
+
 ${OBJECTDIR}/MessageReception.o: MessageReception.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -122,6 +131,11 @@ ${OBJECTDIR}/MethodInvocation.o: MethodInvocation.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MethodInvocation.o MethodInvocation.cpp
+
+${OBJECTDIR}/ResultHandling.o: ResultHandling.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ResultHandling.o ResultHandling.cpp
 
 ${OBJECTDIR}/State.o: State.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -183,6 +197,11 @@ ${OBJECTDIR}/jsonMapper/PicoJsonIF.o: jsonMapper/PicoJsonIF.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/PicoJsonIF.o jsonMapper/PicoJsonIF.cpp
 
+${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o: jsonMapper/ResultHandlingMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o jsonMapper/ResultHandlingMapper.cpp
+
 ${OBJECTDIR}/jsonMapper/StateMapper.o: jsonMapper/StateMapper.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
@@ -227,6 +246,10 @@ ${TESTDIR}/TestFiles/f7: ${TESTDIR}/tests/MessageReceptionMappertestclass.o ${TE
 ${TESTDIR}/TestFiles/f9: ${TESTDIR}/tests/MethodInvocationMappertestclass.o ${TESTDIR}/tests/MethodInvocationMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f9 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
+${TESTDIR}/TestFiles/f12: ${TESTDIR}/tests/ResultHandlingtestclass.o ${TESTDIR}/tests/ResultHandlingtestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f12 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f5: ${TESTDIR}/tests/StateMappertestclass.o ${TESTDIR}/tests/StateMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
@@ -311,6 +334,18 @@ ${TESTDIR}/tests/MethodInvocationMappertestrunner.o: tests/MethodInvocationMappe
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MethodInvocationMappertestrunner.o tests/MethodInvocationMappertestrunner.cpp
+
+
+${TESTDIR}/tests/ResultHandlingtestclass.o: tests/ResultHandlingtestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ResultHandlingtestclass.o tests/ResultHandlingtestclass.cpp
+
+
+${TESTDIR}/tests/ResultHandlingtestrunner.o: tests/ResultHandlingtestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ResultHandlingtestrunner.o tests/ResultHandlingtestrunner.cpp
 
 
 ${TESTDIR}/tests/StateMappertestclass.o: tests/StateMappertestclass.cpp 
@@ -424,6 +459,19 @@ ${OBJECTDIR}/MessageEmission_nomain.o: ${OBJECTDIR}/MessageEmission.o MessageEmi
 	    ${CP} ${OBJECTDIR}/MessageEmission.o ${OBJECTDIR}/MessageEmission_nomain.o;\
 	fi
 
+${OBJECTDIR}/MessageProcessing_nomain.o: ${OBJECTDIR}/MessageProcessing.o MessageProcessing.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageProcessing.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageProcessing_nomain.o MessageProcessing.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/MessageProcessing.o ${OBJECTDIR}/MessageProcessing_nomain.o;\
+	fi
+
 ${OBJECTDIR}/MessageReception_nomain.o: ${OBJECTDIR}/MessageReception.o MessageReception.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageReception.o`; \
@@ -448,6 +496,19 @@ ${OBJECTDIR}/MethodInvocation_nomain.o: ${OBJECTDIR}/MethodInvocation.o MethodIn
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MethodInvocation_nomain.o MethodInvocation.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/MethodInvocation.o ${OBJECTDIR}/MethodInvocation_nomain.o;\
+	fi
+
+${OBJECTDIR}/ResultHandling_nomain.o: ${OBJECTDIR}/ResultHandling.o ResultHandling.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/ResultHandling.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ResultHandling_nomain.o ResultHandling.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/ResultHandling.o ${OBJECTDIR}/ResultHandling_nomain.o;\
 	fi
 
 ${OBJECTDIR}/State_nomain.o: ${OBJECTDIR}/State.o State.cpp 
@@ -606,6 +667,19 @@ ${OBJECTDIR}/jsonMapper/PicoJsonIF_nomain.o: ${OBJECTDIR}/jsonMapper/PicoJsonIF.
 	    ${CP} ${OBJECTDIR}/jsonMapper/PicoJsonIF.o ${OBJECTDIR}/jsonMapper/PicoJsonIF_nomain.o;\
 	fi
 
+${OBJECTDIR}/jsonMapper/ResultHandlingMapper_nomain.o: ${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o jsonMapper/ResultHandlingMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/ResultHandlingMapper_nomain.o jsonMapper/ResultHandlingMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o ${OBJECTDIR}/jsonMapper/ResultHandlingMapper_nomain.o;\
+	fi
+
 ${OBJECTDIR}/jsonMapper/StateMapper_nomain.o: ${OBJECTDIR}/jsonMapper/StateMapper.o jsonMapper/StateMapper.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/StateMapper.o`; \
@@ -667,6 +741,7 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    ${TESTDIR}/TestFiles/f10 || true; \
 	    ${TESTDIR}/TestFiles/f7 || true; \
 	    ${TESTDIR}/TestFiles/f9 || true; \
+	    ${TESTDIR}/TestFiles/f12 || true; \
 	    ${TESTDIR}/TestFiles/f5 || true; \
 	    ${TESTDIR}/TestFiles/f6 || true; \
 	    ${TESTDIR}/TestFiles/f4 || true; \

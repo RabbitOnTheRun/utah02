@@ -8,6 +8,8 @@
 #include "TransitionMapper.h"
 #include "MessageReceptionMapper.h"
 #include "GuardMapper.h"
+#include "MethodInvocationMapper.h"
+#include "ResultHandlingMapper.h"
 
 namespace jsonMapper {
 
@@ -33,6 +35,10 @@ namespace jsonMapper {
         result->setGuard(GuardMapper::create(
                 PicoJsonIF::getObject(obj, "guard")
                 ));
+        result->setMethodInvocation(MethodInvocationMapper::create(
+                PicoJsonIF::getObject(obj, "methodInvocation")
+                ));
+        ResultHandlingMapper::create(PicoJsonIF::getArray(obj, "resultHandling"), *result );
         return result;
     }
 }

@@ -12,11 +12,12 @@
 #include "Symbol.h"
 #include "MessageEmission.h"
 #include "tests/ExternalEffectMappertestclass.h"
-
+#include "tests/ResultHandlingtestclass.h"
 namespace utah {
 
     class ExternalEffect {
         friend ExternalEffectMappertestclass;
+        friend ResultHandlingtestclass;
     public:
         ExternalEffect();
         ExternalEffect(std::string resultCode_);

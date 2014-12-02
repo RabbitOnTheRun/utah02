@@ -11,6 +11,9 @@
 #include "Symbol.h"
 #include "MessageReception.h"
 #include "Guard.h"
+#include "ResultHandling.h"
+#include "MethodInvocation.h"
+#include "ExternalEffect.h"
 #include "tests/Transitiontestclass.h"
 #include "tests/TransitionMappertestclass.h"
 #include "tests/Statetestclass.h"
@@ -29,12 +32,17 @@ namespace utah {
         virtual ~Transition();
         void setMessageReception(MessageReception messageReception_);
         void setGuard(Guard guard_);
+        void setMethodInvocation(MethodInvocation methodInvocation_);
+        void addExternalEffect(ExternalEffect externalEffect);
+
     private:
         //const Symbol& name;
         Symbol* from;
         Symbol* to;
         MessageReception messageReception;
         Guard guard;
+        MethodInvocation methodInvocation;
+        ResultHandling resultHandling;
         //message
     };
 }
