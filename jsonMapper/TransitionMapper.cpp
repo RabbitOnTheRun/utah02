@@ -6,6 +6,8 @@
  */
 #include "PicoJsonIF.h"
 #include "TransitionMapper.h"
+#include "MessageReceptionMapper.h"
+#include "GuardMapper.h"
 
 namespace jsonMapper {
 
@@ -21,8 +23,16 @@ namespace jsonMapper {
     utah::Transition* TransitionMapper::create(const picojson::value& obj) {
         std::string strFrom = PicoJsonIF::getString(obj, "from");
         std::string strTo = PicoJsonIF::getString(obj, "to");
-
+        //picojson::value& messageObj = PicoJsonIF::getObject(obj, "message");
         utah::Transition* result = new utah::Transition(strFrom, strTo);
+        //MessageReceptionMapper::create(messageObj));
+
+        result->setMessageReception(MessageReceptionMapper::create(
+                PicoJsonIF::getObject(obj, "message")
+                ));
+        result->setGuard(GuardMapper::create(
+                PicoJsonIF::getObject(obj, "guard")
+                ));
         return result;
     }
 }

@@ -35,14 +35,18 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Guard.o \
 	${OBJECTDIR}/MessageReception.o \
+	${OBJECTDIR}/MethodInvocation.o \
 	${OBJECTDIR}/State.o \
 	${OBJECTDIR}/Symbol.o \
 	${OBJECTDIR}/Transition.o \
 	${OBJECTDIR}/jsonMapper/FileIOException.o \
+	${OBJECTDIR}/jsonMapper/GuardMapper.o \
 	${OBJECTDIR}/jsonMapper/JsonFormatException.o \
 	${OBJECTDIR}/jsonMapper/JsonMapper.o \
 	${OBJECTDIR}/jsonMapper/MessageReceptionMapper.o \
+	${OBJECTDIR}/jsonMapper/MethodInvocationMapper.o \
 	${OBJECTDIR}/jsonMapper/PicoJsonIF.o \
 	${OBJECTDIR}/jsonMapper/StateMapper.o \
 	${OBJECTDIR}/jsonMapper/StatePartMapper.o \
@@ -54,6 +58,8 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
+	${TESTDIR}/TestFiles/f8 \
+	${TESTDIR}/TestFiles/f7 \
 	${TESTDIR}/TestFiles/f5 \
 	${TESTDIR}/TestFiles/f6 \
 	${TESTDIR}/TestFiles/f4 \
@@ -85,10 +91,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utah02.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utah02 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/Guard.o: Guard.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Guard.o Guard.cpp
+
 ${OBJECTDIR}/MessageReception.o: MessageReception.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageReception.o MessageReception.cpp
+
+${OBJECTDIR}/MethodInvocation.o: MethodInvocation.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MethodInvocation.o MethodInvocation.cpp
 
 ${OBJECTDIR}/State.o: State.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -110,6 +126,11 @@ ${OBJECTDIR}/jsonMapper/FileIOException.o: jsonMapper/FileIOException.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/FileIOException.o jsonMapper/FileIOException.cpp
 
+${OBJECTDIR}/jsonMapper/GuardMapper.o: jsonMapper/GuardMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/GuardMapper.o jsonMapper/GuardMapper.cpp
+
 ${OBJECTDIR}/jsonMapper/JsonFormatException.o: jsonMapper/JsonFormatException.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
@@ -124,6 +145,11 @@ ${OBJECTDIR}/jsonMapper/MessageReceptionMapper.o: jsonMapper/MessageReceptionMap
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/MessageReceptionMapper.o jsonMapper/MessageReceptionMapper.cpp
+
+${OBJECTDIR}/jsonMapper/MethodInvocationMapper.o: jsonMapper/MethodInvocationMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/MethodInvocationMapper.o jsonMapper/MethodInvocationMapper.cpp
 
 ${OBJECTDIR}/jsonMapper/PicoJsonIF.o: jsonMapper/PicoJsonIF.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
@@ -155,6 +181,14 @@ ${OBJECTDIR}/main.o: main.cpp
 
 # Build Test Targets
 .build-tests-conf: .build-conf ${TESTFILES}
+${TESTDIR}/TestFiles/f8: ${TESTDIR}/tests/GuardMappertestclass.o ${TESTDIR}/tests/GuardMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f8 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
+${TESTDIR}/TestFiles/f7: ${TESTDIR}/tests/MessageReceptionMappertestclass.o ${TESTDIR}/tests/MessageReceptionMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f7 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f5: ${TESTDIR}/tests/StateMappertestclass.o ${TESTDIR}/tests/StateMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -178,6 +212,30 @@ ${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/TransitionMappertestclass.o ${TESTDIR}
 ${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/Transitiontestclass.o ${TESTDIR}/tests/Transitiontestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
+
+${TESTDIR}/tests/GuardMappertestclass.o: tests/GuardMappertestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/GuardMappertestclass.o tests/GuardMappertestclass.cpp
+
+
+${TESTDIR}/tests/GuardMappertestrunner.o: tests/GuardMappertestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/GuardMappertestrunner.o tests/GuardMappertestrunner.cpp
+
+
+${TESTDIR}/tests/MessageReceptionMappertestclass.o: tests/MessageReceptionMappertestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MessageReceptionMappertestclass.o tests/MessageReceptionMappertestclass.cpp
+
+
+${TESTDIR}/tests/MessageReceptionMappertestrunner.o: tests/MessageReceptionMappertestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MessageReceptionMappertestrunner.o tests/MessageReceptionMappertestrunner.cpp
 
 
 ${TESTDIR}/tests/StateMappertestclass.o: tests/StateMappertestclass.cpp 
@@ -252,6 +310,19 @@ ${TESTDIR}/tests/Transitiontestrunner.o: tests/Transitiontestrunner.cpp
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/Transitiontestrunner.o tests/Transitiontestrunner.cpp
 
 
+${OBJECTDIR}/Guard_nomain.o: ${OBJECTDIR}/Guard.o Guard.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Guard.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Guard_nomain.o Guard.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Guard.o ${OBJECTDIR}/Guard_nomain.o;\
+	fi
+
 ${OBJECTDIR}/MessageReception_nomain.o: ${OBJECTDIR}/MessageReception.o MessageReception.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageReception.o`; \
@@ -263,6 +334,19 @@ ${OBJECTDIR}/MessageReception_nomain.o: ${OBJECTDIR}/MessageReception.o MessageR
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageReception_nomain.o MessageReception.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/MessageReception.o ${OBJECTDIR}/MessageReception_nomain.o;\
+	fi
+
+${OBJECTDIR}/MethodInvocation_nomain.o: ${OBJECTDIR}/MethodInvocation.o MethodInvocation.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/MethodInvocation.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MethodInvocation_nomain.o MethodInvocation.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/MethodInvocation.o ${OBJECTDIR}/MethodInvocation_nomain.o;\
 	fi
 
 ${OBJECTDIR}/State_nomain.o: ${OBJECTDIR}/State.o State.cpp 
@@ -317,6 +401,19 @@ ${OBJECTDIR}/jsonMapper/FileIOException_nomain.o: ${OBJECTDIR}/jsonMapper/FileIO
 	    ${CP} ${OBJECTDIR}/jsonMapper/FileIOException.o ${OBJECTDIR}/jsonMapper/FileIOException_nomain.o;\
 	fi
 
+${OBJECTDIR}/jsonMapper/GuardMapper_nomain.o: ${OBJECTDIR}/jsonMapper/GuardMapper.o jsonMapper/GuardMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/GuardMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/GuardMapper_nomain.o jsonMapper/GuardMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/GuardMapper.o ${OBJECTDIR}/jsonMapper/GuardMapper_nomain.o;\
+	fi
+
 ${OBJECTDIR}/jsonMapper/JsonFormatException_nomain.o: ${OBJECTDIR}/jsonMapper/JsonFormatException.o jsonMapper/JsonFormatException.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/JsonFormatException.o`; \
@@ -354,6 +451,19 @@ ${OBJECTDIR}/jsonMapper/MessageReceptionMapper_nomain.o: ${OBJECTDIR}/jsonMapper
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/MessageReceptionMapper_nomain.o jsonMapper/MessageReceptionMapper.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/jsonMapper/MessageReceptionMapper.o ${OBJECTDIR}/jsonMapper/MessageReceptionMapper_nomain.o;\
+	fi
+
+${OBJECTDIR}/jsonMapper/MethodInvocationMapper_nomain.o: ${OBJECTDIR}/jsonMapper/MethodInvocationMapper.o jsonMapper/MethodInvocationMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/MethodInvocationMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/MethodInvocationMapper_nomain.o jsonMapper/MethodInvocationMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/MethodInvocationMapper.o ${OBJECTDIR}/jsonMapper/MethodInvocationMapper_nomain.o;\
 	fi
 
 ${OBJECTDIR}/jsonMapper/PicoJsonIF_nomain.o: ${OBJECTDIR}/jsonMapper/PicoJsonIF.o jsonMapper/PicoJsonIF.cpp 
@@ -425,6 +535,8 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
 	then  \
+	    ${TESTDIR}/TestFiles/f8 || true; \
+	    ${TESTDIR}/TestFiles/f7 || true; \
 	    ${TESTDIR}/TestFiles/f5 || true; \
 	    ${TESTDIR}/TestFiles/f6 || true; \
 	    ${TESTDIR}/TestFiles/f4 || true; \

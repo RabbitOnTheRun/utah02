@@ -10,17 +10,21 @@
 
 #include <string>
 #include "Symbol.h"
-
+#include "tests/MessageReceptionMappertestclass.h"
+#include "tests/TransitionMappertestclass.h"
 namespace utah {
 
     class MessageReception {
+        friend MessageReceptionMappertestclass;
+        friend TransitionMappertestclass;
     public:
+       MessageReception();
         MessageReception(std::string name_, std::string type_);
-        //MessageReception(const MessageReception& orig);
+       // MessageReception(const MessageReception& orig);
         virtual ~MessageReception();
     private:
-        Symbol& name;
-        Symbol& type;
+        Symbol* name;
+        Symbol* type;
     };
 }
 #endif	/* MESSAGERECEPTION_H */

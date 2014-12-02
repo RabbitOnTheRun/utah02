@@ -1,0 +1,2 @@
+{ "from" : "b" ,"to" : "g" ,
+	"message" : {"name" : "v" ,"type" : "NULL" } }

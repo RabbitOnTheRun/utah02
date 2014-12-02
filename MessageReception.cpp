@@ -7,13 +7,20 @@
 
 #include "MessageReception.h"
 namespace utah {
-MessageReception::MessageReception(std::string name_, std::string type_) :
-    name(Symbol::create(name_)), type(Symbol::create(type_)) {
-}
 
-//MessageReception::MessageReception(const MessageReception& orig) {
-//}
+    MessageReception::MessageReception() {
+    }
 
-MessageReception::~MessageReception() {
-}
+    MessageReception::MessageReception(std::string name_, std::string type_) :
+  name(Symbol::create(name_)), type(Symbol::create(type_)) {
+    }
+
+    //MessageReception::MessageReception(const MessageReception& orig) { 
+     //   name(orig.name), type(orig.name) {
+       //name = orig.name;
+       // type = orig.name;
+    //}
+
+    MessageReception::~MessageReception() {
+    }
 }

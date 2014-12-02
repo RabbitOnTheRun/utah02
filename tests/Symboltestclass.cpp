@@ -24,28 +24,28 @@ void Symboltestclass::tearDown() {
 }
 
 void Symboltestclass::testCreate() {
-    Symbol& result1 = Symbol::create("kazuko");
-    Symbol& result2 = Symbol::create("atsuko");
-    Symbol& result3 = Symbol::create("kazuko");
+    Symbol* result1 = Symbol::create("kazuko");
+    Symbol* result2 = Symbol::create("atsuko");
+    Symbol* result3 = Symbol::create("kazuko");
     if (true /*check result*/) {
-        CPPUNIT_ASSERT((&result1 != &result2));
-        CPPUNIT_ASSERT((&result1 == &result3));
+        CPPUNIT_ASSERT((result1 != result2));
+        CPPUNIT_ASSERT((result1 == result3));
     }
 }
 
 void Symboltestclass::testEq() {
-    Symbol& result1 = Symbol::create("mizue");
-    Symbol& result2 = Symbol::create("kariya");
-    Symbol& result3 = Symbol::create("mizue");
+    Symbol* result1 = Symbol::create("mizue");
+    Symbol* result2 = Symbol::create("kariya");
+    Symbol* result3 = Symbol::create("mizue");
     if (true /*check result*/) {
-        CPPUNIT_ASSERT(!result1.eq(result2));
-        CPPUNIT_ASSERT(result1.eq(result3));
+        CPPUNIT_ASSERT(!result1->eq(result2));
+        CPPUNIT_ASSERT(result1->eq(result3));
     }
 }
 
 void Symboltestclass::testGetName() {
-    Symbol& symbol = Symbol::create("saeko");
-    std::string result = symbol.getName();
+    Symbol* symbol = Symbol::create("saeko");
+    std::string result = symbol->getName();
     if (true /*check result*/) {
         CPPUNIT_ASSERT(result == "saeko");
     }

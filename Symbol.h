@@ -16,10 +16,10 @@ namespace utah {
     class Symbol {
     public:
 
-        static Symbol& create(const std::string &name_);
+        static Symbol* create(const std::string &name_);
         virtual ~Symbol();
          std::string getName();
-        bool eq(const Symbol&);
+        bool eq(const Symbol*);
     private:
         Symbol();
         Symbol(const std::string &name_);

@@ -39,7 +39,7 @@ namespace utah {
      void State::addChild(State *child_) {
          children.push_back(child_);
      }
-      Symbol& State::getNameSymbol(){
+      Symbol* State::getNameSymbol(){
           return name;
       }
 }

@@ -1,0 +1,4 @@
+{ "from" : "b" ,"to" : "g" ,
+	"message" : {"name" : "v" ,"type" : "NULL" } , 
+	"guard" : {"name" : "L", "arg" : "NULL" }
+}

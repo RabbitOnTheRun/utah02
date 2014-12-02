@@ -4,12 +4,16 @@
     <logicalFolder name="f1" displayName="jsonMapper" projectFiles="true">
       <itemPath>jsonMapper/FileIOException.cpp</itemPath>
       <itemPath>jsonMapper/FileIOException.h</itemPath>
+      <itemPath>jsonMapper/GuardMapper.cpp</itemPath>
+      <itemPath>jsonMapper/GuardMapper.h</itemPath>
       <itemPath>jsonMapper/JsonFormatException.cpp</itemPath>
       <itemPath>jsonMapper/JsonFormatException.h</itemPath>
       <itemPath>jsonMapper/JsonMapper.cpp</itemPath>
       <itemPath>jsonMapper/JsonMapper.h</itemPath>
       <itemPath>jsonMapper/MessageReceptionMapper.cpp</itemPath>
       <itemPath>jsonMapper/MessageReceptionMapper.h</itemPath>
+      <itemPath>jsonMapper/MethodInvocationMapper.cpp</itemPath>
+      <itemPath>jsonMapper/MethodInvocationMapper.h</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.cpp</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.h</itemPath>
       <itemPath>jsonMapper/StateMapper.cpp</itemPath>
@@ -21,14 +25,18 @@
       <itemPath>jsonMapper/picojson.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
+      <itemPath>Guard.cpp</itemPath>
       <itemPath>MessageReception.cpp</itemPath>
+      <itemPath>MethodInvocation.cpp</itemPath>
       <itemPath>State.cpp</itemPath>
       <itemPath>Symbol.cpp</itemPath>
       <itemPath>Transition.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles" displayName="ヘッダー・ファイル" projectFiles="true">
+      <itemPath>Guard.h</itemPath>
       <itemPath>MessageReception.h</itemPath>
+      <itemPath>MethodInvocation.h</itemPath>
       <itemPath>State.h</itemPath>
       <itemPath>Symbol.h</itemPath>
       <itemPath>Transition.h</itemPath>
@@ -39,6 +47,22 @@
                    displayName="テスト・ファイル"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f8"
+                     displayName="GuardMapper"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/GuardMappertestclass.cpp</itemPath>
+        <itemPath>tests/GuardMappertestclass.h</itemPath>
+        <itemPath>tests/GuardMappertestrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7"
+                     displayName="MessageReceptionMappertest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/MessageReceptionMappertestclass.cpp</itemPath>
+        <itemPath>tests/MessageReceptionMappertestclass.h</itemPath>
+        <itemPath>tests/MessageReceptionMappertestrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f5"
                      displayName="StateMapper"
                      projectFiles="true"
@@ -108,9 +132,17 @@
           <standard>8</standard>
         </ccTool>
       </compileType>
+      <item path="Guard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Guard.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MethodInvocation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MethodInvocation.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="State.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -209,9 +241,41 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f7">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f7</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f8">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f8</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/GuardMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/GuardMapper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="jsonMapper/JsonFormatException.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -227,6 +291,16 @@
             flavor2="0">
       </item>
       <item path="jsonMapper/MessageReceptionMapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/MethodInvocationMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/MethodInvocationMapper.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -250,6 +324,27 @@
       <item path="jsonMapper/picojson.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/GuardMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/GuardMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/GuardMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MessageReceptionMappertestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/MessageReceptionMappertestclass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tests/MessageReceptionMappertestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="tests/StateMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -314,9 +409,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Guard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Guard.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MethodInvocation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MethodInvocation.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="State.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -415,9 +518,41 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f7">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f7</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f8">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f8</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/GuardMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/GuardMapper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="jsonMapper/JsonFormatException.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -433,6 +568,16 @@
             flavor2="0">
       </item>
       <item path="jsonMapper/MessageReceptionMapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/MethodInvocationMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/MethodInvocationMapper.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -456,6 +601,27 @@
       <item path="jsonMapper/picojson.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/GuardMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/GuardMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/GuardMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MessageReceptionMappertestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/MessageReceptionMappertestclass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tests/MessageReceptionMappertestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="tests/StateMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>

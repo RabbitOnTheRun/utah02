@@ -10,8 +10,14 @@
 namespace utah {
 
     Transition::Transition(const std::string from_, const std::string to_) :
-        from(Symbol::create(from_)), to(Symbol::create(to_)) {
+    //const MessageReception& messageReception_) :
+    from(Symbol::create(from_)), to(Symbol::create(to_)) {
+        //messageReception(messageReception_) {
     }
+
+    Transition::Transition(Symbol* from_, Symbol* to_) : from(from_), to(to_) {
+    }
+
 
     //Transition::Transition(const Transition& orig) {
     //}
@@ -19,4 +25,11 @@ namespace utah {
     Transition::~Transition() {
     }
 
+    void Transition::setMessageReception(MessageReception messageReception_) {
+        messageReception = messageReception_;
+    }
+
+    void Transition::setGuard(Guard guard_) {
+        guard = guard_;
+    }
 }

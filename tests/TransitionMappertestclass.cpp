@@ -23,12 +23,14 @@ void TransitionMappertestclass::tearDown() {
 }
 
 void TransitionMappertestclass::testCreate() {
-    const picojson::value& obj = jsonMapper::PicoJsonIF::JSONFileToObj("data/Transition.txt");
+    const picojson::value& obj = jsonMapper::PicoJsonIF::JSONFileToObj("data/Transition-3.txt");
     //jsonMapper::TransitionMapper transitionMapper;
     utah::Transition* result = jsonMapper::TransitionMapper::create(obj);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT((result->from).eq(utah::Symbol::create("b")));
-        CPPUNIT_ASSERT((result->to).eq(utah::Symbol::create("g")));
+        CPPUNIT_ASSERT((result->from)->eq(utah::Symbol::create("b")));
+        CPPUNIT_ASSERT((result->to)->eq(utah::Symbol::create("g")));
+        CPPUNIT_ASSERT("v" == result->messageReception.name->getName());
+        CPPUNIT_ASSERT("L" == result->guard.name->getName());
     }
 }
 

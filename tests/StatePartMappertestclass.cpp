@@ -29,7 +29,7 @@ void StatePartMappertestclass::testCreate() {
     //jsonMapper::StatePartMapper statePartMapper;
      jsonMapper::StatePartMapper::create(obj, stateMap);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT(stateMap["b"]->getNameSymbol().getName() == "b");
+        CPPUNIT_ASSERT(stateMap["b"]->getNameSymbol()->getName() == "b");
     }
 }
 

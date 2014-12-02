@@ -21,19 +21,19 @@ namespace utah {
     Symbol::~Symbol() {
     }
 
-    bool Symbol::eq(const Symbol& arg) {
-        return ((this) == (&arg));
+    bool Symbol::eq(const Symbol* arg) {
+        return (this == arg);
     }
     std::map<std::string, Symbol* > Symbol::symbolTable;
 
-    Symbol& Symbol::create(const std::string &name_) {
+    Symbol* Symbol::create(const std::string &name_) {
         // Should be guarded from Concurrent access
         if (symbolTable.find(name_) == symbolTable.end()) {
             Symbol *sym = new Symbol(name_);
             symbolTable[name_] = sym;
-            return *sym;
+            return sym;
         } else {
-            return *(symbolTable[name_]);
+            return symbolTable[name_];
         }
     }
 

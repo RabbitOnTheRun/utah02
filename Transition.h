@@ -9,9 +9,12 @@
 #define	TRANSITION_H
 
 #include "Symbol.h"
+#include "MessageReception.h"
+#include "Guard.h"
 #include "tests/Transitiontestclass.h"
 #include "tests/TransitionMappertestclass.h"
 #include "tests/Statetestclass.h"
+
 namespace utah {
 
     class Transition {
@@ -20,13 +23,18 @@ namespace utah {
         friend Statetestclass;
     public:
         Transition(const std::string from_, const std::string to_);
+        Transition(Symbol* from_, Symbol* to_);
+        //const MessageReception& messageReception_);
         //Transition(const Transition& orig);
         virtual ~Transition();
+        void setMessageReception(MessageReception messageReception_);
+        void setGuard(Guard guard_);
     private:
         //const Symbol& name;
-        Symbol& from;
-        Symbol& to;
-        //guard
+        Symbol* from;
+        Symbol* to;
+        MessageReception messageReception;
+        Guard guard;
         //message
     };
 }
