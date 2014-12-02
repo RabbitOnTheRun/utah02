@@ -16,10 +16,10 @@ namespace utah {
 
     class Transition {
         friend Transitiontestclass;
-                friend TransitionMappertestclass;
-                                friend Statetestclass;
+        friend TransitionMappertestclass;
+        friend Statetestclass;
     public:
-        Transition(const std::string from_, const std::string to_) ;
+        Transition(const std::string from_, const std::string to_);
         //Transition(const Transition& orig);
         virtual ~Transition();
     private:
