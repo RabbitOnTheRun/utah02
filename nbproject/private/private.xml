@@ -7,23 +7,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Transition.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Transition.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MethodInvocation.h</file>
-            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MessageReceptionMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MethodInvocation.cpp</file>
-            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Symbol.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/GuardMapper.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageEmission.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MessageEmissionMapper.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MessageReceptionMappertestclass.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Guard.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/.gitignore</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Guard.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageEmission.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Transition.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MessageReceptionMapper.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageReception.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/ExternalEffectMapper.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Symbol.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MethodInvocationMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/TransitionMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageReception.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/TransitionMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MethodInvocationMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/GuardMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MethodInvocationMapper.h</file>
-            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MessageReceptionMappertestclass.cpp</file>
-            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Guard.cpp</file>
-            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/.gitignore</file>
-            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Guard.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MessageEmissionMapper.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ExternalEffect.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MessageEmissiontestclass.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/ExternalEffectMapper.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ExternalEffect.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MessageReceptionMapper.h</file>
         </group>
     </open-files>

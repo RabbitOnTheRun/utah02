@@ -35,16 +35,20 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/ExternalEffect.o \
 	${OBJECTDIR}/Guard.o \
+	${OBJECTDIR}/MessageEmission.o \
 	${OBJECTDIR}/MessageReception.o \
 	${OBJECTDIR}/MethodInvocation.o \
 	${OBJECTDIR}/State.o \
 	${OBJECTDIR}/Symbol.o \
 	${OBJECTDIR}/Transition.o \
+	${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o \
 	${OBJECTDIR}/jsonMapper/FileIOException.o \
 	${OBJECTDIR}/jsonMapper/GuardMapper.o \
 	${OBJECTDIR}/jsonMapper/JsonFormatException.o \
 	${OBJECTDIR}/jsonMapper/JsonMapper.o \
+	${OBJECTDIR}/jsonMapper/MessageEmissionMapper.o \
 	${OBJECTDIR}/jsonMapper/MessageReceptionMapper.o \
 	${OBJECTDIR}/jsonMapper/MethodInvocationMapper.o \
 	${OBJECTDIR}/jsonMapper/PicoJsonIF.o \
@@ -58,7 +62,9 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
+	${TESTDIR}/TestFiles/f11 \
 	${TESTDIR}/TestFiles/f8 \
+	${TESTDIR}/TestFiles/f10 \
 	${TESTDIR}/TestFiles/f7 \
 	${TESTDIR}/TestFiles/f9 \
 	${TESTDIR}/TestFiles/f5 \
@@ -92,10 +98,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utah02.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utah02 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/ExternalEffect.o: ExternalEffect.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ExternalEffect.o ExternalEffect.cpp
+
 ${OBJECTDIR}/Guard.o: Guard.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Guard.o Guard.cpp
+
+${OBJECTDIR}/MessageEmission.o: MessageEmission.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageEmission.o MessageEmission.cpp
 
 ${OBJECTDIR}/MessageReception.o: MessageReception.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -122,6 +138,11 @@ ${OBJECTDIR}/Transition.o: Transition.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Transition.o Transition.cpp
 
+${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o: jsonMapper/ExternalEffectMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o jsonMapper/ExternalEffectMapper.cpp
+
 ${OBJECTDIR}/jsonMapper/FileIOException.o: jsonMapper/FileIOException.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
@@ -141,6 +162,11 @@ ${OBJECTDIR}/jsonMapper/JsonMapper.o: jsonMapper/JsonMapper.cpp
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/JsonMapper.o jsonMapper/JsonMapper.cpp
+
+${OBJECTDIR}/jsonMapper/MessageEmissionMapper.o: jsonMapper/MessageEmissionMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/MessageEmissionMapper.o jsonMapper/MessageEmissionMapper.cpp
 
 ${OBJECTDIR}/jsonMapper/MessageReceptionMapper.o: jsonMapper/MessageReceptionMapper.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
@@ -182,9 +208,17 @@ ${OBJECTDIR}/main.o: main.cpp
 
 # Build Test Targets
 .build-tests-conf: .build-conf ${TESTFILES}
+${TESTDIR}/TestFiles/f11: ${TESTDIR}/tests/ExternalEffectMappertestclass.o ${TESTDIR}/tests/ExternalEffectMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f11 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f8: ${TESTDIR}/tests/GuardMappertestclass.o ${TESTDIR}/tests/GuardMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f8 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
+${TESTDIR}/TestFiles/f10: ${TESTDIR}/tests/MessageEmissiontestclass.o ${TESTDIR}/tests/MessageEmissiontestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f10 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f7: ${TESTDIR}/tests/MessageReceptionMappertestclass.o ${TESTDIR}/tests/MessageReceptionMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
@@ -219,6 +253,18 @@ ${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/Transitiontestclass.o ${TESTDIR}/tests
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
 
+${TESTDIR}/tests/ExternalEffectMappertestclass.o: tests/ExternalEffectMappertestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ExternalEffectMappertestclass.o tests/ExternalEffectMappertestclass.cpp
+
+
+${TESTDIR}/tests/ExternalEffectMappertestrunner.o: tests/ExternalEffectMappertestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ExternalEffectMappertestrunner.o tests/ExternalEffectMappertestrunner.cpp
+
+
 ${TESTDIR}/tests/GuardMappertestclass.o: tests/GuardMappertestclass.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
@@ -229,6 +275,18 @@ ${TESTDIR}/tests/GuardMappertestrunner.o: tests/GuardMappertestrunner.cpp
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/GuardMappertestrunner.o tests/GuardMappertestrunner.cpp
+
+
+${TESTDIR}/tests/MessageEmissiontestclass.o: tests/MessageEmissiontestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MessageEmissiontestclass.o tests/MessageEmissiontestclass.cpp
+
+
+${TESTDIR}/tests/MessageEmissiontestrunner.o: tests/MessageEmissiontestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MessageEmissiontestrunner.o tests/MessageEmissiontestrunner.cpp
 
 
 ${TESTDIR}/tests/MessageReceptionMappertestclass.o: tests/MessageReceptionMappertestclass.cpp 
@@ -327,6 +385,19 @@ ${TESTDIR}/tests/Transitiontestrunner.o: tests/Transitiontestrunner.cpp
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/Transitiontestrunner.o tests/Transitiontestrunner.cpp
 
 
+${OBJECTDIR}/ExternalEffect_nomain.o: ${OBJECTDIR}/ExternalEffect.o ExternalEffect.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/ExternalEffect.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ExternalEffect_nomain.o ExternalEffect.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/ExternalEffect.o ${OBJECTDIR}/ExternalEffect_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Guard_nomain.o: ${OBJECTDIR}/Guard.o Guard.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Guard.o`; \
@@ -338,6 +409,19 @@ ${OBJECTDIR}/Guard_nomain.o: ${OBJECTDIR}/Guard.o Guard.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Guard_nomain.o Guard.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Guard.o ${OBJECTDIR}/Guard_nomain.o;\
+	fi
+
+${OBJECTDIR}/MessageEmission_nomain.o: ${OBJECTDIR}/MessageEmission.o MessageEmission.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageEmission.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageEmission_nomain.o MessageEmission.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/MessageEmission.o ${OBJECTDIR}/MessageEmission_nomain.o;\
 	fi
 
 ${OBJECTDIR}/MessageReception_nomain.o: ${OBJECTDIR}/MessageReception.o MessageReception.cpp 
@@ -405,6 +489,19 @@ ${OBJECTDIR}/Transition_nomain.o: ${OBJECTDIR}/Transition.o Transition.cpp
 	    ${CP} ${OBJECTDIR}/Transition.o ${OBJECTDIR}/Transition_nomain.o;\
 	fi
 
+${OBJECTDIR}/jsonMapper/ExternalEffectMapper_nomain.o: ${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o jsonMapper/ExternalEffectMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/ExternalEffectMapper_nomain.o jsonMapper/ExternalEffectMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o ${OBJECTDIR}/jsonMapper/ExternalEffectMapper_nomain.o;\
+	fi
+
 ${OBJECTDIR}/jsonMapper/FileIOException_nomain.o: ${OBJECTDIR}/jsonMapper/FileIOException.o jsonMapper/FileIOException.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/FileIOException.o`; \
@@ -455,6 +552,19 @@ ${OBJECTDIR}/jsonMapper/JsonMapper_nomain.o: ${OBJECTDIR}/jsonMapper/JsonMapper.
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/JsonMapper_nomain.o jsonMapper/JsonMapper.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/jsonMapper/JsonMapper.o ${OBJECTDIR}/jsonMapper/JsonMapper_nomain.o;\
+	fi
+
+${OBJECTDIR}/jsonMapper/MessageEmissionMapper_nomain.o: ${OBJECTDIR}/jsonMapper/MessageEmissionMapper.o jsonMapper/MessageEmissionMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/MessageEmissionMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/MessageEmissionMapper_nomain.o jsonMapper/MessageEmissionMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/MessageEmissionMapper.o ${OBJECTDIR}/jsonMapper/MessageEmissionMapper_nomain.o;\
 	fi
 
 ${OBJECTDIR}/jsonMapper/MessageReceptionMapper_nomain.o: ${OBJECTDIR}/jsonMapper/MessageReceptionMapper.o jsonMapper/MessageReceptionMapper.cpp 
@@ -552,7 +662,9 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
 	then  \
+	    ${TESTDIR}/TestFiles/f11 || true; \
 	    ${TESTDIR}/TestFiles/f8 || true; \
+	    ${TESTDIR}/TestFiles/f10 || true; \
 	    ${TESTDIR}/TestFiles/f7 || true; \
 	    ${TESTDIR}/TestFiles/f9 || true; \
 	    ${TESTDIR}/TestFiles/f5 || true; \

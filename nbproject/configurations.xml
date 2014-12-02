@@ -2,6 +2,8 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="f1" displayName="jsonMapper" projectFiles="true">
+      <itemPath>jsonMapper/ExternalEffectMapper.cpp</itemPath>
+      <itemPath>jsonMapper/ExternalEffectMapper.h</itemPath>
       <itemPath>jsonMapper/FileIOException.cpp</itemPath>
       <itemPath>jsonMapper/FileIOException.h</itemPath>
       <itemPath>jsonMapper/GuardMapper.cpp</itemPath>
@@ -10,6 +12,8 @@
       <itemPath>jsonMapper/JsonFormatException.h</itemPath>
       <itemPath>jsonMapper/JsonMapper.cpp</itemPath>
       <itemPath>jsonMapper/JsonMapper.h</itemPath>
+      <itemPath>jsonMapper/MessageEmissionMapper.cpp</itemPath>
+      <itemPath>jsonMapper/MessageEmissionMapper.h</itemPath>
       <itemPath>jsonMapper/MessageReceptionMapper.cpp</itemPath>
       <itemPath>jsonMapper/MessageReceptionMapper.h</itemPath>
       <itemPath>jsonMapper/MethodInvocationMapper.cpp</itemPath>
@@ -25,7 +29,9 @@
       <itemPath>jsonMapper/picojson.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
+      <itemPath>ExternalEffect.cpp</itemPath>
       <itemPath>Guard.cpp</itemPath>
+      <itemPath>MessageEmission.cpp</itemPath>
       <itemPath>MessageReception.cpp</itemPath>
       <itemPath>MethodInvocation.cpp</itemPath>
       <itemPath>State.cpp</itemPath>
@@ -34,7 +40,9 @@
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles" displayName="ヘッダー・ファイル" projectFiles="true">
+      <itemPath>ExternalEffect.h</itemPath>
       <itemPath>Guard.h</itemPath>
+      <itemPath>MessageEmission.h</itemPath>
       <itemPath>MessageReception.h</itemPath>
       <itemPath>MethodInvocation.h</itemPath>
       <itemPath>State.h</itemPath>
@@ -47,6 +55,14 @@
                    displayName="テスト・ファイル"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f11"
+                     displayName="ExternalEffectMapper"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/ExternalEffectMappertestclass.cpp</itemPath>
+        <itemPath>tests/ExternalEffectMappertestclass.h</itemPath>
+        <itemPath>tests/ExternalEffectMappertestrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f8"
                      displayName="GuardMapper"
                      projectFiles="true"
@@ -54,6 +70,14 @@
         <itemPath>tests/GuardMappertestclass.cpp</itemPath>
         <itemPath>tests/GuardMappertestclass.h</itemPath>
         <itemPath>tests/GuardMappertestrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f10"
+                     displayName="MessageEmission"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/MessageEmissiontestclass.cpp</itemPath>
+        <itemPath>tests/MessageEmissiontestclass.h</itemPath>
+        <itemPath>tests/MessageEmissiontestrunner.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f7"
                      displayName="MessageReceptionMappertest"
@@ -140,9 +164,17 @@
           <standard>8</standard>
         </ccTool>
       </compileType>
+      <item path="ExternalEffect.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ExternalEffect.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Guard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Guard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MessageEmission.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageEmission.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -173,6 +205,35 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f10">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f10</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f11">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f11</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
@@ -291,6 +352,13 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="jsonMapper/ExternalEffectMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/ExternalEffectMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
@@ -306,6 +374,13 @@
       <item path="jsonMapper/JsonMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/JsonMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/MessageEmissionMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/MessageEmissionMapper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="jsonMapper/MessageReceptionMapper.cpp"
             ex="false"
@@ -347,11 +422,35 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="tests/ExternalEffectMappertestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/ExternalEffectMappertestclass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tests/ExternalEffectMappertestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="tests/GuardMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/GuardMappertestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/GuardMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MessageEmissiontestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MessageEmissiontestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/MessageEmissiontestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="tests/MessageReceptionMappertestclass.cpp"
             ex="false"
@@ -446,9 +545,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="ExternalEffect.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ExternalEffect.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Guard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Guard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MessageEmission.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageEmission.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -479,6 +586,35 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f10">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f10</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f11">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f11</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
@@ -597,6 +733,13 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="jsonMapper/ExternalEffectMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/ExternalEffectMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
@@ -612,6 +755,13 @@
       <item path="jsonMapper/JsonMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/JsonMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/MessageEmissionMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="jsonMapper/MessageEmissionMapper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="jsonMapper/MessageReceptionMapper.cpp"
             ex="false"
@@ -653,11 +803,35 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="tests/ExternalEffectMappertestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/ExternalEffectMappertestclass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tests/ExternalEffectMappertestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="tests/GuardMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/GuardMappertestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/GuardMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MessageEmissiontestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MessageEmissiontestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/MessageEmissiontestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="tests/MessageReceptionMappertestclass.cpp"
             ex="false"
