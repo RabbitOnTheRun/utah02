@@ -10,9 +10,12 @@
 
 #include "Symbol.h"
 #include <string>
+
+#include "tests/MethodInvocationMappertestclass.h"
 namespace utah {
 
     class MethodInvocation {
+        friend MethodInvocationMappertestclass;
     public:
         MethodInvocation();
         MethodInvocation(std::string methodName_, std::string methodArgument_);

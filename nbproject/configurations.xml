@@ -63,6 +63,14 @@
         <itemPath>tests/MessageReceptionMappertestclass.h</itemPath>
         <itemPath>tests/MessageReceptionMappertestrunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f9"
+                     displayName="MethodInvocationMapper"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/MethodInvocationMappertestclass.cpp</itemPath>
+        <itemPath>tests/MethodInvocationMappertestclass.h</itemPath>
+        <itemPath>tests/MethodInvocationMappertestrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f5"
                      displayName="StateMapper"
                      projectFiles="true"
@@ -269,6 +277,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f9">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f9</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
@@ -342,6 +364,21 @@
             flavor2="0">
       </item>
       <item path="tests/MessageReceptionMappertestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/MethodInvocationMappertestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/MethodInvocationMappertestclass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tests/MethodInvocationMappertestrunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -546,6 +583,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f9">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f9</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="jsonMapper/FileIOException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/FileIOException.h" ex="false" tool="3" flavor2="0">
@@ -619,6 +670,21 @@
             flavor2="0">
       </item>
       <item path="tests/MessageReceptionMappertestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/MethodInvocationMappertestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/MethodInvocationMappertestclass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tests/MethodInvocationMappertestrunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
