@@ -12,6 +12,7 @@
 #include <string>
 
 #include "tests/MethodInvocationMappertestclass.h"
+#include "tests/TransitionMappertestclass.h"
 namespace utah {
 
     class MethodInvocation {

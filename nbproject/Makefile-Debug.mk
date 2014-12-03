@@ -35,8 +35,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Argument.o \
+	${OBJECTDIR}/EventQueue.o \
 	${OBJECTDIR}/ExternalEffect.o \
 	${OBJECTDIR}/Guard.o \
+	${OBJECTDIR}/Message.o \
 	${OBJECTDIR}/MessageEmission.o \
 	${OBJECTDIR}/MessageProcessing.o \
 	${OBJECTDIR}/MessageReception.o \
@@ -44,6 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/ResultHandling.o \
 	${OBJECTDIR}/State.o \
 	${OBJECTDIR}/Symbol.o \
+	${OBJECTDIR}/Thread.o \
 	${OBJECTDIR}/Transition.o \
 	${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o \
 	${OBJECTDIR}/jsonMapper/FileIOException.o \
@@ -58,7 +62,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/jsonMapper/StateMapper.o \
 	${OBJECTDIR}/jsonMapper/StatePartMapper.o \
 	${OBJECTDIR}/jsonMapper/TransitionMapper.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/shared_queue.o
 
 # Test Directory
 TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
@@ -102,6 +107,16 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utah02.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utah02 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/Argument.o: Argument.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Argument.o Argument.cpp
+
+${OBJECTDIR}/EventQueue.o: EventQueue.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EventQueue.o EventQueue.cpp
+
 ${OBJECTDIR}/ExternalEffect.o: ExternalEffect.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -111,6 +126,11 @@ ${OBJECTDIR}/Guard.o: Guard.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Guard.o Guard.cpp
+
+${OBJECTDIR}/Message.o: Message.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Message.o Message.cpp
 
 ${OBJECTDIR}/MessageEmission.o: MessageEmission.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -146,6 +166,11 @@ ${OBJECTDIR}/Symbol.o: Symbol.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Symbol.o Symbol.cpp
+
+${OBJECTDIR}/Thread.o: Thread.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Thread.o Thread.cpp
 
 ${OBJECTDIR}/Transition.o: Transition.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -221,6 +246,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/shared_queue.o: shared_queue.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 
 # Subprojects
 .build-subprojects:
@@ -420,6 +450,32 @@ ${TESTDIR}/tests/Transitiontestrunner.o: tests/Transitiontestrunner.cpp
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/Transitiontestrunner.o tests/Transitiontestrunner.cpp
 
 
+${OBJECTDIR}/Argument_nomain.o: ${OBJECTDIR}/Argument.o Argument.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Argument.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Argument_nomain.o Argument.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Argument.o ${OBJECTDIR}/Argument_nomain.o;\
+	fi
+
+${OBJECTDIR}/EventQueue_nomain.o: ${OBJECTDIR}/EventQueue.o EventQueue.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/EventQueue.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EventQueue_nomain.o EventQueue.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/EventQueue.o ${OBJECTDIR}/EventQueue_nomain.o;\
+	fi
+
 ${OBJECTDIR}/ExternalEffect_nomain.o: ${OBJECTDIR}/ExternalEffect.o ExternalEffect.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/ExternalEffect.o`; \
@@ -444,6 +500,19 @@ ${OBJECTDIR}/Guard_nomain.o: ${OBJECTDIR}/Guard.o Guard.cpp
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Guard_nomain.o Guard.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Guard.o ${OBJECTDIR}/Guard_nomain.o;\
+	fi
+
+${OBJECTDIR}/Message_nomain.o: ${OBJECTDIR}/Message.o Message.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Message.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Message_nomain.o Message.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Message.o ${OBJECTDIR}/Message_nomain.o;\
 	fi
 
 ${OBJECTDIR}/MessageEmission_nomain.o: ${OBJECTDIR}/MessageEmission.o MessageEmission.cpp 
@@ -535,6 +604,19 @@ ${OBJECTDIR}/Symbol_nomain.o: ${OBJECTDIR}/Symbol.o Symbol.cpp
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Symbol_nomain.o Symbol.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Symbol.o ${OBJECTDIR}/Symbol_nomain.o;\
+	fi
+
+${OBJECTDIR}/Thread_nomain.o: ${OBJECTDIR}/Thread.o Thread.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Thread.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Thread_nomain.o Thread.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Thread.o ${OBJECTDIR}/Thread_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Transition_nomain.o: ${OBJECTDIR}/Transition.o Transition.cpp 
@@ -730,6 +812,19 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_nomain.o main.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/main.o ${OBJECTDIR}/main_nomain.o;\
+	fi
+
+${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/shared_queue.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/shared_queue_nomain.o shared_queue.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/shared_queue.o ${OBJECTDIR}/shared_queue_nomain.o;\
 	fi
 
 # Run Test Targets
