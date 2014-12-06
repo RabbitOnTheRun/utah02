@@ -19,6 +19,7 @@ namespace utah {
         virtual ~InPort();
     private:
         Symbol* portName;
+        Symbol* stateMachine;
     };
 }
 #endif	/* INPORT_H */

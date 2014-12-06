@@ -25,6 +25,7 @@ namespace utah {
         void push(MessageWithDest messageWithDest_);
     private:
         std::map<Symbol*, Thread*> threadMap;
+       // std::map<Symbol*, std::map<Symbol*, InPort>
     };
 }
 #endif	/* PROCESS_H */

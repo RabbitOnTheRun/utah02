@@ -8,6 +8,9 @@
 #ifndef STATEMACHINE_H
 #define	STATEMACHINE_H
 
+#include <map>
+#include "Symbol.h"
+#include "OutPort.h"
 namespace utah {
 
     class StateMachine {
@@ -17,7 +20,7 @@ namespace utah {
         virtual ~StateMachine();
         
     private:
-
+        std::map<Symbol*, OutPort*> outPortMap;
     };
 }
 #endif	/* STATEMACHINE_H */
