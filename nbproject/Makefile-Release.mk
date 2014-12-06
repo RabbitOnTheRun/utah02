@@ -36,16 +36,22 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Argument.o \
+	${OBJECTDIR}/Destination.o \
 	${OBJECTDIR}/EventQueue.o \
 	${OBJECTDIR}/ExternalEffect.o \
 	${OBJECTDIR}/Guard.o \
+	${OBJECTDIR}/InPort.o \
 	${OBJECTDIR}/Message.o \
 	${OBJECTDIR}/MessageEmission.o \
 	${OBJECTDIR}/MessageProcessing.o \
 	${OBJECTDIR}/MessageReception.o \
+	${OBJECTDIR}/MessageWithDest.o \
 	${OBJECTDIR}/MethodInvocation.o \
+	${OBJECTDIR}/OutPort.o \
+	${OBJECTDIR}/Process.o \
 	${OBJECTDIR}/ResultHandling.o \
 	${OBJECTDIR}/State.o \
+	${OBJECTDIR}/StateMachine.o \
 	${OBJECTDIR}/Symbol.o \
 	${OBJECTDIR}/Thread.o \
 	${OBJECTDIR}/Transition.o \
@@ -112,6 +118,11 @@ ${OBJECTDIR}/Argument.o: Argument.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Argument.o Argument.cpp
 
+${OBJECTDIR}/Destination.o: Destination.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Destination.o Destination.cpp
+
 ${OBJECTDIR}/EventQueue.o: EventQueue.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -126,6 +137,11 @@ ${OBJECTDIR}/Guard.o: Guard.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Guard.o Guard.cpp
+
+${OBJECTDIR}/InPort.o: InPort.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InPort.o InPort.cpp
 
 ${OBJECTDIR}/Message.o: Message.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -147,10 +163,25 @@ ${OBJECTDIR}/MessageReception.o: MessageReception.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageReception.o MessageReception.cpp
 
+${OBJECTDIR}/MessageWithDest.o: MessageWithDest.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithDest.o MessageWithDest.cpp
+
 ${OBJECTDIR}/MethodInvocation.o: MethodInvocation.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MethodInvocation.o MethodInvocation.cpp
+
+${OBJECTDIR}/OutPort.o: OutPort.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/OutPort.o OutPort.cpp
+
+${OBJECTDIR}/Process.o: Process.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Process.o Process.cpp
 
 ${OBJECTDIR}/ResultHandling.o: ResultHandling.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -161,6 +192,11 @@ ${OBJECTDIR}/State.o: State.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/State.o State.cpp
+
+${OBJECTDIR}/StateMachine.o: StateMachine.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StateMachine.o StateMachine.cpp
 
 ${OBJECTDIR}/Symbol.o: Symbol.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -463,6 +499,19 @@ ${OBJECTDIR}/Argument_nomain.o: ${OBJECTDIR}/Argument.o Argument.cpp
 	    ${CP} ${OBJECTDIR}/Argument.o ${OBJECTDIR}/Argument_nomain.o;\
 	fi
 
+${OBJECTDIR}/Destination_nomain.o: ${OBJECTDIR}/Destination.o Destination.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Destination.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Destination_nomain.o Destination.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Destination.o ${OBJECTDIR}/Destination_nomain.o;\
+	fi
+
 ${OBJECTDIR}/EventQueue_nomain.o: ${OBJECTDIR}/EventQueue.o EventQueue.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/EventQueue.o`; \
@@ -500,6 +549,19 @@ ${OBJECTDIR}/Guard_nomain.o: ${OBJECTDIR}/Guard.o Guard.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Guard_nomain.o Guard.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Guard.o ${OBJECTDIR}/Guard_nomain.o;\
+	fi
+
+${OBJECTDIR}/InPort_nomain.o: ${OBJECTDIR}/InPort.o InPort.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/InPort.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InPort_nomain.o InPort.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/InPort.o ${OBJECTDIR}/InPort_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Message_nomain.o: ${OBJECTDIR}/Message.o Message.cpp 
@@ -554,6 +616,19 @@ ${OBJECTDIR}/MessageReception_nomain.o: ${OBJECTDIR}/MessageReception.o MessageR
 	    ${CP} ${OBJECTDIR}/MessageReception.o ${OBJECTDIR}/MessageReception_nomain.o;\
 	fi
 
+${OBJECTDIR}/MessageWithDest_nomain.o: ${OBJECTDIR}/MessageWithDest.o MessageWithDest.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageWithDest.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithDest_nomain.o MessageWithDest.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/MessageWithDest.o ${OBJECTDIR}/MessageWithDest_nomain.o;\
+	fi
+
 ${OBJECTDIR}/MethodInvocation_nomain.o: ${OBJECTDIR}/MethodInvocation.o MethodInvocation.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/MethodInvocation.o`; \
@@ -565,6 +640,32 @@ ${OBJECTDIR}/MethodInvocation_nomain.o: ${OBJECTDIR}/MethodInvocation.o MethodIn
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MethodInvocation_nomain.o MethodInvocation.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/MethodInvocation.o ${OBJECTDIR}/MethodInvocation_nomain.o;\
+	fi
+
+${OBJECTDIR}/OutPort_nomain.o: ${OBJECTDIR}/OutPort.o OutPort.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/OutPort.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/OutPort_nomain.o OutPort.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/OutPort.o ${OBJECTDIR}/OutPort_nomain.o;\
+	fi
+
+${OBJECTDIR}/Process_nomain.o: ${OBJECTDIR}/Process.o Process.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Process.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Process_nomain.o Process.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Process.o ${OBJECTDIR}/Process_nomain.o;\
 	fi
 
 ${OBJECTDIR}/ResultHandling_nomain.o: ${OBJECTDIR}/ResultHandling.o ResultHandling.cpp 
@@ -591,6 +692,19 @@ ${OBJECTDIR}/State_nomain.o: ${OBJECTDIR}/State.o State.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/State_nomain.o State.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/State.o ${OBJECTDIR}/State_nomain.o;\
+	fi
+
+${OBJECTDIR}/StateMachine_nomain.o: ${OBJECTDIR}/StateMachine.o StateMachine.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/StateMachine.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StateMachine_nomain.o StateMachine.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/StateMachine.o ${OBJECTDIR}/StateMachine_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Symbol_nomain.o: ${OBJECTDIR}/Symbol.o Symbol.cpp 

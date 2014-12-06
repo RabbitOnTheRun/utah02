@@ -17,13 +17,13 @@ namespace utah {
 
     EventQueue::~EventQueue() {
     }
-    void EventQueue::push(Message message) {
-        eventQueue.push(message);
+    void EventQueue::push(MessageWithDest messageWithDest) {
+        eventQueue.push(messageWithDest);
     }
 
-    Message EventQueue::wait_and_pop() {
-        Message message;
-        eventQueue.wait_and_pop(message);
-        return message;
+    MessageWithDest EventQueue::wait_and_pop() {
+        MessageWithDest messageWithDest;
+        eventQueue.wait_and_pop(messageWithDest);
+        return messageWithDest;
     }
 }

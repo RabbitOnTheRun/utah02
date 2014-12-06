@@ -12,8 +12,10 @@
 #include <memory>
 #include <map>
 #include <thread>
+#include "Symbol.h"
 #include "Message.h"
 #include "EventQueue.h"
+#include "StateMachine.h"
 
 namespace utah {
 
@@ -21,10 +23,11 @@ namespace utah {
     public:
         virtual ~Thread();
         const std::string name;
-        void push(Message message);
+        void push(MessageWithDest messageWithDest);
         void start();
         void join();
         void setEventQueue(std::shared_ptr<EventQueue> eventQueue);
+        void addStateMachine(Symbol* stateMachineName, StateMachine* stateMachine);
     private:
         Thread();
         std::thread thread_;
@@ -32,6 +35,7 @@ namespace utah {
         bool done_ = false;
         void doDone();
         void run();
+        std::map<Symbol* , StateMachine*> stateMachineMap;
     };
 }
 #endif	/* THREAD_H */

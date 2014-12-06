@@ -18,9 +18,9 @@ namespace utah {
     Thread::~Thread() {
     }
 
-    void Thread::push(Message message) {
+    void Thread::push(MessageWithDest messageWithDest) {
         //std::cout << "Thread::push " + eventWithDest.event.symbol->getName() + "\n" ;
-        eventQueue->push(message);
+        eventQueue->push(messageWithDest);
     }
 
     void Thread::start() {
@@ -38,7 +38,7 @@ namespace utah {
     void Thread::run() {
         while (!done_) {
 
-            Message message = eventQueue->wait_and_pop();
+            MessageWithDest messageWithDest = eventQueue->wait_and_pop();
 
             //SymbolicEvent ev = eventHandling->popEvent();
 
@@ -47,7 +47,9 @@ namespace utah {
                 break;
             }
 
-            // dispatch here ;
+            Destination destination = messageWithDest.getDestination();
+            Symbol* stateMachineName = destination.getStateMachineName();
+            //stateMachineMap[stateMachineName]
 
         }
     }

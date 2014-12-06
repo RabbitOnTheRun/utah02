@@ -32,16 +32,22 @@
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
       <itemPath>Argument.cpp</itemPath>
+      <itemPath>Destination.cpp</itemPath>
       <itemPath>EventQueue.cpp</itemPath>
       <itemPath>ExternalEffect.cpp</itemPath>
       <itemPath>Guard.cpp</itemPath>
+      <itemPath>InPort.cpp</itemPath>
       <itemPath>Message.cpp</itemPath>
       <itemPath>MessageEmission.cpp</itemPath>
       <itemPath>MessageProcessing.cpp</itemPath>
       <itemPath>MessageReception.cpp</itemPath>
+      <itemPath>MessageWithDest.cpp</itemPath>
       <itemPath>MethodInvocation.cpp</itemPath>
+      <itemPath>OutPort.cpp</itemPath>
+      <itemPath>Process.cpp</itemPath>
       <itemPath>ResultHandling.cpp</itemPath>
       <itemPath>State.cpp</itemPath>
+      <itemPath>StateMachine.cpp</itemPath>
       <itemPath>Symbol.cpp</itemPath>
       <itemPath>Thread.cpp</itemPath>
       <itemPath>Transition.cpp</itemPath>
@@ -50,16 +56,22 @@
     </logicalFolder>
     <logicalFolder name="HeaderFiles" displayName="ヘッダー・ファイル" projectFiles="true">
       <itemPath>Argument.h</itemPath>
+      <itemPath>Destination.h</itemPath>
       <itemPath>EventQueue.h</itemPath>
       <itemPath>ExternalEffect.h</itemPath>
       <itemPath>Guard.h</itemPath>
+      <itemPath>InPort.h</itemPath>
       <itemPath>Message.h</itemPath>
       <itemPath>MessageEmission.h</itemPath>
       <itemPath>MessageProcessing.h</itemPath>
       <itemPath>MessageReception.h</itemPath>
+      <itemPath>MessageWithDest.h</itemPath>
       <itemPath>MethodInvocation.h</itemPath>
+      <itemPath>OutPort.h</itemPath>
+      <itemPath>Process.h</itemPath>
       <itemPath>ResultHandling.h</itemPath>
       <itemPath>State.h</itemPath>
+      <itemPath>StateMachine.h</itemPath>
       <itemPath>Symbol.h</itemPath>
       <itemPath>Thread.h</itemPath>
       <itemPath>Transition.h</itemPath>
@@ -192,6 +204,10 @@
       </item>
       <item path="Argument.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Destination.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Destination.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="EventQueue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="EventQueue.h" ex="false" tool="3" flavor2="0">
@@ -203,6 +219,10 @@
       <item path="Guard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Guard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InPort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="InPort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Message.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -220,9 +240,21 @@
       </item>
       <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="MessageWithDest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageWithDest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MethodInvocation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MethodInvocation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="OutPort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="OutPort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Process.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Process.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ResultHandling.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -231,6 +263,10 @@
       <item path="State.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="State.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StateMachine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StateMachine.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Symbol.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -628,6 +664,10 @@
       </item>
       <item path="Argument.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Destination.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Destination.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="EventQueue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="EventQueue.h" ex="false" tool="3" flavor2="0">
@@ -639,6 +679,10 @@
       <item path="Guard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Guard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InPort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="InPort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Message.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -656,9 +700,21 @@
       </item>
       <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="MessageWithDest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageWithDest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MethodInvocation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MethodInvocation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="OutPort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="OutPort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Process.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Process.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ResultHandling.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -667,6 +723,10 @@
       <item path="State.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="State.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StateMachine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StateMachine.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Symbol.cpp" ex="false" tool="1" flavor2="0">
       </item>
