@@ -9,8 +9,8 @@
 
 namespace utah {
 
-    OutPort::OutPort() {
-    }
+//    OutPort::OutPort() {
+  //  }
 
     //OutPort::OutPort(const OutPort& orig) {
     //}

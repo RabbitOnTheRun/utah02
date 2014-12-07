@@ -10,16 +10,17 @@
 
 #include <string>
 #include "Symbol.h"
+#include "Port.h"
 
 namespace utah {
 
-    class OutPort {
+    class OutPort : public Port{
     public:
-        OutPort();
+       // OutPort();
         //OutPort(const OutPort& orig);
         virtual ~OutPort();
     private:
-        Symbol* portName;
+        //Symbol* portName;
     };
 }
 #endif	/* OUTPORT_H */

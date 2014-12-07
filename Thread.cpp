@@ -5,7 +5,9 @@
  * Created on 2014/12/03, 13:22
  */
 
+#include "Sym.h"
 #include "Thread.h"
+
 #include <iostream>
 namespace utah {
 
@@ -42,7 +44,8 @@ namespace utah {
 
             //SymbolicEvent ev = eventHandling->popEvent();
 
-            if (Symbol::create("done") == NULL) { //message.getName()) {
+            //if (Symbol::create("done") == NULL) { //message.getName()) {
+            if (Sym::done == messageWithDest.getMessage().getMessageName()) { 
                 doDone();
                 break;
             }
@@ -59,5 +62,5 @@ namespace utah {
     }
     // wait_and_pop();
 
- 
+
 }

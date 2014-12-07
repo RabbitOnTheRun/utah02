@@ -48,10 +48,14 @@ OBJECTFILES= \
 	${OBJECTDIR}/MessageWithDest.o \
 	${OBJECTDIR}/MethodInvocation.o \
 	${OBJECTDIR}/OutPort.o \
+	${OBJECTDIR}/Port.o \
+	${OBJECTDIR}/PortConnection.o \
+	${OBJECTDIR}/PortMap.o \
 	${OBJECTDIR}/Process.o \
 	${OBJECTDIR}/ResultHandling.o \
 	${OBJECTDIR}/State.o \
 	${OBJECTDIR}/StateMachine.o \
+	${OBJECTDIR}/Sym.o \
 	${OBJECTDIR}/Symbol.o \
 	${OBJECTDIR}/Thread.o \
 	${OBJECTDIR}/Transition.o \
@@ -178,6 +182,21 @@ ${OBJECTDIR}/OutPort.o: OutPort.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/OutPort.o OutPort.cpp
 
+${OBJECTDIR}/Port.o: Port.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Port.o Port.cpp
+
+${OBJECTDIR}/PortConnection.o: PortConnection.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PortConnection.o PortConnection.cpp
+
+${OBJECTDIR}/PortMap.o: PortMap.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PortMap.o PortMap.cpp
+
 ${OBJECTDIR}/Process.o: Process.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -197,6 +216,11 @@ ${OBJECTDIR}/StateMachine.o: StateMachine.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StateMachine.o StateMachine.cpp
+
+${OBJECTDIR}/Sym.o: Sym.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Sym.o Sym.cpp
 
 ${OBJECTDIR}/Symbol.o: Symbol.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -655,6 +679,45 @@ ${OBJECTDIR}/OutPort_nomain.o: ${OBJECTDIR}/OutPort.o OutPort.cpp
 	    ${CP} ${OBJECTDIR}/OutPort.o ${OBJECTDIR}/OutPort_nomain.o;\
 	fi
 
+${OBJECTDIR}/Port_nomain.o: ${OBJECTDIR}/Port.o Port.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Port.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Port_nomain.o Port.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Port.o ${OBJECTDIR}/Port_nomain.o;\
+	fi
+
+${OBJECTDIR}/PortConnection_nomain.o: ${OBJECTDIR}/PortConnection.o PortConnection.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/PortConnection.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PortConnection_nomain.o PortConnection.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/PortConnection.o ${OBJECTDIR}/PortConnection_nomain.o;\
+	fi
+
+${OBJECTDIR}/PortMap_nomain.o: ${OBJECTDIR}/PortMap.o PortMap.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/PortMap.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PortMap_nomain.o PortMap.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/PortMap.o ${OBJECTDIR}/PortMap_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Process_nomain.o: ${OBJECTDIR}/Process.o Process.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Process.o`; \
@@ -705,6 +768,19 @@ ${OBJECTDIR}/StateMachine_nomain.o: ${OBJECTDIR}/StateMachine.o StateMachine.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StateMachine_nomain.o StateMachine.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/StateMachine.o ${OBJECTDIR}/StateMachine_nomain.o;\
+	fi
+
+${OBJECTDIR}/Sym_nomain.o: ${OBJECTDIR}/Sym.o Sym.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Sym.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Sym_nomain.o Sym.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Sym.o ${OBJECTDIR}/Sym_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Symbol_nomain.o: ${OBJECTDIR}/Symbol.o Symbol.cpp 

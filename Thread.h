@@ -19,6 +19,8 @@
 
 namespace utah {
 
+    class Process;
+    
     class Thread {
     public:
         virtual ~Thread();
@@ -36,6 +38,7 @@ namespace utah {
         void doDone();
         void run();
         std::map<Symbol* , StateMachine*> stateMachineMap;
+        Process* process;
     };
 }
 #endif	/* THREAD_H */

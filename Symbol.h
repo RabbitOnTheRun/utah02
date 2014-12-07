@@ -17,8 +17,9 @@ namespace utah {
     public:
 
         static Symbol* create(const std::string &name_);
+        //static constexpr Symbol* createConstExpr(const std::string &name_);
         virtual ~Symbol();
-         std::string getName();
+        std::string getName();
         bool eq(const Symbol*);
     private:
         Symbol();

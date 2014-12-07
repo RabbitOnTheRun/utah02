@@ -37,7 +37,7 @@ namespace utah {
         }
     }
 
-     std::string Symbol::getName() {
+    std::string Symbol::getName() {
         return name;
     }
 }

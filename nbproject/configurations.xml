@@ -44,10 +44,14 @@
       <itemPath>MessageWithDest.cpp</itemPath>
       <itemPath>MethodInvocation.cpp</itemPath>
       <itemPath>OutPort.cpp</itemPath>
+      <itemPath>Port.cpp</itemPath>
+      <itemPath>PortConnection.cpp</itemPath>
+      <itemPath>PortMap.cpp</itemPath>
       <itemPath>Process.cpp</itemPath>
       <itemPath>ResultHandling.cpp</itemPath>
       <itemPath>State.cpp</itemPath>
       <itemPath>StateMachine.cpp</itemPath>
+      <itemPath>Sym.cpp</itemPath>
       <itemPath>Symbol.cpp</itemPath>
       <itemPath>Thread.cpp</itemPath>
       <itemPath>Transition.cpp</itemPath>
@@ -68,10 +72,14 @@
       <itemPath>MessageWithDest.h</itemPath>
       <itemPath>MethodInvocation.h</itemPath>
       <itemPath>OutPort.h</itemPath>
+      <itemPath>Port.h</itemPath>
+      <itemPath>PortConnection.h</itemPath>
+      <itemPath>PortMap.h</itemPath>
       <itemPath>Process.h</itemPath>
       <itemPath>ResultHandling.h</itemPath>
       <itemPath>State.h</itemPath>
       <itemPath>StateMachine.h</itemPath>
+      <itemPath>Sym.h</itemPath>
       <itemPath>Symbol.h</itemPath>
       <itemPath>Thread.h</itemPath>
       <itemPath>Transition.h</itemPath>
@@ -252,6 +260,18 @@
       </item>
       <item path="OutPort.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Port.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Port.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PortConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PortConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PortMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PortMap.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Process.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Process.h" ex="false" tool="3" flavor2="0">
@@ -267,6 +287,10 @@
       <item path="StateMachine.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="StateMachine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sym.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sym.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Symbol.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -712,6 +736,18 @@
       </item>
       <item path="OutPort.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Port.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Port.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PortConnection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PortConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PortMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PortMap.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Process.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Process.h" ex="false" tool="3" flavor2="0">
@@ -727,6 +763,10 @@
       <item path="StateMachine.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="StateMachine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sym.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sym.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Symbol.cpp" ex="false" tool="1" flavor2="0">
       </item>
