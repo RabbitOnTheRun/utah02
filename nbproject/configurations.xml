@@ -36,7 +36,9 @@
       <itemPath>EventQueue.cpp</itemPath>
       <itemPath>ExternalEffect.cpp</itemPath>
       <itemPath>Guard.cpp</itemPath>
+      <itemPath>GuardIF.cpp</itemPath>
       <itemPath>InPort.cpp</itemPath>
+      <itemPath>MapOfGuard.cpp</itemPath>
       <itemPath>Message.cpp</itemPath>
       <itemPath>MessageEmission.cpp</itemPath>
       <itemPath>MessageProcessing.cpp</itemPath>
@@ -66,7 +68,9 @@
       <itemPath>EventQueue.h</itemPath>
       <itemPath>ExternalEffect.h</itemPath>
       <itemPath>Guard.h</itemPath>
+      <itemPath>GuardIF.h</itemPath>
       <itemPath>InPort.h</itemPath>
+      <itemPath>MapOfGuard.h</itemPath>
       <itemPath>Message.h</itemPath>
       <itemPath>MessageEmission.h</itemPath>
       <itemPath>MessageProcessing.h</itemPath>
@@ -232,9 +236,17 @@
       </item>
       <item path="Guard.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GuardIF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GuardIF.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="InPort.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="InPort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MapOfGuard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MapOfGuard.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Message.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -716,9 +728,17 @@
       </item>
       <item path="Guard.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GuardIF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GuardIF.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="InPort.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="InPort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MapOfGuard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MapOfGuard.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Message.cpp" ex="false" tool="1" flavor2="0">
       </item>

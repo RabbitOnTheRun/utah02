@@ -40,7 +40,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/EventQueue.o \
 	${OBJECTDIR}/ExternalEffect.o \
 	${OBJECTDIR}/Guard.o \
+	${OBJECTDIR}/GuardIF.o \
 	${OBJECTDIR}/InPort.o \
+	${OBJECTDIR}/MapOfGuard.o \
 	${OBJECTDIR}/Message.o \
 	${OBJECTDIR}/MessageEmission.o \
 	${OBJECTDIR}/MessageProcessing.o \
@@ -144,10 +146,20 @@ ${OBJECTDIR}/Guard.o: Guard.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Guard.o Guard.cpp
 
+${OBJECTDIR}/GuardIF.o: GuardIF.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GuardIF.o GuardIF.cpp
+
 ${OBJECTDIR}/InPort.o: InPort.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InPort.o InPort.cpp
+
+${OBJECTDIR}/MapOfGuard.o: MapOfGuard.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MapOfGuard.o MapOfGuard.cpp
 
 ${OBJECTDIR}/Message.o: Message.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -587,6 +599,19 @@ ${OBJECTDIR}/Guard_nomain.o: ${OBJECTDIR}/Guard.o Guard.cpp
 	    ${CP} ${OBJECTDIR}/Guard.o ${OBJECTDIR}/Guard_nomain.o;\
 	fi
 
+${OBJECTDIR}/GuardIF_nomain.o: ${OBJECTDIR}/GuardIF.o GuardIF.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GuardIF.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GuardIF_nomain.o GuardIF.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GuardIF.o ${OBJECTDIR}/GuardIF_nomain.o;\
+	fi
+
 ${OBJECTDIR}/InPort_nomain.o: ${OBJECTDIR}/InPort.o InPort.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/InPort.o`; \
@@ -598,6 +623,19 @@ ${OBJECTDIR}/InPort_nomain.o: ${OBJECTDIR}/InPort.o InPort.cpp
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InPort_nomain.o InPort.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/InPort.o ${OBJECTDIR}/InPort_nomain.o;\
+	fi
+
+${OBJECTDIR}/MapOfGuard_nomain.o: ${OBJECTDIR}/MapOfGuard.o MapOfGuard.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/MapOfGuard.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MapOfGuard_nomain.o MapOfGuard.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/MapOfGuard.o ${OBJECTDIR}/MapOfGuard_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Message_nomain.o: ${OBJECTDIR}/Message.o Message.cpp 

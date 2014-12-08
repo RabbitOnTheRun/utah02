@@ -43,6 +43,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Sym.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/ExternalEffectMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/EventQueue.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StatePartMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/EventQueue.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/PortMap.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ExternalEffect.h</file>
@@ -64,6 +65,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/PortConnection.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/PortMap.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/StateMachine.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/State.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Thread.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Transition.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MessageReceptionMapper.cpp</file>
