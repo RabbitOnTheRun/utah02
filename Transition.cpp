@@ -6,6 +6,7 @@
  */
 
 #include "Transition.h"
+#include "Message.h"
 
 namespace utah {
 
@@ -39,5 +40,13 @@ namespace utah {
 
     void Transition::addExternalEffect(ExternalEffect externalEffect) {
         resultHandling.addExternalEffect(externalEffect);
+    }
+
+    bool Transition::ifMatch(Message& message_) {
+        if (messageReception.ifMatch(message_) && guard.ifMatch(message_)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

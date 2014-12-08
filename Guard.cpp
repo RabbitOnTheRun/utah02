@@ -20,4 +20,7 @@ namespace utah {
 
     Guard::~Guard() {
     }
+    bool Guard::ifMatch(Message message_){
+        return true; // for now
+    }
 }

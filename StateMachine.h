@@ -15,6 +15,7 @@
 #include "Transition.h"
 #include "OutPort.h"
 #include "Message.h"
+#include "MessageWithOutPort.h"
 namespace utah {
 
     class StateMachine {

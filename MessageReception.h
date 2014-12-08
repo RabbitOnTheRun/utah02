@@ -10,6 +10,7 @@
 
 #include <string>
 #include "Symbol.h"
+#include "Message.h"
 #include "tests/MessageReceptionMappertestclass.h"
 #include "tests/TransitionMappertestclass.h"
 namespace utah {
@@ -22,6 +23,8 @@ namespace utah {
         MessageReception(std::string name_, std::string type_);
        // MessageReception(const MessageReception& orig);
         virtual ~MessageReception();
+        Symbol* getName();
+        bool ifMatch(Message& message_);
     private:
         Symbol* name;
         Symbol* type;

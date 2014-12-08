@@ -63,7 +63,7 @@ namespace utah {
                 Message message = messageWithOutPort.getMessage();
                 OutPort outPort = messageWithOutPort.getOutPort();
                 
-                InPort inPort = this->process->portMap[outPort]; // accessing process without concurrency control
+                InPort inPort = this->process->portMap.getConnectedPort(outPort); // accessing process without concurrency control
                 Thread* peerThread = this->process->getThread(inPort.thread);
                 MessageWithInPort messageWithInPort(message, inPort);
                 peerThread->push(messageWithInPort);

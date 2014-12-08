@@ -12,15 +12,27 @@ namespace utah {
     }
 
     MessageReception::MessageReception(std::string name_, std::string type_) :
-  name(Symbol::create(name_)), type(Symbol::create(type_)) {
+    name(Symbol::create(name_)), type(Symbol::create(type_)) {
     }
 
     //MessageReception::MessageReception(const MessageReception& orig) { 
-     //   name(orig.name), type(orig.name) {
-       //name = orig.name;
-       // type = orig.name;
+    //   name(orig.name), type(orig.name) {
+    //name = orig.name;
+    // type = orig.name;
     //}
 
     MessageReception::~MessageReception() {
+    }
+
+    Symbol* MessageReception::getName() {
+        return name;
+    }
+
+    bool MessageReception::ifMatch(Message& message_) {
+        if (message_.getMessageName() == name) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

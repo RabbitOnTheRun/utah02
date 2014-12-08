@@ -34,6 +34,7 @@ namespace utah {
         void setGuard(Guard guard_);
         void setMethodInvocation(MethodInvocation methodInvocation_);
         void addExternalEffect(ExternalEffect externalEffect);
+        bool ifMatch(Message& message_);
 
     private:
         //const Symbol& name;
