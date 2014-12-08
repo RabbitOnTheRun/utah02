@@ -6,6 +6,8 @@
  */
 
 #include "MethodInvocation.h"
+#include "MapOfAction.h"
+#include "Result.h"
 namespace utah {
 
     MethodInvocation::MethodInvocation() {
@@ -20,4 +22,7 @@ namespace utah {
     MethodInvocation::~MethodInvocation() {
     }
 
+    Result MethodInvocation::execute(Message& message_, ComponentIF* component_) {
+        return component_->execute(methodName, message_, methodArgument);
+    }
 }

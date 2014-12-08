@@ -11,6 +11,7 @@
 #include <string>
 #include "Symbol.h"
 #include "Message.h"
+#include "ComponentIF.h"
 #include "tests/GuardMappertestclass.h"
 #include "tests/TransitionMappertestclass.h"
 namespace utah {
@@ -23,7 +24,7 @@ namespace utah {
         Guard(std::string name_, std::string arg_);
         //Guard(const Guard& orig);
         virtual ~Guard();
-        bool ifMatch(Message message_);
+        bool ifMatch(Message message_, ComponentIF* component_);
     private:
         Symbol* name;
         std::string arg;

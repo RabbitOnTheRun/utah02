@@ -22,17 +22,20 @@ namespace utah {
 
         std::vector<Transition*> matched;
         for (Transition* transition : current->transitions) {
-            if (transition->ifMatch(message_)) {
+            if (transition->ifMatch(message_, component)) {
                 matched.push_back(transition);
             }
         }
         assert(1 == matched.size());
-        // execute
+        Result result = matched[0]->execute(message_, component);
         // resultHandling
         
     }
 
     void StateMachine::setCurrent(State* current_) {
         current = current_;
+    }
+    void StateMachine::setComponent(ComponentIF* component_){
+        component = component_;
     }
 }

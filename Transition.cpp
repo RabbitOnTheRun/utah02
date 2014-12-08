@@ -42,11 +42,14 @@ namespace utah {
         resultHandling.addExternalEffect(externalEffect);
     }
 
-    bool Transition::ifMatch(Message& message_) {
-        if (messageReception.ifMatch(message_) && guard.ifMatch(message_)) {
+    bool Transition::ifMatch(Message& message_, ComponentIF* component_) {
+        if (messageReception.ifMatch(message_) && guard.ifMatch(message_, component_)) {
             return true;
         } else {
             return false;
         }
+    }
+    Result Transition::execute(Message& message_, ComponentIF* component_){
+        methodInvocation.execute(message_, component_);
     }
 }

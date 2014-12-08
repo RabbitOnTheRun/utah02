@@ -16,6 +16,7 @@
 #include "OutPort.h"
 #include "Message.h"
 #include "MessageWithOutPort.h"
+#include "ComponentIF.h"
 namespace utah {
 
     class StateMachine {
@@ -25,11 +26,14 @@ namespace utah {
         virtual ~StateMachine();
         void processMessage(Message message_, std::vector<MessageWithOutPort>& result);
         void setCurrent(State* current_);
+        void setComponent(ComponentIF* component_);
     private:
         //std::map<Symbol*, OutPort*> outPortMap;
         State* current;
         std::map<Symbol*, State*> stateMap;
         std::vector<Transition*> transitions;
+        ComponentIF* component;
+        
     };
 }
 #endif	/* STATEMACHINE_H */

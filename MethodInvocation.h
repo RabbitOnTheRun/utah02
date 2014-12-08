@@ -10,7 +10,9 @@
 
 #include "Symbol.h"
 #include <string>
-
+#include "Message.h"
+#include "Result.h"
+#include "ComponentIF.h"
 #include "tests/MethodInvocationMappertestclass.h"
 #include "tests/TransitionMappertestclass.h"
 namespace utah {
@@ -23,6 +25,7 @@ namespace utah {
         MethodInvocation(std::string methodName_, std::string methodArgument_);
         //MethodInvocation(const MethodInvocation& orig);
         virtual ~MethodInvocation();
+        Result execute(Message& message_, ComponentIF* component_);
     private:
         Symbol* methodName;
         std::string methodArgument;

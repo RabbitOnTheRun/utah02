@@ -35,13 +35,16 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/ActionIF.o \
 	${OBJECTDIR}/Argument.o \
+	${OBJECTDIR}/ComponentIF.o \
 	${OBJECTDIR}/Destination.o \
 	${OBJECTDIR}/EventQueue.o \
 	${OBJECTDIR}/ExternalEffect.o \
 	${OBJECTDIR}/Guard.o \
 	${OBJECTDIR}/GuardIF.o \
 	${OBJECTDIR}/InPort.o \
+	${OBJECTDIR}/MapOfAction.o \
 	${OBJECTDIR}/MapOfGuard.o \
 	${OBJECTDIR}/Message.o \
 	${OBJECTDIR}/MessageEmission.o \
@@ -56,6 +59,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/PortConnection.o \
 	${OBJECTDIR}/PortMap.o \
 	${OBJECTDIR}/Process.o \
+	${OBJECTDIR}/Result.o \
 	${OBJECTDIR}/ResultHandling.o \
 	${OBJECTDIR}/State.o \
 	${OBJECTDIR}/StateMachine.o \
@@ -121,10 +125,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utah02.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/utah02 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/ActionIF.o: ActionIF.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ActionIF.o ActionIF.cpp
+
 ${OBJECTDIR}/Argument.o: Argument.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Argument.o Argument.cpp
+
+${OBJECTDIR}/ComponentIF.o: ComponentIF.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ComponentIF.o ComponentIF.cpp
 
 ${OBJECTDIR}/Destination.o: Destination.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -155,6 +169,11 @@ ${OBJECTDIR}/InPort.o: InPort.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InPort.o InPort.cpp
+
+${OBJECTDIR}/MapOfAction.o: MapOfAction.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MapOfAction.o MapOfAction.cpp
 
 ${OBJECTDIR}/MapOfGuard.o: MapOfGuard.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -225,6 +244,11 @@ ${OBJECTDIR}/Process.o: Process.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Process.o Process.cpp
+
+${OBJECTDIR}/Result.o: Result.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Result.o Result.cpp
 
 ${OBJECTDIR}/ResultHandling.o: ResultHandling.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -534,6 +558,19 @@ ${TESTDIR}/tests/Transitiontestrunner.o: tests/Transitiontestrunner.cpp
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/Transitiontestrunner.o tests/Transitiontestrunner.cpp
 
 
+${OBJECTDIR}/ActionIF_nomain.o: ${OBJECTDIR}/ActionIF.o ActionIF.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/ActionIF.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ActionIF_nomain.o ActionIF.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/ActionIF.o ${OBJECTDIR}/ActionIF_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Argument_nomain.o: ${OBJECTDIR}/Argument.o Argument.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Argument.o`; \
@@ -545,6 +582,19 @@ ${OBJECTDIR}/Argument_nomain.o: ${OBJECTDIR}/Argument.o Argument.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Argument_nomain.o Argument.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Argument.o ${OBJECTDIR}/Argument_nomain.o;\
+	fi
+
+${OBJECTDIR}/ComponentIF_nomain.o: ${OBJECTDIR}/ComponentIF.o ComponentIF.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/ComponentIF.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ComponentIF_nomain.o ComponentIF.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/ComponentIF.o ${OBJECTDIR}/ComponentIF_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Destination_nomain.o: ${OBJECTDIR}/Destination.o Destination.cpp 
@@ -623,6 +673,19 @@ ${OBJECTDIR}/InPort_nomain.o: ${OBJECTDIR}/InPort.o InPort.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InPort_nomain.o InPort.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/InPort.o ${OBJECTDIR}/InPort_nomain.o;\
+	fi
+
+${OBJECTDIR}/MapOfAction_nomain.o: ${OBJECTDIR}/MapOfAction.o MapOfAction.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/MapOfAction.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MapOfAction_nomain.o MapOfAction.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/MapOfAction.o ${OBJECTDIR}/MapOfAction_nomain.o;\
 	fi
 
 ${OBJECTDIR}/MapOfGuard_nomain.o: ${OBJECTDIR}/MapOfGuard.o MapOfGuard.cpp 
@@ -805,6 +868,19 @@ ${OBJECTDIR}/Process_nomain.o: ${OBJECTDIR}/Process.o Process.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Process_nomain.o Process.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Process.o ${OBJECTDIR}/Process_nomain.o;\
+	fi
+
+${OBJECTDIR}/Result_nomain.o: ${OBJECTDIR}/Result.o Result.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Result.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Result_nomain.o Result.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Result.o ${OBJECTDIR}/Result_nomain.o;\
 	fi
 
 ${OBJECTDIR}/ResultHandling_nomain.o: ${OBJECTDIR}/ResultHandling.o ResultHandling.cpp 

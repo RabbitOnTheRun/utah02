@@ -14,6 +14,8 @@
 #include "ResultHandling.h"
 #include "MethodInvocation.h"
 #include "ExternalEffect.h"
+#include "ComponentIF.h"
+#include "Result.h"
 #include "tests/Transitiontestclass.h"
 #include "tests/TransitionMappertestclass.h"
 #include "tests/Statetestclass.h"
@@ -34,8 +36,8 @@ namespace utah {
         void setGuard(Guard guard_);
         void setMethodInvocation(MethodInvocation methodInvocation_);
         void addExternalEffect(ExternalEffect externalEffect);
-        bool ifMatch(Message& message_);
-
+        bool ifMatch(Message& message_, ComponentIF* component_);
+        Result execute(Message& message_, ComponentIF* component_);
     private:
         //const Symbol& name;
         Symbol* from;
