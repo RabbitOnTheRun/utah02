@@ -42,6 +42,8 @@
       <itemPath>MessageProcessing.cpp</itemPath>
       <itemPath>MessageReception.cpp</itemPath>
       <itemPath>MessageWithDest.cpp</itemPath>
+      <itemPath>MessageWithInPort.cpp</itemPath>
+      <itemPath>MessageWithOutPort.cpp</itemPath>
       <itemPath>MethodInvocation.cpp</itemPath>
       <itemPath>OutPort.cpp</itemPath>
       <itemPath>Port.cpp</itemPath>
@@ -70,6 +72,8 @@
       <itemPath>MessageProcessing.h</itemPath>
       <itemPath>MessageReception.h</itemPath>
       <itemPath>MessageWithDest.h</itemPath>
+      <itemPath>MessageWithInPort.h</itemPath>
+      <itemPath>MessageWithOutPort.h</itemPath>
       <itemPath>MethodInvocation.h</itemPath>
       <itemPath>OutPort.h</itemPath>
       <itemPath>Port.h</itemPath>
@@ -251,6 +255,14 @@
       <item path="MessageWithDest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MessageWithDest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MessageWithInPort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageWithInPort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MessageWithOutPort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageWithOutPort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MethodInvocation.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -727,6 +739,14 @@
       <item path="MessageWithDest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MessageWithDest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MessageWithInPort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageWithInPort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MessageWithOutPort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageWithOutPort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MethodInvocation.cpp" ex="false" tool="1" flavor2="0">
       </item>

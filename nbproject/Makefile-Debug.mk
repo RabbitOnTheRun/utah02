@@ -46,6 +46,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/MessageProcessing.o \
 	${OBJECTDIR}/MessageReception.o \
 	${OBJECTDIR}/MessageWithDest.o \
+	${OBJECTDIR}/MessageWithInPort.o \
+	${OBJECTDIR}/MessageWithOutPort.o \
 	${OBJECTDIR}/MethodInvocation.o \
 	${OBJECTDIR}/OutPort.o \
 	${OBJECTDIR}/Port.o \
@@ -171,6 +173,16 @@ ${OBJECTDIR}/MessageWithDest.o: MessageWithDest.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithDest.o MessageWithDest.cpp
+
+${OBJECTDIR}/MessageWithInPort.o: MessageWithInPort.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithInPort.o MessageWithInPort.cpp
+
+${OBJECTDIR}/MessageWithOutPort.o: MessageWithOutPort.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithOutPort.o MessageWithOutPort.cpp
 
 ${OBJECTDIR}/MethodInvocation.o: MethodInvocation.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -651,6 +663,32 @@ ${OBJECTDIR}/MessageWithDest_nomain.o: ${OBJECTDIR}/MessageWithDest.o MessageWit
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithDest_nomain.o MessageWithDest.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/MessageWithDest.o ${OBJECTDIR}/MessageWithDest_nomain.o;\
+	fi
+
+${OBJECTDIR}/MessageWithInPort_nomain.o: ${OBJECTDIR}/MessageWithInPort.o MessageWithInPort.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageWithInPort.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithInPort_nomain.o MessageWithInPort.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/MessageWithInPort.o ${OBJECTDIR}/MessageWithInPort_nomain.o;\
+	fi
+
+${OBJECTDIR}/MessageWithOutPort_nomain.o: ${OBJECTDIR}/MessageWithOutPort.o MessageWithOutPort.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageWithOutPort.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithOutPort_nomain.o MessageWithOutPort.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/MessageWithOutPort.o ${OBJECTDIR}/MessageWithOutPort_nomain.o;\
 	fi
 
 ${OBJECTDIR}/MethodInvocation_nomain.o: ${OBJECTDIR}/MethodInvocation.o MethodInvocation.cpp 

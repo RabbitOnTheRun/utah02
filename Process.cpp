@@ -25,10 +25,13 @@ namespace utah {
     void Process::addThread(std::string threadName, Thread* thread_){
         threadMap[Symbol::create(threadName)] = thread_;        
     }
-    void Process::push(MessageWithDest messageWithDest_){
-        Destination destination = messageWithDest_.getDestination();
-        Symbol* threadName = destination.getThreadName();
+    void Process::push(MessageWithInPort messageWithInPort_){
+        InPort inPort = messageWithInPort_.getInPort();
+        Symbol* threadName = inPort.thread;
         Thread* thread = threadMap[threadName];
-        thread->push(messageWithDest_);
+        thread->push(messageWithInPort_);
+    }
+    Thread* Process::getThread(Symbol* threadName){
+        return threadMap[threadName];
     }
 }

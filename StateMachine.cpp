@@ -16,4 +16,12 @@ namespace utah {
 
     StateMachine::~StateMachine() {
     }
+
+    void StateMachine::processMessage(Message message_, std::vector<MessageWithOutPort>& result_) {
+
+    }
+
+    void StateMachine::setCurrent(State* current_) {
+        current = current_;
+    }
 }

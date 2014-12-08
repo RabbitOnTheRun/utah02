@@ -9,7 +9,8 @@
 #define	EVENTQUEUE_H
 
 #include "shared_queue.h"
-#include "MessageWithDest.h"
+#include "MessageWithInPort.h"
+
 namespace utah {
 
     class EventQueue {
@@ -17,10 +18,10 @@ namespace utah {
         EventQueue();
         //EventQueue(const EventQueue& orig);
         virtual ~EventQueue();
-        void push(MessageWithDest messageWithDest);
-        MessageWithDest wait_and_pop();
+        void push(MessageWithInPort messageWithInPort);
+        MessageWithInPort wait_and_pop();
     private:
-        itc::shared_queue<MessageWithDest> eventQueue;
+        itc::shared_queue<MessageWithInPort> eventQueue;
     };
 }
 #endif	/* EVENTQUEUE_H */

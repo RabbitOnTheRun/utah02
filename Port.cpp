@@ -9,6 +9,10 @@
 
 namespace utah {
 
+    Port::Port() {
+
+    }
+
     Port::Port(std::string portName_, std::string stateMachine_, std::string thread_) :
     portName(Symbol::create(portName_)), stateMachine(Symbol::create(stateMachine_)), thread(Symbol::create(thread_)) {
     }
@@ -27,7 +31,7 @@ namespace utah {
     }
 
     bool Port::eq(const Port& port_) {
-        if (    (this->portName == port_.portName) &&
+        if ((this->portName == port_.portName) &&
                 (this->stateMachine == port_.stateMachine) &&
                 (this->thread == port_.thread)) {
             return true;

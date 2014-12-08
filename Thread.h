@@ -25,7 +25,7 @@ namespace utah {
     public:
         virtual ~Thread();
         const std::string name;
-        void push(MessageWithDest messageWithDest);
+        void push(MessageWithInPort messageWithInPort);
         void start();
         void join();
         void setEventQueue(std::shared_ptr<EventQueue> eventQueue);

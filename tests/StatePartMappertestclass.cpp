@@ -27,7 +27,7 @@ void StatePartMappertestclass::testCreate() {
     const picojson::value& obj = jsonMapper::PicoJsonIF::JSONFileToObj("data/StatePart.txt");
     std::map<std::string, utah::State*> stateMap;
     //jsonMapper::StatePartMapper statePartMapper;
-     jsonMapper::StatePartMapper::create(obj, stateMap);
+     jsonMapper::StatePartMapper::create2(obj, stateMap);
     if (true /*check result*/) {
         CPPUNIT_ASSERT(stateMap["b"]->getNameSymbol()->getName() == "b");
     }

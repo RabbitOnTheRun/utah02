@@ -11,7 +11,7 @@
 #include <map>
 #include "Symbol.h"
 #include "Thread.h"
-#include "MessageWithDest.h"
+#include "MessageWithInPort.h"
 #include "PortMap.h"
 
 namespace utah {
@@ -23,7 +23,8 @@ namespace utah {
         virtual ~Process();
         void addThread(Symbol* threadName, Thread* thread_);
         void addThread(std::string threadName, Thread* thread_);
-        void push(MessageWithDest messageWithDest_);
+        void push(MessageWithInPort messageWithInPort_);
+        Thread* getThread(Symbol* threadName);
         PortMap portMap;
     private:
         std::map<Symbol*, Thread*> threadMap;

@@ -18,7 +18,8 @@ namespace jsonMapper {
         StatePartMapper();
         //StatePartMapper(const StatePartMapper& orig);
         virtual ~StatePartMapper();
-        static void create(const picojson::value& obj, std::map<std::string, utah::State*>& stateMap);
+        static void create2(const picojson::value& obj, std::map<std::string, utah::State*>& stateMap);
+        static void create(const picojson::value& obj, std::map<utah::Symbol*, utah::State*>& stateMap);
     private:
 
     };

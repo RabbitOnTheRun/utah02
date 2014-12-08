@@ -15,13 +15,14 @@ namespace utah {
 
     class Port {
     public:
+        Port();
         Port(std::string portName_, std::string stateMachine, std::string thread_);
         Port(Symbol* portName_, Symbol* stateMachine, Symbol* thread_);
         //Port(const Port& orig);
         virtual ~Port();
-        const Symbol* portName;
-        const Symbol* stateMachine;
-        const Symbol* thread;
+        Symbol*  portName;
+        Symbol*  stateMachine;
+        Symbol*  thread;
         bool eq(const Port& port_);
     private:
 
