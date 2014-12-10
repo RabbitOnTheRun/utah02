@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Guard.o \
 	${OBJECTDIR}/GuardIF.o \
 	${OBJECTDIR}/InPort.o \
+	${OBJECTDIR}/Log.o \
 	${OBJECTDIR}/MapOfAction.o \
 	${OBJECTDIR}/MapOfGuard.o \
 	${OBJECTDIR}/Message.o \
@@ -156,6 +157,11 @@ ${OBJECTDIR}/InPort.o: InPort.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InPort.o InPort.cpp
+
+${OBJECTDIR}/Log.o: Log.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Log.o Log.cpp
 
 ${OBJECTDIR}/MapOfAction.o: MapOfAction.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -629,6 +635,19 @@ ${OBJECTDIR}/InPort_nomain.o: ${OBJECTDIR}/InPort.o InPort.cpp
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InPort_nomain.o InPort.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/InPort.o ${OBJECTDIR}/InPort_nomain.o;\
+	fi
+
+${OBJECTDIR}/Log_nomain.o: ${OBJECTDIR}/Log.o Log.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Log.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Log_nomain.o Log.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Log.o ${OBJECTDIR}/Log_nomain.o;\
 	fi
 
 ${OBJECTDIR}/MapOfAction_nomain.o: ${OBJECTDIR}/MapOfAction.o MapOfAction.cpp 
