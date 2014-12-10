@@ -30,9 +30,10 @@ namespace utah {
         //std::vector<Transition*> getTransitions();
         virtual ~State();
         const Symbol* getNameSymbol();
+        State* getParent();
         std::vector<Transition *> transitions;
     private:
-        const State *parent;
+        State *parent = NULL;
         const Symbol* name;
         //std::vector<Transition *> transitions;
         std::vector<State *> children;

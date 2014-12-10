@@ -44,4 +44,8 @@ namespace utah {
     const Symbol* State::getNameSymbol() {
         return name;
     }
+
+    State* State::getParent() {
+        return parent;
+    }
 }

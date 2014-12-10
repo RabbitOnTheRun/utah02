@@ -10,7 +10,7 @@
 namespace utah {
 
     StateMachine::StateMachine(std::string name_, std::string threadName_) :
-    name(Symbol::create(name_)), threadName(Symbol::create(threadName_)){
+    name(Symbol::create(name_)), threadName(Symbol::create(threadName_)) {
 
     }
 
@@ -23,11 +23,16 @@ namespace utah {
     void StateMachine::processMessage(Message message_, std::vector<MessageWithOutPort>& result_) {
 
         std::vector<Transition*> matched;
-        for (Transition* transition : current->transitions) {
-            if (transition->ifMatch(message_, component)) {
-                matched.push_back(transition);
+        State* state = current;
+        do {
+            for (Transition* transition : state->transitions) {
+                if (transition->ifMatch(message_, component)) {
+                    matched.push_back(transition);
+                }
             }
-        }
+            state = state->getParent();
+        } while ((0 == matched.size()) && (NULL != state));
+
         assert(1 == matched.size());
         // execute action
         Result result = matched[0]->execute(message_, component);
@@ -38,7 +43,8 @@ namespace utah {
     void StateMachine::setCurrent(State* current_) {
         current = current_;
     }
-    void StateMachine::setComponent(ComponentIF* component_){
+
+    void StateMachine::setComponent(ComponentIF* component_) {
         component = component_;
     }
 }
