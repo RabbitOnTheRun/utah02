@@ -15,7 +15,7 @@
 #include "Result.h"
 
 namespace utah {
-    typedef std::function<Result(Message&, std::string&) > ActionFunction;
+    typedef std::function<Result(Message&, const std::string&) > ActionFunction;
 
     class ActionIF {
     public:
@@ -23,7 +23,7 @@ namespace utah {
         ActionIF(std::string name_);
         //ActionIF(const ActionIF& orig);
         virtual ~ActionIF();
-        Result execute(Message& message_, std::string& argument_);
+        Result execute(Message& message_, const std::string& argument_);
         void setActionFunction(ActionFunction function_);
     private:
         Symbol* name;

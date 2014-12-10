@@ -8,6 +8,8 @@
 #ifndef RESULT_H
 #define	RESULT_H
 
+#include "Symbol.h"
+#include "Value.h"
 namespace utah {
 
     class Result {
@@ -15,6 +17,8 @@ namespace utah {
         Result();
         //Result(const Result& orig);
         virtual ~Result();
+        Symbol* resultCode;
+        Value value;
     private:
 
     };

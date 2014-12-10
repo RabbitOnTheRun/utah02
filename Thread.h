@@ -37,7 +37,7 @@ namespace utah {
         bool done_ = false;
         void doDone();
         void run();
-        std::map<Symbol* , StateMachine*> stateMachineMap;
+        std::map<const Symbol* , StateMachine*> stateMachineMap;
         Process* process;
     };
 }

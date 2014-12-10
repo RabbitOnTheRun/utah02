@@ -24,7 +24,7 @@ namespace utah {
     MessageReception::~MessageReception() {
     }
 
-    Symbol* MessageReception::getName() {
+    const Symbol* MessageReception::getName() {
         return name;
     }
 

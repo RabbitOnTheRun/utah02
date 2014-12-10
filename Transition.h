@@ -28,7 +28,7 @@ namespace utah {
         friend Statetestclass;
     public:
         Transition(const std::string from_, const std::string to_);
-        Transition(Symbol* from_, Symbol* to_);
+        Transition(const Symbol* from_, const Symbol* to_);
         //const MessageReception& messageReception_);
         //Transition(const Transition& orig);
         virtual ~Transition();
@@ -40,8 +40,8 @@ namespace utah {
         Result execute(Message& message_, ComponentIF* component_);
     private:
         //const Symbol& name;
-        Symbol* from;
-        Symbol* to;
+        const Symbol* from;
+        const Symbol* to;
         MessageReception messageReception;
         Guard guard;
         MethodInvocation methodInvocation;

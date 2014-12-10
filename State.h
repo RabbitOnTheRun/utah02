@@ -29,11 +29,11 @@ namespace utah {
         void addTranstion(Transition* transition);
         //std::vector<Transition*> getTransitions();
         virtual ~State();
-        Symbol* getNameSymbol();
+        const Symbol* getNameSymbol();
         std::vector<Transition *> transitions;
     private:
-        State *parent;
-        Symbol* name;
+        const State *parent;
+        const Symbol* name;
         //std::vector<Transition *> transitions;
         std::vector<State *> children;
     };

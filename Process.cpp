@@ -27,11 +27,11 @@ namespace utah {
     }
     void Process::push(MessageWithInPort messageWithInPort_){
         InPort inPort = messageWithInPort_.getInPort();
-        Symbol* threadName = inPort.thread;
+        const Symbol* threadName = inPort.thread;
         Thread* thread = threadMap[threadName];
         thread->push(messageWithInPort_);
     }
-    Thread* Process::getThread(Symbol* threadName){
+    Thread* Process::getThread(const Symbol* threadName){
         return threadMap[threadName];
     }
 }

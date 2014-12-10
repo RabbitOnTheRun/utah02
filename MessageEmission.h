@@ -23,9 +23,9 @@ namespace utah {
         //MessageEmission(const MessageEmission& orig);
         virtual ~MessageEmission();
     private:
-        Symbol* port;
-        Symbol* messageName;
-        Symbol* argType;
+        const Symbol* port;
+        const Symbol* messageName;
+        const Symbol* argType;
         std::string givenArgument;
     };
 }

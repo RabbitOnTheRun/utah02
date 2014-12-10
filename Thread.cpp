@@ -54,7 +54,7 @@ namespace utah {
             }
 
             InPort inPort = messageWithInPort.getInPort();
-            Symbol* stateMachineName = inPort.stateMachine;
+            const Symbol* stateMachineName = inPort.stateMachine;
             
             std::vector<MessageWithOutPort> result;
             stateMachineMap[stateMachineName]->processMessage(messageWithInPort.getMessage(), result); // sendMessage

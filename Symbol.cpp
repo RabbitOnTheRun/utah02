@@ -21,7 +21,7 @@ namespace utah {
     Symbol::~Symbol() {
     }
 
-    bool Symbol::eq(const Symbol* arg) {
+    bool Symbol::eq(const Symbol* arg) const {
         return (this == arg);
     }
     std::map<std::string, Symbol* > Symbol::symbolTable;
@@ -37,7 +37,7 @@ namespace utah {
         }
     }
 
-    std::string Symbol::getName() {
+    std::string Symbol::getName() const {
         return name;
     }
 }

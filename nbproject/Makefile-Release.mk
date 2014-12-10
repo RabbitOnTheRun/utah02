@@ -36,7 +36,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/ActionIF.o \
-	${OBJECTDIR}/Argument.o \
 	${OBJECTDIR}/ComponentIF.o \
 	${OBJECTDIR}/Destination.o \
 	${OBJECTDIR}/EventQueue.o \
@@ -67,6 +66,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Symbol.o \
 	${OBJECTDIR}/Thread.o \
 	${OBJECTDIR}/Transition.o \
+	${OBJECTDIR}/Value.o \
 	${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o \
 	${OBJECTDIR}/jsonMapper/FileIOException.o \
 	${OBJECTDIR}/jsonMapper/GuardMapper.o \
@@ -129,11 +129,6 @@ ${OBJECTDIR}/ActionIF.o: ActionIF.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ActionIF.o ActionIF.cpp
-
-${OBJECTDIR}/Argument.o: Argument.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Argument.o Argument.cpp
 
 ${OBJECTDIR}/ComponentIF.o: ComponentIF.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -284,6 +279,11 @@ ${OBJECTDIR}/Transition.o: Transition.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Transition.o Transition.cpp
+
+${OBJECTDIR}/Value.o: Value.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Value.o Value.cpp
 
 ${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o: jsonMapper/ExternalEffectMapper.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
@@ -569,19 +569,6 @@ ${OBJECTDIR}/ActionIF_nomain.o: ${OBJECTDIR}/ActionIF.o ActionIF.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ActionIF_nomain.o ActionIF.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/ActionIF.o ${OBJECTDIR}/ActionIF_nomain.o;\
-	fi
-
-${OBJECTDIR}/Argument_nomain.o: ${OBJECTDIR}/Argument.o Argument.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Argument.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Argument_nomain.o Argument.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/Argument.o ${OBJECTDIR}/Argument_nomain.o;\
 	fi
 
 ${OBJECTDIR}/ComponentIF_nomain.o: ${OBJECTDIR}/ComponentIF.o ComponentIF.cpp 
@@ -972,6 +959,19 @@ ${OBJECTDIR}/Transition_nomain.o: ${OBJECTDIR}/Transition.o Transition.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Transition_nomain.o Transition.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Transition.o ${OBJECTDIR}/Transition_nomain.o;\
+	fi
+
+${OBJECTDIR}/Value_nomain.o: ${OBJECTDIR}/Value.o Value.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Value.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Value_nomain.o Value.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Value.o ${OBJECTDIR}/Value_nomain.o;\
 	fi
 
 ${OBJECTDIR}/jsonMapper/ExternalEffectMapper_nomain.o: ${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o jsonMapper/ExternalEffectMapper.cpp 

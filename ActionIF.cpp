@@ -19,7 +19,7 @@ namespace utah {
     ActionIF::~ActionIF() {
     }
 
-    Result ActionIF::execute(Message& message_, std::string& argument_) {
+    Result ActionIF::execute(Message& message_, const std::string& argument_) {
         return( actionFunction(message_, argument_));
     }
 

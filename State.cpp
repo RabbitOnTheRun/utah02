@@ -36,10 +36,12 @@ namespace utah {
         assert(transition != NULL);
         transitions.push_back(transition);
     }
-     void State::addChild(State *child_) {
-         children.push_back(child_);
-     }
-      Symbol* State::getNameSymbol(){
-          return name;
-      }
+
+    void State::addChild(State *child_) {
+        children.push_back(child_);
+    }
+
+    const Symbol* State::getNameSymbol() {
+        return name;
+    }
 }

@@ -23,11 +23,11 @@ namespace utah {
         MessageReception(std::string name_, std::string type_);
        // MessageReception(const MessageReception& orig);
         virtual ~MessageReception();
-        Symbol* getName();
+        const Symbol* getName();
         bool ifMatch(Message& message_);
     private:
-        Symbol* name;
-        Symbol* type;
+        const Symbol* name;
+        const Symbol* type;
     };
 }
 #endif	/* MESSAGERECEPTION_H */

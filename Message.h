@@ -11,7 +11,7 @@
 #include <memory>
 #include <string>
 #include "Symbol.h"
-#include "Argument.h"
+#include "Value.h"
 namespace utah {
 
     class Message {
@@ -21,14 +21,14 @@ namespace utah {
         Message(std::string messageName_, std::string argType_);
         //Message(const Message& orig);
         virtual ~Message();
-        void setArgument(std::shared_ptr<Argument> argument_);
+        void setValue(std::shared_ptr<Value> value_);
         Symbol* getMessageName();
-        Symbol* getArgType();
-        std::shared_ptr<Argument> getArgument();
+        Symbol* getValueType();
+        std::shared_ptr<Value> getValue();
     private:
         Symbol* messageName;
-        Symbol* argType;
-        std::shared_ptr<Argument> argument;
+        Symbol* valueType;
+        std::shared_ptr<Value> value;
     };
 }
 #endif	/* MESSAGE_H */

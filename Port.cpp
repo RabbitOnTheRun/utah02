@@ -13,11 +13,11 @@ namespace utah {
 
     }
 
-    Port::Port(std::string portName_, std::string stateMachine_, std::string thread_) :
+    Port::Port(const std::string portName_, const std::string stateMachine_, const std::string thread_) :
     portName(Symbol::create(portName_)), stateMachine(Symbol::create(stateMachine_)), thread(Symbol::create(thread_)) {
     }
 
-    Port::Port(Symbol* portName_, Symbol* stateMachine_, Symbol* thread_) :
+    Port::Port(const Symbol* portName_, const Symbol* stateMachine_, const Symbol* thread_) :
     portName(portName_), stateMachine(stateMachine_), thread(thread_) {
     }
 
@@ -30,7 +30,7 @@ namespace utah {
     Port::~Port() {
     }
 
-    bool Port::eq(const Port& port_) {
+    bool Port::eq(const Port& port_) const {
         if ((this->portName == port_.portName) &&
                 (this->stateMachine == port_.stateMachine) &&
                 (this->thread == port_.thread)) {

@@ -19,11 +19,11 @@ namespace utah {
         MapOfAction();
         //MapOfAction(const MapOfAction& orig);
         virtual ~MapOfAction();
-        Result execute(Symbol* nameOfAction, Message& message_, std::string& argument_);
+        Result execute(const Symbol* nameOfAction, Message& message_, const std::string& argument_);
         void addAction(ActionFunction function_, std::string name);
 
     private:
-        std::map<Symbol*, ActionIF> mapOfAction;
+        std::map<const Symbol*, ActionIF> mapOfAction;
     };
 }
 #endif	/* MAPOFACTION_H */

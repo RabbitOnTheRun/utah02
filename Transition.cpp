@@ -16,7 +16,7 @@ namespace utah {
         //messageReception(messageReception_) {
     }
 
-    Transition::Transition(Symbol* from_, Symbol* to_) : from(from_), to(to_) {
+    Transition::Transition(const Symbol* from_, const Symbol* to_) : from(from_), to(to_) {
     }
 
 

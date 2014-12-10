@@ -24,10 +24,10 @@ namespace utah {
         void addThread(Symbol* threadName, Thread* thread_);
         void addThread(std::string threadName, Thread* thread_);
         void push(MessageWithInPort messageWithInPort_);
-        Thread* getThread(Symbol* threadName);
+        Thread* getThread(const Symbol* threadName);
         PortMap portMap;
     private:
-        std::map<Symbol*, Thread*> threadMap;
+        std::map<const Symbol*, Thread*> threadMap;
         std::map<Symbol*, Thread*> stateMachineMap;
        // std::map<Symbol*, std::map<Symbol*, InPort>
     };

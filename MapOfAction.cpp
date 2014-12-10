@@ -18,7 +18,7 @@ namespace utah {
     MapOfAction::~MapOfAction() {
     }
 
-    Result MapOfAction::execute(Symbol* nameOfAction, Message& message_, std::string& argument_) {
+    Result MapOfAction::execute(const Symbol* nameOfAction, Message& message_, const std::string& argument_) {
         return (mapOfAction[nameOfAction].execute(message_, argument_));
     }
 
