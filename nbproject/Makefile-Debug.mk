@@ -37,7 +37,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/ActionIF.o \
 	${OBJECTDIR}/ComponentIF.o \
-	${OBJECTDIR}/Destination.o \
 	${OBJECTDIR}/EventQueue.o \
 	${OBJECTDIR}/ExternalEffect.o \
 	${OBJECTDIR}/Guard.o \
@@ -47,9 +46,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/MapOfGuard.o \
 	${OBJECTDIR}/Message.o \
 	${OBJECTDIR}/MessageEmission.o \
-	${OBJECTDIR}/MessageProcessing.o \
 	${OBJECTDIR}/MessageReception.o \
-	${OBJECTDIR}/MessageWithDest.o \
 	${OBJECTDIR}/MessageWithInPort.o \
 	${OBJECTDIR}/MessageWithOutPort.o \
 	${OBJECTDIR}/MethodInvocation.o \
@@ -135,11 +132,6 @@ ${OBJECTDIR}/ComponentIF.o: ComponentIF.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ComponentIF.o ComponentIF.cpp
 
-${OBJECTDIR}/Destination.o: Destination.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Destination.o Destination.cpp
-
 ${OBJECTDIR}/EventQueue.o: EventQueue.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -185,20 +177,10 @@ ${OBJECTDIR}/MessageEmission.o: MessageEmission.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageEmission.o MessageEmission.cpp
 
-${OBJECTDIR}/MessageProcessing.o: MessageProcessing.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageProcessing.o MessageProcessing.cpp
-
 ${OBJECTDIR}/MessageReception.o: MessageReception.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageReception.o MessageReception.cpp
-
-${OBJECTDIR}/MessageWithDest.o: MessageWithDest.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithDest.o MessageWithDest.cpp
 
 ${OBJECTDIR}/MessageWithInPort.o: MessageWithInPort.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -584,19 +566,6 @@ ${OBJECTDIR}/ComponentIF_nomain.o: ${OBJECTDIR}/ComponentIF.o ComponentIF.cpp
 	    ${CP} ${OBJECTDIR}/ComponentIF.o ${OBJECTDIR}/ComponentIF_nomain.o;\
 	fi
 
-${OBJECTDIR}/Destination_nomain.o: ${OBJECTDIR}/Destination.o Destination.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Destination.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Destination_nomain.o Destination.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/Destination.o ${OBJECTDIR}/Destination_nomain.o;\
-	fi
-
 ${OBJECTDIR}/EventQueue_nomain.o: ${OBJECTDIR}/EventQueue.o EventQueue.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/EventQueue.o`; \
@@ -714,19 +683,6 @@ ${OBJECTDIR}/MessageEmission_nomain.o: ${OBJECTDIR}/MessageEmission.o MessageEmi
 	    ${CP} ${OBJECTDIR}/MessageEmission.o ${OBJECTDIR}/MessageEmission_nomain.o;\
 	fi
 
-${OBJECTDIR}/MessageProcessing_nomain.o: ${OBJECTDIR}/MessageProcessing.o MessageProcessing.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageProcessing.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageProcessing_nomain.o MessageProcessing.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/MessageProcessing.o ${OBJECTDIR}/MessageProcessing_nomain.o;\
-	fi
-
 ${OBJECTDIR}/MessageReception_nomain.o: ${OBJECTDIR}/MessageReception.o MessageReception.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageReception.o`; \
@@ -738,19 +694,6 @@ ${OBJECTDIR}/MessageReception_nomain.o: ${OBJECTDIR}/MessageReception.o MessageR
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageReception_nomain.o MessageReception.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/MessageReception.o ${OBJECTDIR}/MessageReception_nomain.o;\
-	fi
-
-${OBJECTDIR}/MessageWithDest_nomain.o: ${OBJECTDIR}/MessageWithDest.o MessageWithDest.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/MessageWithDest.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageWithDest_nomain.o MessageWithDest.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/MessageWithDest.o ${OBJECTDIR}/MessageWithDest_nomain.o;\
 	fi
 
 ${OBJECTDIR}/MessageWithInPort_nomain.o: ${OBJECTDIR}/MessageWithInPort.o MessageWithInPort.cpp 

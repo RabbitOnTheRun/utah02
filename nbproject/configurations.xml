@@ -33,7 +33,6 @@
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
       <itemPath>ActionIF.cpp</itemPath>
       <itemPath>ComponentIF.cpp</itemPath>
-      <itemPath>Destination.cpp</itemPath>
       <itemPath>EventQueue.cpp</itemPath>
       <itemPath>ExternalEffect.cpp</itemPath>
       <itemPath>Guard.cpp</itemPath>
@@ -43,9 +42,7 @@
       <itemPath>MapOfGuard.cpp</itemPath>
       <itemPath>Message.cpp</itemPath>
       <itemPath>MessageEmission.cpp</itemPath>
-      <itemPath>MessageProcessing.cpp</itemPath>
       <itemPath>MessageReception.cpp</itemPath>
-      <itemPath>MessageWithDest.cpp</itemPath>
       <itemPath>MessageWithInPort.cpp</itemPath>
       <itemPath>MessageWithOutPort.cpp</itemPath>
       <itemPath>MethodInvocation.cpp</itemPath>
@@ -69,7 +66,6 @@
     <logicalFolder name="HeaderFiles" displayName="ヘッダー・ファイル" projectFiles="true">
       <itemPath>ActionIF.h</itemPath>
       <itemPath>ComponentIF.h</itemPath>
-      <itemPath>Destination.h</itemPath>
       <itemPath>EventQueue.h</itemPath>
       <itemPath>ExternalEffect.h</itemPath>
       <itemPath>Guard.h</itemPath>
@@ -79,9 +75,7 @@
       <itemPath>MapOfGuard.h</itemPath>
       <itemPath>Message.h</itemPath>
       <itemPath>MessageEmission.h</itemPath>
-      <itemPath>MessageProcessing.h</itemPath>
       <itemPath>MessageReception.h</itemPath>
-      <itemPath>MessageWithDest.h</itemPath>
       <itemPath>MessageWithInPort.h</itemPath>
       <itemPath>MessageWithOutPort.h</itemPath>
       <itemPath>MethodInvocation.h</itemPath>
@@ -232,10 +226,6 @@
       </item>
       <item path="ComponentIF.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Destination.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Destination.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="EventQueue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="EventQueue.h" ex="false" tool="3" flavor2="0">
@@ -272,17 +262,9 @@
       </item>
       <item path="MessageEmission.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="MessageProcessing.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MessageProcessing.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MessageWithDest.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MessageWithDest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MessageWithInPort.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -740,10 +722,6 @@
       </item>
       <item path="ComponentIF.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Destination.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Destination.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="EventQueue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="EventQueue.h" ex="false" tool="3" flavor2="0">
@@ -780,17 +758,9 @@
       </item>
       <item path="MessageEmission.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="MessageProcessing.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MessageProcessing.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="MessageReception.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MessageReception.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MessageWithDest.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MessageWithDest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MessageWithInPort.cpp" ex="false" tool="1" flavor2="0">
       </item>
