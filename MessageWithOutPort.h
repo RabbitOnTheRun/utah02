@@ -14,7 +14,7 @@ namespace utah {
 
     class MessageWithOutPort {
     public:
-        MessageWithOutPort();
+        //MessageWithOutPort();
         MessageWithOutPort(Message message_, OutPort outPort_);
         //MessageWithOutPort(const MessageWithOutPort& orig);
         virtual ~MessageWithOutPort();

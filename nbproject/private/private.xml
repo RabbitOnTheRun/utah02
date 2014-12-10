@@ -41,8 +41,8 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StatePartMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/TransitionMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/State.cpp</file>
-            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Argument.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ComponentIF.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageWithInPort.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/GuardMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MethodInvocationMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ExternalEffect.cpp</file>
@@ -62,7 +62,6 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/GuardMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageEmission.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/Statetestclass.cpp</file>
-            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Argument.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/JsonMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ResultHandling.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Destination.h</file>
@@ -79,6 +78,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/PortMap.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/StateMachine.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/State.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageWithOutPort.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Thread.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Value.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Transition.h</file>

@@ -13,8 +13,7 @@ namespace utah {
     ExternalEffect::ExternalEffect() {
     }
 
-    ExternalEffect::ExternalEffect(std::string resultCode_) : resultCode(Symbol::create(resultCode_))
-    {
+    ExternalEffect::ExternalEffect(std::string resultCode_) : resultCode(Symbol::create(resultCode_)) {
 
     }
     //ExternalEffect::ExternalEffect(const ExternalEffect& orig) {
@@ -25,5 +24,16 @@ namespace utah {
 
     void ExternalEffect::setMessageEmission(MessageEmission messageEmission_) {
         messageEmission = messageEmission_;
+    }
+
+    Symbol* ExternalEffect::getResultCode() {
+        return resultCode;
+    }
+
+    Message ExternalEffect::generateMessage() {
+        return messageEmission.makeMessage();
+    }
+    const Symbol* ExternalEffect::getPort(){
+        return messageEmission.getPortSymbol();
     }
 }

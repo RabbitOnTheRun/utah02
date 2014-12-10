@@ -14,9 +14,9 @@ namespace utah {
 
     MessageEmission::MessageEmission(
             std::string port_, std::string messageName_,
-            std::string argType_, std::string givenArgument_) :
-    port(Symbol::create(port_)), messageName(Symbol::create(messageName_)), 
-            argType(Symbol::create(argType_)), givenArgument(givenArgument_) {
+            std::string valueType_, std::string givenArgument_) :
+    port(Symbol::create(port_)), messageName(Symbol::create(messageName_)),
+    valueType(Symbol::create(valueType_)), givenArgument(givenArgument_) {
 
     }
     //MessageEmission::MessageEmission(const MessageEmission& orig) {
@@ -25,4 +25,12 @@ namespace utah {
     MessageEmission::~MessageEmission() {
     }
 
+    Message MessageEmission::makeMessage() {
+        Message message(messageName, valueType, givenArgument);
+        return message;
+    }
+
+    const Symbol* MessageEmission::getPortSymbol() {
+        return port;
+    }
 }

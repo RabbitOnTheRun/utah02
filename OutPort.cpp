@@ -11,6 +11,9 @@ namespace utah {
 
 //    OutPort::OutPort() {
   //  }
+     OutPort::OutPort(const Symbol* portName_, const Symbol* stateMachine_, const Symbol* thread_) : 
+     Port(portName_, stateMachine, thread_) {
+     }
 
     //OutPort::OutPort(const OutPort& orig) {
     //}

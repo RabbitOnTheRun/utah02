@@ -9,7 +9,9 @@
 #include "StateMachine.h"
 namespace utah {
 
-    StateMachine::StateMachine() {
+    StateMachine::StateMachine(std::string name_, std::string threadName_) :
+    name(Symbol::create(name_)), threadName(Symbol::create(threadName_)){
+
     }
 
     //StateMachine::StateMachine(const StateMachine& orig) {
@@ -30,7 +32,7 @@ namespace utah {
         // execute action
         Result result = matched[0]->execute(message_, component);
         // resultHandling
-        
+        matched[0]->generateEmission(result, threadName, name, result_);
     }
 
     void StateMachine::setCurrent(State* current_) {

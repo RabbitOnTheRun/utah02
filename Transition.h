@@ -16,6 +16,7 @@
 #include "ExternalEffect.h"
 #include "ComponentIF.h"
 #include "Result.h"
+#include "MessageWithOutPort.h"
 #include "tests/Transitiontestclass.h"
 #include "tests/TransitionMappertestclass.h"
 #include "tests/Statetestclass.h"
@@ -38,6 +39,7 @@ namespace utah {
         void addExternalEffect(ExternalEffect externalEffect);
         bool ifMatch(Message& message_, ComponentIF* component_);
         Result execute(Message& message_, ComponentIF* component_);
+        void generateEmission(Result result_, Symbol* threadName_, Symbol* stateMachineName_, std::vector<MessageWithOutPort>& resultMessage ) ;
     private:
         //const Symbol& name;
         const Symbol* from;

@@ -11,6 +11,7 @@
 #include <string>
 #include "Symbol.h"
 #include "MessageEmission.h"
+#include "MessageWithOutPort.h"
 #include "tests/ExternalEffectMappertestclass.h"
 #include "tests/ResultHandlingtestclass.h"
 namespace utah {
@@ -24,6 +25,9 @@ namespace utah {
         //ExternalEffect(const ExternalEffect& orig);
         virtual ~ExternalEffect();
         void setMessageEmission(MessageEmission messageEmission_);
+        Symbol* getResultCode();
+        Message generateMessage();
+        const Symbol* getPort();
     private:
         Symbol* resultCode;
         MessageEmission messageEmission;

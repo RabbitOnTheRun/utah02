@@ -6,6 +6,7 @@
  */
 
 #include "ResultHandling.h"
+#include "Result.h"
 
 namespace utah {
 
@@ -20,5 +21,20 @@ namespace utah {
 
     void ResultHandling::addExternalEffect(ExternalEffect externalEffect_) {
         externalEffects.push_back(externalEffect_);
+    }
+
+    void ResultHandling::generateEmission(Result result_, Symbol* threadName_, Symbol* stateMachineName_, std::vector<MessageWithOutPort>& resultMessage) {
+        //std::vector<MessageWithOutPort> out;
+        for (ExternalEffect externalEffect : externalEffects) {
+            if (result_.resultCode == externalEffect.getResultCode()) {
+                
+                Message message(externalEffect.generateMessage());
+                message.setValue(result_.value);
+                OutPort outPort(threadName_, stateMachineName_, externalEffect.getPort());
+                MessageWithOutPort messageWithOutPort(message, outPort);
+                resultMessage.push_back(messageWithOutPort);
+            }
+        }
+        //return out;
     }
 }

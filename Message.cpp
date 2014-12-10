@@ -9,11 +9,16 @@
 
 namespace utah {
 
-    Message::Message() {
+    Message::Message() :
+    messageName(Symbol::create("NULL")), valueType(Symbol::create("NULL")) {
     }
 
-    Message::Message(Symbol* messageName_, Symbol* argType_) :
+    Message::Message(const Symbol* messageName_, const Symbol* argType_) :
     messageName(messageName_), valueType(argType_) {
+    }
+
+    Message::Message(const Symbol* messageName_, const Symbol* valueType_, std::string givenArgument_) :
+    messageName(messageName_), valueType(valueType_), argument(givenArgument_) {
     }
 
     Message::Message(std::string messageName_, std::string valueType_) :
@@ -26,14 +31,15 @@ namespace utah {
     Message::~Message() {
     }
 
-    void Message::setValue(std::shared_ptr<Value> argument_) {
+    void Message::setValue(std::shared_ptr<Value> value_) {
+        value = value_;
     }
 
-    Symbol* Message::getMessageName() {
+    const Symbol* Message::getMessageName() {
         return messageName;
     }
 
-    Symbol* Message::getValueType() {
+    const Symbol* Message::getValueType() {
         return valueType;
     }
 

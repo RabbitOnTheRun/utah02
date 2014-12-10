@@ -8,6 +8,7 @@
 #ifndef RESULT_H
 #define	RESULT_H
 
+#include <memory>
 #include "Symbol.h"
 #include "Value.h"
 namespace utah {
@@ -18,7 +19,7 @@ namespace utah {
         //Result(const Result& orig);
         virtual ~Result();
         Symbol* resultCode;
-        Value value;
+        std::shared_ptr<Value> value;
     private:
 
     };

@@ -9,8 +9,8 @@
 
 namespace utah {
 
-    MessageWithOutPort::MessageWithOutPort() {
-    }
+    //MessageWithOutPort::MessageWithOutPort() {
+    //}
 
     MessageWithOutPort::MessageWithOutPort(Message message_, OutPort outPort_) :
     message(message_), outPort(outPort_) {

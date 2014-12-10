@@ -12,11 +12,13 @@
 #include "Symbol.h"
 #include "Port.h"
 
+#include "Symbol.h"
 namespace utah {
 
-    class OutPort : public Port{
+    class OutPort : public Port {
     public:
-       // OutPort();
+        // OutPort();
+       OutPort(const Symbol* portName_, const Symbol* stateMachine_, const Symbol* thread_);
         //OutPort(const OutPort& orig);
         virtual ~OutPort();
     private:

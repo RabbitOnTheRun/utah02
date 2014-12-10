@@ -17,18 +17,22 @@ namespace utah {
     class Message {
     public:
         Message();
-        Message(Symbol* messageName_, Symbol* argType_);
-        Message(std::string messageName_, std::string argType_);
+        Message(const Symbol* messageName_, const Symbol* valueType_);
+        Message(const Symbol* messageName_, const Symbol* valueType_, std::string givenArgument_);
+
+        Message(std::string messageName_, std::string valueType_);
         //Message(const Message& orig);
         virtual ~Message();
         void setValue(std::shared_ptr<Value> value_);
-        Symbol* getMessageName();
-        Symbol* getValueType();
+        const Symbol* getMessageName();
+        const Symbol* getValueType();
         std::shared_ptr<Value> getValue();
+        std::string argument;
     private:
-        Symbol* messageName;
-        Symbol* valueType;
+        const Symbol* messageName;
+        const Symbol* valueType;
         std::shared_ptr<Value> value;
+
     };
 }
 #endif	/* MESSAGE_H */

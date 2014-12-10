@@ -10,6 +10,7 @@
 
 #include <string>
 #include "Symbol.h"
+#include "Message.h"
 #include "tests/MessageEmissiontestclass.h"
 #include "tests/ExternalEffectMappertestclass.h"
 namespace utah {
@@ -19,13 +20,15 @@ namespace utah {
         friend ExternalEffectMappertestclass;
     public:
         MessageEmission();
-        MessageEmission(std::string port_, std::string messageName_, std::string argType_, std::string givenArgument_);
+        MessageEmission(std::string port_, std::string messageName_, std::string valueType_, std::string givenArgument_);
         //MessageEmission(const MessageEmission& orig);
         virtual ~MessageEmission();
+        Message makeMessage();
+        const Symbol* getPortSymbol();
     private:
         const Symbol* port;
         const Symbol* messageName;
-        const Symbol* argType;
+        const Symbol* valueType;
         std::string givenArgument;
     };
 }

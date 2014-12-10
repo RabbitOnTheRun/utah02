@@ -30,7 +30,7 @@ void MessageEmissiontestclass::testCreate() {
     if (true /*check result*/) {
         CPPUNIT_ASSERT("w" == result.port->getName());
         CPPUNIT_ASSERT("joy" == result.messageName->getName());
-        CPPUNIT_ASSERT("NULL" == result.argType->getName());
+        CPPUNIT_ASSERT("NULL" == result.valueType->getName());
         CPPUNIT_ASSERT("NULL" == result.givenArgument);
     }
 }
