@@ -49,4 +49,20 @@ namespace utah {
     void StateMachine::setComponent(ComponentIF* component_) {
         component = component_;
     }
+
+    void StateMachine::setStateMap(std::map<const Symbol*, State*> stateMap_) {
+        stateMap = stateMap_;
+    }
+
+    void StateMachine::setTransitions(std::vector<Transition*> transitions_) {
+        transitions = transitions_;
+    }
+
+    void StateMachine::setInPorts(std::vector<Symbol*> inPorts_) {
+        inPorts = inPorts_;
+    }
+
+    void StateMachine::setOutPorts(std::vector<Symbol*> outPorts_) {
+        outPorts = outPorts_;
+    }
 }

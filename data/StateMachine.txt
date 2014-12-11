@@ -1,4 +1,10 @@
-[ 
+{"port" : 
+ ["z" , "w" , "x" , "y"] , 
+
+"state" : 
+ [[ "a" , [] ] , [ "b" , [] ] , [ "c", [[ "g" , [] ] , [ "h" , [] ] , [ "i" , [] ]] ]] , 
+
+"transition" : [ 
 { "from" : "a" ,"to" : "b" ,
 	"message" : {"name" : "x" ,"type" : "NULL" } , 
 	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
@@ -19,4 +25,6 @@
 		}
 	 ] 
  } 
-]
+] , 
+
+"name" : "StateMachine" }

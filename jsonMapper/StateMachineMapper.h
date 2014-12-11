@@ -17,7 +17,7 @@ namespace jsonMapper {
         StateMachineMapper();
         //StateMachineMapper(const StateMachineMapper& orig);
         virtual ~StateMachineMapper();
-        utah::StateMachine* create(std::string name_);
+        static utah::StateMachine* create(std::string name_, std::string threadName_);
     private:
 
     };
