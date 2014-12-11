@@ -35,7 +35,7 @@ namespace utah {
         Symbol* name;
         Symbol* threadName;
         State* current;
-        std::map<Symbol*, State*> stateMap;
+        std::map<const Symbol*, State*> stateMap;
         std::vector<Transition*> transitions;
         ComponentIF* component;
     };

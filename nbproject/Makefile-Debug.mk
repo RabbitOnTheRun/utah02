@@ -60,7 +60,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/ResultHandling.o \
 	${OBJECTDIR}/State.o \
 	${OBJECTDIR}/StateMachine.o \
-	${OBJECTDIR}/StateMachineMapper.o \
 	${OBJECTDIR}/Sym.o \
 	${OBJECTDIR}/Symbol.o \
 	${OBJECTDIR}/Thread.o \
@@ -78,9 +77,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/jsonMapper/PicoJsonIF.o \
 	${OBJECTDIR}/jsonMapper/ProcessMapper.o \
 	${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o \
+	${OBJECTDIR}/jsonMapper/StateMachineMapper.o \
 	${OBJECTDIR}/jsonMapper/StateMapper.o \
 	${OBJECTDIR}/jsonMapper/StatePartMapper.o \
 	${OBJECTDIR}/jsonMapper/TransitionMapper.o \
+	${OBJECTDIR}/jsonMapper/TransitionPartMapper.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/shared_queue.o
 
@@ -251,11 +252,6 @@ ${OBJECTDIR}/StateMachine.o: StateMachine.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StateMachine.o StateMachine.cpp
 
-${OBJECTDIR}/StateMachineMapper.o: StateMachineMapper.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StateMachineMapper.o StateMachineMapper.cpp
-
 ${OBJECTDIR}/Sym.o: Sym.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -341,6 +337,11 @@ ${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o: jsonMapper/ResultHandlingMapper.
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o jsonMapper/ResultHandlingMapper.cpp
 
+${OBJECTDIR}/jsonMapper/StateMachineMapper.o: jsonMapper/StateMachineMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/StateMachineMapper.o jsonMapper/StateMachineMapper.cpp
+
 ${OBJECTDIR}/jsonMapper/StateMapper.o: jsonMapper/StateMapper.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
@@ -355,6 +356,11 @@ ${OBJECTDIR}/jsonMapper/TransitionMapper.o: jsonMapper/TransitionMapper.cpp
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/TransitionMapper.o jsonMapper/TransitionMapper.cpp
+
+${OBJECTDIR}/jsonMapper/TransitionPartMapper.o: jsonMapper/TransitionPartMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/TransitionPartMapper.o jsonMapper/TransitionPartMapper.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -889,19 +895,6 @@ ${OBJECTDIR}/StateMachine_nomain.o: ${OBJECTDIR}/StateMachine.o StateMachine.cpp
 	    ${CP} ${OBJECTDIR}/StateMachine.o ${OBJECTDIR}/StateMachine_nomain.o;\
 	fi
 
-${OBJECTDIR}/StateMachineMapper_nomain.o: ${OBJECTDIR}/StateMachineMapper.o StateMachineMapper.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/StateMachineMapper.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StateMachineMapper_nomain.o StateMachineMapper.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/StateMachineMapper.o ${OBJECTDIR}/StateMachineMapper_nomain.o;\
-	fi
-
 ${OBJECTDIR}/Sym_nomain.o: ${OBJECTDIR}/Sym.o Sym.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Sym.o`; \
@@ -1123,6 +1116,19 @@ ${OBJECTDIR}/jsonMapper/ResultHandlingMapper_nomain.o: ${OBJECTDIR}/jsonMapper/R
 	    ${CP} ${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o ${OBJECTDIR}/jsonMapper/ResultHandlingMapper_nomain.o;\
 	fi
 
+${OBJECTDIR}/jsonMapper/StateMachineMapper_nomain.o: ${OBJECTDIR}/jsonMapper/StateMachineMapper.o jsonMapper/StateMachineMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/StateMachineMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/StateMachineMapper_nomain.o jsonMapper/StateMachineMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/StateMachineMapper.o ${OBJECTDIR}/jsonMapper/StateMachineMapper_nomain.o;\
+	fi
+
 ${OBJECTDIR}/jsonMapper/StateMapper_nomain.o: ${OBJECTDIR}/jsonMapper/StateMapper.o jsonMapper/StateMapper.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/StateMapper.o`; \
@@ -1160,6 +1166,19 @@ ${OBJECTDIR}/jsonMapper/TransitionMapper_nomain.o: ${OBJECTDIR}/jsonMapper/Trans
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/TransitionMapper_nomain.o jsonMapper/TransitionMapper.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/jsonMapper/TransitionMapper.o ${OBJECTDIR}/jsonMapper/TransitionMapper_nomain.o;\
+	fi
+
+${OBJECTDIR}/jsonMapper/TransitionPartMapper_nomain.o: ${OBJECTDIR}/jsonMapper/TransitionPartMapper.o jsonMapper/TransitionPartMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/TransitionPartMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/TransitionPartMapper_nomain.o jsonMapper/TransitionPartMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/TransitionPartMapper.o ${OBJECTDIR}/jsonMapper/TransitionPartMapper_nomain.o;\
 	fi
 
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 

@@ -24,12 +24,16 @@
       <itemPath>ProcessMapper.h</itemPath>
       <itemPath>jsonMapper/ResultHandlingMapper.cpp</itemPath>
       <itemPath>jsonMapper/ResultHandlingMapper.h</itemPath>
+      <itemPath>jsonMapper/StateMachineMapper.cpp</itemPath>
+      <itemPath>jsonMapper/StateMachineMapper.h</itemPath>
       <itemPath>jsonMapper/StateMapper.cpp</itemPath>
       <itemPath>jsonMapper/StateMapper.h</itemPath>
       <itemPath>jsonMapper/StatePartMapper.cpp</itemPath>
       <itemPath>jsonMapper/StatePartMapper.h</itemPath>
       <itemPath>jsonMapper/TransitionMapper.cpp</itemPath>
       <itemPath>jsonMapper/TransitionMapper.h</itemPath>
+      <itemPath>jsonMapper/TransitionPartMapper.cpp</itemPath>
+      <itemPath>TransitionPartMapper.h</itemPath>
       <itemPath>jsonMapper/picojson.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
@@ -58,7 +62,6 @@
       <itemPath>ResultHandling.cpp</itemPath>
       <itemPath>State.cpp</itemPath>
       <itemPath>StateMachine.cpp</itemPath>
-      <itemPath>StateMachineMapper.cpp</itemPath>
       <itemPath>Sym.cpp</itemPath>
       <itemPath>Symbol.cpp</itemPath>
       <itemPath>Thread.cpp</itemPath>
@@ -94,7 +97,6 @@
       <itemPath>ResultHandling.h</itemPath>
       <itemPath>State.h</itemPath>
       <itemPath>StateMachine.h</itemPath>
-      <itemPath>StateMachineMapper.h</itemPath>
       <itemPath>Sym.h</itemPath>
       <itemPath>Symbol.h</itemPath>
       <itemPath>Thread.h</itemPath>
@@ -328,10 +330,6 @@
       </item>
       <item path="StateMachine.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="StateMachineMapper.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="StateMachineMapper.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Sym.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Sym.h" ex="false" tool="3" flavor2="0">
@@ -351,6 +349,8 @@
       <item path="Transition.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Transition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TransitionPartMapper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Value.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -589,6 +589,10 @@
       </item>
       <item path="jsonMapper/ResultHandlingMapper.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="jsonMapper/StateMachineMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/StateMachineMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/StateMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/StateMapper.h" ex="false" tool="3" flavor2="0">
@@ -600,6 +604,11 @@
       <item path="jsonMapper/TransitionMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/TransitionMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/TransitionPartMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="jsonMapper/picojson.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -840,10 +849,6 @@
       </item>
       <item path="StateMachine.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="StateMachineMapper.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="StateMachineMapper.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Sym.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Sym.h" ex="false" tool="3" flavor2="0">
@@ -863,6 +868,8 @@
       <item path="Transition.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Transition.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TransitionPartMapper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Value.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1101,6 +1108,10 @@
       </item>
       <item path="jsonMapper/ResultHandlingMapper.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="jsonMapper/StateMachineMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/StateMachineMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/StateMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/StateMapper.h" ex="false" tool="3" flavor2="0">
@@ -1112,6 +1123,11 @@
       <item path="jsonMapper/TransitionMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/TransitionMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/TransitionPartMapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="jsonMapper/picojson.h" ex="false" tool="3" flavor2="0">
       </item>

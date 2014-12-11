@@ -49,10 +49,16 @@ namespace utah {
             return false;
         }
     }
-    Result Transition::execute(Message& message_, ComponentIF* component_){
+
+    Result Transition::execute(Message& message_, ComponentIF* component_) {
         methodInvocation.execute(message_, component_);
     }
-    void Transition::generateEmission(Result result_, Symbol* threadName_, Symbol* stateMachineName_, std::vector<MessageWithOutPort>& resultMessage ){
+
+    void Transition::generateEmission(Result result_, Symbol* threadName_, Symbol* stateMachineName_, std::vector<MessageWithOutPort>& resultMessage) {
         resultHandling.generateEmission(result_, threadName_, stateMachineName_, resultMessage);
+    }
+
+    const Symbol* Transition::getNextState() {
+        return to;
     }
 }

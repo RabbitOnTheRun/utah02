@@ -38,6 +38,8 @@ namespace utah {
         Result result = matched[0]->execute(message_, component);
         // resultHandling
         matched[0]->generateEmission(result, threadName, name, result_);
+        const Symbol* nextState = matched[0]->getNextState();
+        current = stateMap[nextState];
     }
 
     void StateMachine::setCurrent(State* current_) {

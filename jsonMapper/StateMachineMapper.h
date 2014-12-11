@@ -8,6 +8,8 @@
 #ifndef STATEMACHINEMAPPER_H
 #define	STATEMACHINEMAPPER_H
 
+#include "../StateMachine.h"
+
 namespace jsonMapper {
 
     class StateMachineMapper {
@@ -15,6 +17,7 @@ namespace jsonMapper {
         StateMachineMapper();
         //StateMachineMapper(const StateMachineMapper& orig);
         virtual ~StateMachineMapper();
+        utah::StateMachine* create(std::string name_);
     private:
 
     };
