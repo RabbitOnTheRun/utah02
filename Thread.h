@@ -23,13 +23,14 @@ namespace utah {
     
     class Thread {
     public:
+        Thread(std::string name_);
         virtual ~Thread();
-        const std::string name;
+        const Symbol* name;
         void push(MessageWithInPort messageWithInPort);
         void start();
         void join();
         void setEventQueue(std::shared_ptr<EventQueue> eventQueue);
-        void addStateMachine(Symbol* stateMachineName, StateMachine* stateMachine);
+        void addStateMachine(std::string& stateMachineName_, StateMachine* stateMachine_);
     private:
         Thread();
         std::thread thread_;

@@ -37,8 +37,8 @@ namespace utah {
         void setComponent(ComponentIF* component_);
         void setStateMap(std::map<const Symbol*, State*> stateMap_);
         void setTransitions(std::vector<Transition*> transitions_);
-        void setInPorts(std::vector<Symbol*> inPorts_);
-        void setOutPorts(std::vector<Symbol*> outPorts_);
+        void setInPorts(std::vector<const Symbol*> inPorts_);
+        void setOutPorts(std::vector<const Symbol*> outPorts_);
     private:
         //std::map<Symbol*, OutPort*> outPortMap;
         Symbol* name;
@@ -47,8 +47,8 @@ namespace utah {
         std::map<const Symbol*, State*> stateMap;
         std::vector<Transition*> transitions;
         ComponentIF* component;
-        std::vector<Symbol*> inPorts;
-        std::vector<Symbol*> outPorts;
+        std::vector<const Symbol*> inPorts;
+        std::vector<const Symbol*> outPorts;
     };
 }
 #endif	/* STATEMACHINE_H */

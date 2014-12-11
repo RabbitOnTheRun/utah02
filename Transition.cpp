@@ -61,4 +61,8 @@ namespace utah {
     const Symbol* Transition::getNextState() {
         return to;
     }
+
+    const Symbol* Transition::getFrom() {
+        return from;
+    }
 }

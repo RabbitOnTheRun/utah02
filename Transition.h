@@ -41,6 +41,7 @@ namespace utah {
         Result execute(Message& message_, ComponentIF* component_);
         void generateEmission(Result result_, Symbol* threadName_, Symbol* stateMachineName_, std::vector<MessageWithOutPort>& resultMessage ) ;
         const Symbol* getNextState();
+        const Symbol* getFrom();
     private:
         //const Symbol& name;
         const Symbol* from;

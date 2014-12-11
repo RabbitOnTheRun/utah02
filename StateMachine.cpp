@@ -58,11 +58,11 @@ namespace utah {
         transitions = transitions_;
     }
 
-    void StateMachine::setInPorts(std::vector<Symbol*> inPorts_) {
+    void StateMachine::setInPorts(std::vector<const Symbol*> inPorts_) {
         inPorts = inPorts_;
     }
 
-    void StateMachine::setOutPorts(std::vector<Symbol*> outPorts_) {
+    void StateMachine::setOutPorts(std::vector<const Symbol*> outPorts_) {
         outPorts = outPorts_;
     }
 }

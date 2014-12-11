@@ -17,6 +17,8 @@ namespace utah {
     Thread::Thread() {
     }
 
+    Thread::Thread(std::string name_) : name(Symbol::create(name_)) {
+    }
     //Thread::Thread(const Thread& orig) {
     //}
 
@@ -48,27 +50,27 @@ namespace utah {
             //SymbolicEvent ev = eventHandling->popEvent();
 
             //if (Symbol::create("done") == NULL) { //message.getName()) {
-            if (Sym::done == messageWithInPort.getMessage().getMessageName()) { 
+            if (Sym::done == messageWithInPort.getMessage().getMessageName()) {
                 doDone();
                 break;
             }
 
             InPort inPort = messageWithInPort.getInPort();
             const Symbol* stateMachineName = inPort.stateMachine;
-            
+
             std::vector<MessageWithOutPort> result;
             stateMachineMap[stateMachineName]->processMessage(messageWithInPort.getMessage(), result); // sendMessage
 
             for (MessageWithOutPort messageWithOutPort : result) {
                 Message message = messageWithOutPort.getMessage();
                 OutPort outPort = messageWithOutPort.getOutPort();
-                
+
                 InPort inPort = this->process->portMap.getConnectedPort(outPort); // accessing process without concurrency control
                 Thread* peerThread = this->process->getThread(inPort.thread);
                 MessageWithInPort messageWithInPort(message, inPort);
                 peerThread->push(messageWithInPort);
             }
-            
+
         }
     }
 
@@ -77,5 +79,7 @@ namespace utah {
     }
     // wait_and_pop();
 
-
+    void Thread::addStateMachine(std::string& stateMachineName_, StateMachine* stateMachine_) {
+        stateMachineMap[Symbol::create(stateMachineName_)] = stateMachine_;
+    }
 }

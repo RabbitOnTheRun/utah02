@@ -63,12 +63,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/Sym.o \
 	${OBJECTDIR}/Symbol.o \
 	${OBJECTDIR}/Thread.o \
-	${OBJECTDIR}/ThreadMapper.o \
 	${OBJECTDIR}/Transition.o \
 	${OBJECTDIR}/Value.o \
 	${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o \
 	${OBJECTDIR}/jsonMapper/FileIOException.o \
 	${OBJECTDIR}/jsonMapper/GuardMapper.o \
+	${OBJECTDIR}/jsonMapper/InOutPortMapper.o \
 	${OBJECTDIR}/jsonMapper/JsonFormatException.o \
 	${OBJECTDIR}/jsonMapper/JsonMapper.o \
 	${OBJECTDIR}/jsonMapper/MessageEmissionMapper.o \
@@ -80,6 +80,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/jsonMapper/StateMachineMapper.o \
 	${OBJECTDIR}/jsonMapper/StateMapper.o \
 	${OBJECTDIR}/jsonMapper/StatePartMapper.o \
+	${OBJECTDIR}/jsonMapper/ThreadMapper.o \
 	${OBJECTDIR}/jsonMapper/TransitionMapper.o \
 	${OBJECTDIR}/jsonMapper/TransitionPartMapper.o \
 	${OBJECTDIR}/main.o \
@@ -269,11 +270,6 @@ ${OBJECTDIR}/Thread.o: Thread.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Thread.o Thread.cpp
 
-${OBJECTDIR}/ThreadMapper.o: ThreadMapper.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ThreadMapper.o ThreadMapper.cpp
-
 ${OBJECTDIR}/Transition.o: Transition.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -298,6 +294,11 @@ ${OBJECTDIR}/jsonMapper/GuardMapper.o: jsonMapper/GuardMapper.cpp
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/GuardMapper.o jsonMapper/GuardMapper.cpp
+
+${OBJECTDIR}/jsonMapper/InOutPortMapper.o: jsonMapper/InOutPortMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/InOutPortMapper.o jsonMapper/InOutPortMapper.cpp
 
 ${OBJECTDIR}/jsonMapper/JsonFormatException.o: jsonMapper/JsonFormatException.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
@@ -353,6 +354,11 @@ ${OBJECTDIR}/jsonMapper/StatePartMapper.o: jsonMapper/StatePartMapper.cpp
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/StatePartMapper.o jsonMapper/StatePartMapper.cpp
+
+${OBJECTDIR}/jsonMapper/ThreadMapper.o: jsonMapper/ThreadMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/ThreadMapper.o jsonMapper/ThreadMapper.cpp
 
 ${OBJECTDIR}/jsonMapper/TransitionMapper.o: jsonMapper/TransitionMapper.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
@@ -968,19 +974,6 @@ ${OBJECTDIR}/Thread_nomain.o: ${OBJECTDIR}/Thread.o Thread.cpp
 	    ${CP} ${OBJECTDIR}/Thread.o ${OBJECTDIR}/Thread_nomain.o;\
 	fi
 
-${OBJECTDIR}/ThreadMapper_nomain.o: ${OBJECTDIR}/ThreadMapper.o ThreadMapper.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/ThreadMapper.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ThreadMapper_nomain.o ThreadMapper.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/ThreadMapper.o ${OBJECTDIR}/ThreadMapper_nomain.o;\
-	fi
-
 ${OBJECTDIR}/Transition_nomain.o: ${OBJECTDIR}/Transition.o Transition.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Transition.o`; \
@@ -1044,6 +1037,19 @@ ${OBJECTDIR}/jsonMapper/GuardMapper_nomain.o: ${OBJECTDIR}/jsonMapper/GuardMappe
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/GuardMapper_nomain.o jsonMapper/GuardMapper.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/jsonMapper/GuardMapper.o ${OBJECTDIR}/jsonMapper/GuardMapper_nomain.o;\
+	fi
+
+${OBJECTDIR}/jsonMapper/InOutPortMapper_nomain.o: ${OBJECTDIR}/jsonMapper/InOutPortMapper.o jsonMapper/InOutPortMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/InOutPortMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/InOutPortMapper_nomain.o jsonMapper/InOutPortMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/InOutPortMapper.o ${OBJECTDIR}/jsonMapper/InOutPortMapper_nomain.o;\
 	fi
 
 ${OBJECTDIR}/jsonMapper/JsonFormatException_nomain.o: ${OBJECTDIR}/jsonMapper/JsonFormatException.o jsonMapper/JsonFormatException.cpp 
@@ -1187,6 +1193,19 @@ ${OBJECTDIR}/jsonMapper/StatePartMapper_nomain.o: ${OBJECTDIR}/jsonMapper/StateP
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/StatePartMapper_nomain.o jsonMapper/StatePartMapper.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/jsonMapper/StatePartMapper.o ${OBJECTDIR}/jsonMapper/StatePartMapper_nomain.o;\
+	fi
+
+${OBJECTDIR}/jsonMapper/ThreadMapper_nomain.o: ${OBJECTDIR}/jsonMapper/ThreadMapper.o jsonMapper/ThreadMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/ThreadMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/ThreadMapper_nomain.o jsonMapper/ThreadMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/ThreadMapper.o ${OBJECTDIR}/jsonMapper/ThreadMapper_nomain.o;\
 	fi
 
 ${OBJECTDIR}/jsonMapper/TransitionMapper_nomain.o: ${OBJECTDIR}/jsonMapper/TransitionMapper.o jsonMapper/TransitionMapper.cpp 
