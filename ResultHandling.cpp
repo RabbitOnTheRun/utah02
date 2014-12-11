@@ -27,7 +27,7 @@ namespace utah {
         //std::vector<MessageWithOutPort> out;
         for (ExternalEffect externalEffect : externalEffects) {
             if (result_.resultCode == externalEffect.getResultCode()) {
-                
+
                 Message message(externalEffect.generateMessage());
                 message.setValue(result_.value);
                 OutPort outPort(threadName_, stateMachineName_, externalEffect.getPort());
@@ -36,5 +36,9 @@ namespace utah {
             }
         }
         //return out;
+    }
+
+    ExternalEffect ResultHandling::getExternalEffect(int i) {
+        return externalEffects[i];
     }
 }

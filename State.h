@@ -12,14 +12,10 @@
 #include <map>
 #include "Symbol.h"
 #include "Transition.h"
-#include "tests/Statetestclass.h"
-#include "tests/StateMappertestclass.h"
 
 namespace utah {
 
     class State {
-        friend Statetestclass;
-        friend StateMappertestclass;
     public:
         State(const std::string &name_);
         State(const std::string &name_, State *parent_);
@@ -29,9 +25,10 @@ namespace utah {
         void addTranstion(Transition* transition);
         //std::vector<Transition*> getTransitions();
         virtual ~State();
-        const Symbol* getNameSymbol();
+        const Symbol* getName();
         State* getParent();
         std::vector<Transition *> transitions;
+        State* getChild(int i);
     private:
         State *parent = NULL;
         const Symbol* name;

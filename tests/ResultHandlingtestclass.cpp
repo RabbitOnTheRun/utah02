@@ -29,7 +29,7 @@ void ResultHandlingtestclass::testCreate() {
     //jsonMapper::ResultHandlingMapper resultHandlingMapper;
     jsonMapper::ResultHandlingMapper::create(obj, resultHandling_);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT( "success" ==resultHandling_.externalEffects[0].resultCode->getName());
+        CPPUNIT_ASSERT( "success" ==resultHandling_.getExternalEffect(0).getResultCode()->getName());
        
     }
 }

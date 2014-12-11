@@ -28,8 +28,8 @@ void GuardMappertestclass::testCreate() {
     //jsonMapper::GuardMapper guardMapper;
     utah::Guard result = jsonMapper::GuardMapper::create(obj);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT("L" == result.name->getName());
-        CPPUNIT_ASSERT("NULL" == result.arg);
+        CPPUNIT_ASSERT("L" == result.getName()->getName());
+        CPPUNIT_ASSERT("NULL" == result.getArg());
     }
 }
 

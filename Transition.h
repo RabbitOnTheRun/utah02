@@ -17,16 +17,10 @@
 #include "ComponentIF.h"
 #include "Result.h"
 #include "MessageWithOutPort.h"
-#include "tests/Transitiontestclass.h"
-#include "tests/TransitionMappertestclass.h"
-#include "tests/Statetestclass.h"
 
 namespace utah {
 
     class Transition {
-        friend Transitiontestclass;
-        friend TransitionMappertestclass;
-        friend Statetestclass;
     public:
         Transition(const std::string from_, const std::string to_);
         Transition(const Symbol* from_, const Symbol* to_);
@@ -39,9 +33,10 @@ namespace utah {
         void addExternalEffect(ExternalEffect externalEffect);
         bool ifMatch(Message& message_, ComponentIF* component_);
         Result execute(Message& message_, ComponentIF* component_);
-        void generateEmission(Result result_, Symbol* threadName_, Symbol* stateMachineName_, std::vector<MessageWithOutPort>& resultMessage ) ;
+        void generateEmission(Result result_, Symbol* threadName_, Symbol* stateMachineName_, std::vector<MessageWithOutPort>& resultMessage);
         const Symbol* getNextState();
         const Symbol* getFrom();
+        const Symbol* getTo();
     private:
         //const Symbol& name;
         const Symbol* from;

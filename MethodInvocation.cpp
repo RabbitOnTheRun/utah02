@@ -25,4 +25,12 @@ namespace utah {
     Result MethodInvocation::execute(Message& message_, ComponentIF* component_) {
         return component_->execute(methodName, message_, methodArgument);
     }
+
+    Symbol* MethodInvocation::getMethodName() {
+        return methodName;
+    }
+
+    std::string MethodInvocation::getMethodArgument() {
+        return methodArgument;
+    }
 }

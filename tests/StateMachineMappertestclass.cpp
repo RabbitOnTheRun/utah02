@@ -28,7 +28,7 @@ void StateMachineMappertestclass::testCreate() {
     //jsonMapper::StateMachineMapper stateMachineMapper;
     utah::StateMachine* result = jsonMapper::StateMachineMapper::create(name_, "Thread");
     if (true /*check result*/) {
-        CPPUNIT_ASSERT("StateMachine" == result->name->getName());
+        CPPUNIT_ASSERT("StateMachine" == result->getName()->getName());
     }
 }
 

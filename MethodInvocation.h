@@ -13,19 +13,18 @@
 #include "Message.h"
 #include "Result.h"
 #include "ComponentIF.h"
-#include "tests/MethodInvocationMappertestclass.h"
-#include "tests/TransitionMappertestclass.h"
+
 namespace utah {
 
     class MethodInvocation {
-        friend MethodInvocationMappertestclass;
-        friend TransitionMappertestclass;
     public:
         MethodInvocation();
         MethodInvocation(std::string methodName_, std::string methodArgument_);
         //MethodInvocation(const MethodInvocation& orig);
         virtual ~MethodInvocation();
         Result execute(Message& message_, ComponentIF* component_);
+        Symbol* getMethodName();
+        std::string getMethodArgument();
     private:
         Symbol* methodName;
         std::string methodArgument;

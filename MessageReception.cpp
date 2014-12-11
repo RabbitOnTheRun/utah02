@@ -28,6 +28,10 @@ namespace utah {
         return name;
     }
 
+    const Symbol* MessageReception::getType() {
+        return type;
+    }
+
     bool MessageReception::ifMatch(Message& message_) {
         if (message_.getMessageName() == name) {
             return true;

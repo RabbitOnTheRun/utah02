@@ -28,4 +28,12 @@ namespace utah {
             return true;
         }
     }
+
+    Symbol* Guard::getName() {
+        return name;
+    }
+
+    std::string Guard::getArg() {
+        return arg;
+    }
 }

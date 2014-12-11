@@ -34,6 +34,6 @@ namespace utah {
         return messageEmission.makeMessage();
     }
     const Symbol* ExternalEffect::getPort(){
-        return messageEmission.getPortSymbol();
+        return messageEmission.getPort();
     }
 }

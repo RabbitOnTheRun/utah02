@@ -27,8 +27,8 @@ void MethodInvocationMappertestclass::testCreate() {
    const picojson::value& obj = jsonMapper::PicoJsonIF::JSONFileToObj("data/MethodInvocation.txt");
     utah::MethodInvocation result = jsonMapper::MethodInvocationMapper::create(obj);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT("jjj" == result.methodName->getName());
-        CPPUNIT_ASSERT("yama" == result.methodArgument);
+        CPPUNIT_ASSERT("jjj" == result.getMethodName()->getName());
+        CPPUNIT_ASSERT("yama" == result.getMethodArgument());
     }
 }
 

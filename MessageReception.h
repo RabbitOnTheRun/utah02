@@ -11,19 +11,16 @@
 #include <string>
 #include "Symbol.h"
 #include "Message.h"
-#include "tests/MessageReceptionMappertestclass.h"
-#include "tests/TransitionMappertestclass.h"
 namespace utah {
 
     class MessageReception {
-        friend MessageReceptionMappertestclass;
-        friend TransitionMappertestclass;
     public:
-       MessageReception();
+        MessageReception();
         MessageReception(std::string name_, std::string type_);
-       // MessageReception(const MessageReception& orig);
+        // MessageReception(const MessageReception& orig);
         virtual ~MessageReception();
         const Symbol* getName();
+        const Symbol* getType();
         bool ifMatch(Message& message_);
     private:
         const Symbol* name;

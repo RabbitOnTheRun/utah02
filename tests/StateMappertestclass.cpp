@@ -29,8 +29,8 @@ void StateMappertestclass::testCreate() {
     //jsonMapper::StateMapper stateMapper;
     utah::State* result = jsonMapper::StateMapper::create(obj);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT(result->name->getName() == "c");
-        CPPUNIT_ASSERT(result->children[0]->name->getName() == "g");
+        CPPUNIT_ASSERT(result->getName()->getName() == "c");
+        CPPUNIT_ASSERT(result->getChild(0)->getName()->getName() == "g");
     }
 }
 

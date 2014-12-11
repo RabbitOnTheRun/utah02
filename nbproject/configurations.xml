@@ -201,6 +201,14 @@
         <itemPath>tests/Symboltestclass.h</itemPath>
         <itemPath>tests/Symboltestrunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f15"
+                     displayName="ThreadMappertest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/ThreadMappertestclass.cpp</itemPath>
+        <itemPath>tests/ThreadMappertestclass.h</itemPath>
+        <itemPath>tests/ThreadMappertestrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3"
                      displayName="TransitionMapperTest"
                      projectFiles="true"
@@ -451,6 +459,20 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f14</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f15">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f15</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
@@ -772,6 +794,12 @@
       <item path="tests/Symboltestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/Symboltestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ThreadMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ThreadMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ThreadMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/TransitionMappertestclass.cpp"
             ex="false"
@@ -1037,6 +1065,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f15">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f15</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f2">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -1353,6 +1395,12 @@
       <item path="tests/Symboltestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/Symboltestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ThreadMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ThreadMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ThreadMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/TransitionMappertestclass.cpp"
             ex="false"

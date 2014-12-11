@@ -41,11 +41,14 @@ namespace utah {
         children.push_back(child_);
     }
 
-    const Symbol* State::getNameSymbol() {
+    const Symbol* State::getName() {
         return name;
     }
 
     State* State::getParent() {
         return parent;
+    }
+    State* State::getChild(int i){
+        return children[i];
     }
 }

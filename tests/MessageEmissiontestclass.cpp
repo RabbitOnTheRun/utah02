@@ -28,10 +28,10 @@ void MessageEmissiontestclass::testCreate() {
     //jsonMapper::MessageEmissionMapper messageEmissionMapper;
     utah::MessageEmission result = jsonMapper::MessageEmissionMapper::create(obj);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT("w" == result.port->getName());
-        CPPUNIT_ASSERT("joy" == result.messageName->getName());
-        CPPUNIT_ASSERT("NULL" == result.valueType->getName());
-        CPPUNIT_ASSERT("NULL" == result.givenArgument);
+        CPPUNIT_ASSERT("w" == result.getPort()->getName());
+        CPPUNIT_ASSERT("joy" == result.getMessageName()->getName());
+        CPPUNIT_ASSERT("NULL" == result.getValueType()->getName());
+        CPPUNIT_ASSERT("NULL" == result.getGivenArgument());
     }
 }
 

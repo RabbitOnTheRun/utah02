@@ -24,7 +24,7 @@ namespace jsonMapper {
         picojson::array arrayObj = PicoJsonIF::toArray(obj);
         for (picojson::value obj2 : arrayObj) {
             utah::State* newState = StateMapper::create(obj2);
-            stateMap[newState->getNameSymbol()->getName()] = newState;
+            stateMap[newState->getName()->getName()] = newState;
         }
     }
 
@@ -32,7 +32,7 @@ namespace jsonMapper {
         picojson::array arrayObj = PicoJsonIF::toArray(obj);
         for (picojson::value obj2 : arrayObj) {
             utah::State* newState = StateMapper::create(obj2);
-            stateMap[newState->getNameSymbol()] = newState;
+            stateMap[newState->getName()] = newState;
         }
     }
 }

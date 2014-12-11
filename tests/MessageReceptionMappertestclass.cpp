@@ -28,8 +28,8 @@ void MessageReceptionMappertestclass::testCreate() {
     //jsonMapper::MessageReceptionMapper messageReceptionMapper;
     utah::MessageReception result = jsonMapper::MessageReceptionMapper::create(obj);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT("v" == result.name->getName());
-        CPPUNIT_ASSERT("NULL" == result.type->getName());
+        CPPUNIT_ASSERT("v" == result.getName()->getName());
+        CPPUNIT_ASSERT("NULL" == result.getType()->getName());
     }
 }
 

@@ -1,0 +1,34 @@
+{"port" : 
+ ["z" , "w" , "x" , "y"] , 
+"inPort" : 
+ ["z" , "w" , "x" , "y"] , 
+"outPort" : 
+ ["z" , "w" , "x" , "y"] ,
+
+"state" : 
+ [[ "a" , [] ] , [ "b" , [] ] , [ "c", [[ "g" , [] ] , [ "h" , [] ] , [ "i" , [] ]] ]] , 
+
+"transition" : [ 
+{ "from" : "a" ,"to" : "b" ,
+	"message" : {"name" : "x" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" } ,
+    "resultHandling" : [] 
+ } , 
+
+{ "from" : "b" ,"to" : "g" ,
+	"message" : {"name" : "v" ,"type" : "NULL" } , 
+	"guard" : {"name" : "L", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "jjj" , "methodArgument" : "yama" } ,
+	"resultHandling" : [ 
+		{"resultCode" : "success", "messageEmission" : 
+			{"port" : "z" ,"messageName" : "work" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		} ,
+		{"resultCode" : "fail", "messageEmission" : 
+			{"port" : "w" ,"messageName" : "joy" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		}
+	 ] 
+ } 
+] , 
+
+"name" : "StateMachine2" }

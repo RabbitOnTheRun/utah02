@@ -18,14 +18,10 @@
 #include "Message.h"
 #include "MessageWithOutPort.h"
 #include "ComponentIF.h"
-//#include "jsonMapper/StateMachineMapper.h"
-#include "tests/StateMachineMappertestclass.h"
 
 namespace utah {
 
     class StateMachine {
-        friend StateMachineMappertestclass;
-        //friend StateMachineMapper;
     public:
         StateMachine(std::string name_, std::string threadName_);
         //StateMachine(const StateMachine& orig);
@@ -39,6 +35,7 @@ namespace utah {
         void setTransitions(std::vector<Transition*> transitions_);
         void setInPorts(std::vector<const Symbol*> inPorts_);
         void setOutPorts(std::vector<const Symbol*> outPorts_);
+        Symbol* getName();
     private:
         //std::map<Symbol*, OutPort*> outPortMap;
         Symbol* name;

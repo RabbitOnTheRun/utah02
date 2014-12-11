@@ -6,10 +6,12 @@
  */
 
 #include <vector>
+#include <memory>
 #include "ThreadMapper.h"
 #include "PicoJsonIF.h"
 #include "../StateMachine.h"
 #include "StateMachineMapper.h"
+#include "../EventQueue.h"
 
 namespace jsonMapper {
 
@@ -32,6 +34,11 @@ namespace jsonMapper {
             utah::StateMachine* stateMachine = StateMachineMapper::create(stateMachineName, threadName);
             thread->addStateMachine(stateMachineName, stateMachine);
         }
+
+        std::shared_ptr<utah::EventQueue> eventQueue(new utah::EventQueue());
+        thread->setEventQueue(eventQueue);
+        //thread->setEventQueue(std::shared_ptr<EventQueue>(new utah::EventQueue()));
+        thread->start();
         return thread;
     }
 }

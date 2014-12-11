@@ -30,7 +30,7 @@ void ExternalEffectMappertestclass::testCreate() {
     utah::ExternalEffect result = jsonMapper::ExternalEffectMapper::create(obj);
     if (true /*check result*/) {
         CPPUNIT_ASSERT("success" == result.resultCode->getName());
-        CPPUNIT_ASSERT("z" == result.messageEmission.port->getName());
+        CPPUNIT_ASSERT("z" == result.messageEmission.getPort()->getName());
     }
 }
 

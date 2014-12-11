@@ -30,7 +30,19 @@ namespace utah {
         return message;
     }
 
-    const Symbol* MessageEmission::getPortSymbol() {
+    const Symbol* MessageEmission::getPort() {
         return port;
+    }
+
+    const Symbol* MessageEmission::getMessageName() {
+        return messageName;
+    }
+
+    const Symbol* MessageEmission::getValueType() {
+        return valueType;
+    }
+
+    std::string MessageEmission::getGivenArgument() {
+        return givenArgument;
     }
 }

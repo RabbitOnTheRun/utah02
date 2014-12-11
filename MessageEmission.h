@@ -11,20 +11,19 @@
 #include <string>
 #include "Symbol.h"
 #include "Message.h"
-#include "tests/MessageEmissiontestclass.h"
-#include "tests/ExternalEffectMappertestclass.h"
 namespace utah {
 
     class MessageEmission {
-        friend MessageEmissiontestclass;
-        friend ExternalEffectMappertestclass;
     public:
         MessageEmission();
         MessageEmission(std::string port_, std::string messageName_, std::string valueType_, std::string givenArgument_);
         //MessageEmission(const MessageEmission& orig);
         virtual ~MessageEmission();
         Message makeMessage();
-        const Symbol* getPortSymbol();
+        const Symbol* getPort();
+        const Symbol* getMessageName();
+        const Symbol* getValueType();
+        std::string getGivenArgument();
     private:
         const Symbol* port;
         const Symbol* messageName;

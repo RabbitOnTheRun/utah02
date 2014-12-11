@@ -65,4 +65,7 @@ namespace utah {
     void StateMachine::setOutPorts(std::vector<const Symbol*> outPorts_) {
         outPorts = outPorts_;
     }
+    Symbol* StateMachine::getName(){
+        return name;
+    }
 }

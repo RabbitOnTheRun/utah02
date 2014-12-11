@@ -1,1 +1,1 @@
-{"thread" : "threadA", "stateMachine" : ["SM1", "SM2"] }
+{"thread" : "threadA", "stateMachine" : ["StateMachine1", "StateMachine2"] }
