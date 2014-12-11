@@ -29,8 +29,8 @@ void ExternalEffectMappertestclass::testCreate() {
     //jsonMapper::ExternalEffectMapper externalEffectMapper;
     utah::ExternalEffect result = jsonMapper::ExternalEffectMapper::create(obj);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT("success" == result.resultCode->getName());
-        CPPUNIT_ASSERT("z" == result.messageEmission.getPort()->getName());
+        CPPUNIT_ASSERT("success" == result.getResultCode()->getName());
+        CPPUNIT_ASSERT("z" == result.getMessageEmission().getPort()->getName());
     }
 }
 

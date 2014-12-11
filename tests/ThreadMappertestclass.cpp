@@ -27,7 +27,7 @@ void ThreadMappertestclass::tearDown() {
 void ThreadMappertestclass::testCreate() {
     const picojson::value& obj = jsonMapper::PicoJsonIF::JSONFileToObj("data/Thread.txt");
     //jsonMapper::ThreadMapper threadMapper;
-    utah::Thread* result = jsonMapper::ThreadMapper::create(obj);
+    utah::Thread* result = jsonMapper::ThreadMapper::create("data" , obj);
     if (true /*check result*/) {
         CPPUNIT_ASSERT("threadA" == result->name->getName());
     }

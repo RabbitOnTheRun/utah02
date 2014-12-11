@@ -24,14 +24,14 @@ namespace jsonMapper {
     ThreadMapper::~ThreadMapper() {
     }
 
-    utah::Thread* ThreadMapper::create(const picojson::value& obj) {
+    utah::Thread* ThreadMapper::create(std::string path_, const picojson::value& obj) {
         std::string threadName = PicoJsonIF::getString(obj, "thread");
         utah::Thread* thread = new utah::Thread(threadName);
         const picojson::array& stateMachines = PicoJsonIF::getArray(obj, "stateMachine");
 
         for (const picojson::value& obj : stateMachines) {
             std::string stateMachineName = obj.to_str();
-            utah::StateMachine* stateMachine = StateMachineMapper::create(stateMachineName, threadName);
+            utah::StateMachine* stateMachine = StateMachineMapper::create(stateMachineName, threadName, path_);
             thread->addStateMachine(stateMachineName, stateMachine);
         }
 

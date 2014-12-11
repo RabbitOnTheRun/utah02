@@ -23,6 +23,7 @@ namespace utah {
         virtual ~ExternalEffect();
         void setMessageEmission(MessageEmission messageEmission_);
         Symbol* getResultCode();
+        MessageEmission getMessageEmission();
         Message generateMessage();
         const Symbol* getPort();
     private:

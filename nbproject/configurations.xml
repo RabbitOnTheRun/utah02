@@ -153,6 +153,14 @@
         <itemPath>tests/MethodInvocationMappertestclass.h</itemPath>
         <itemPath>tests/MethodInvocationMappertestrunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f16"
+                     displayName="ProcessMappertest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/ProcessMappertestclass.cpp</itemPath>
+        <itemPath>tests/ProcessMappertestclass.h</itemPath>
+        <itemPath>tests/ProcessMappertestrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f12"
                      displayName="ResultHandling"
                      projectFiles="true"
@@ -478,6 +486,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f16">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f16</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f2">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -749,6 +771,12 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="tests/ProcessMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ProcessMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ProcessMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/ResultHandlingtestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1079,6 +1107,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f16">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f16</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f2">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -1350,6 +1392,12 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="tests/ProcessMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ProcessMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ProcessMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/ResultHandlingtestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>

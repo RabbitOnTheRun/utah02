@@ -8,13 +8,16 @@
 #ifndef PROCESSMAPPER_H
 #define	PROCESSMAPPER_H
 
+#include <string>
+#include "../Process.h"
 namespace jsonMapper {
 
     class ProcessMapper {
     public:
         ProcessMapper();
         //ProcessMapper(const ProcessMapper& orig);
-        virtual ~ProcessMapper();
+       virtual ~ProcessMapper();
+        static utah::Process* create(std::string path_, std::string fileName_);
     private:
 
     };

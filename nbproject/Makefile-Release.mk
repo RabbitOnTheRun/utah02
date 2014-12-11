@@ -96,6 +96,7 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f10 \
 	${TESTDIR}/TestFiles/f7 \
 	${TESTDIR}/TestFiles/f9 \
+	${TESTDIR}/TestFiles/f16 \
 	${TESTDIR}/TestFiles/f12 \
 	${TESTDIR}/TestFiles/f13 \
 	${TESTDIR}/TestFiles/f5 \
@@ -406,6 +407,10 @@ ${TESTDIR}/TestFiles/f9: ${TESTDIR}/tests/MethodInvocationMappertestclass.o ${TE
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f9 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f16: ${TESTDIR}/tests/ProcessMappertestclass.o ${TESTDIR}/tests/ProcessMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f16 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f12: ${TESTDIR}/tests/ResultHandlingtestclass.o ${TESTDIR}/tests/ResultHandlingtestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f12 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -505,6 +510,18 @@ ${TESTDIR}/tests/MethodInvocationMappertestrunner.o: tests/MethodInvocationMappe
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MethodInvocationMappertestrunner.o tests/MethodInvocationMappertestrunner.cpp
+
+
+${TESTDIR}/tests/ProcessMappertestclass.o: tests/ProcessMappertestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ProcessMappertestclass.o tests/ProcessMappertestclass.cpp
+
+
+${TESTDIR}/tests/ProcessMappertestrunner.o: tests/ProcessMappertestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ProcessMappertestrunner.o tests/ProcessMappertestrunner.cpp
 
 
 ${TESTDIR}/tests/ResultHandlingtestclass.o: tests/ResultHandlingtestclass.cpp 
@@ -1286,6 +1303,7 @@ ${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 	    ${TESTDIR}/TestFiles/f10 || true; \
 	    ${TESTDIR}/TestFiles/f7 || true; \
 	    ${TESTDIR}/TestFiles/f9 || true; \
+	    ${TESTDIR}/TestFiles/f16 || true; \
 	    ${TESTDIR}/TestFiles/f12 || true; \
 	    ${TESTDIR}/TestFiles/f13 || true; \
 	    ${TESTDIR}/TestFiles/f5 || true; \

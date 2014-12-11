@@ -19,7 +19,7 @@ namespace jsonMapper {
         ThreadMapper();
         //ThreadMapper(const ThreadMapper& orig);
         virtual ~ThreadMapper();
-        static utah::Thread* create(const picojson::value& obj);
+        static utah::Thread* create(std::string path_, const picojson::value& obj);
     private:
 
     };

@@ -30,10 +30,15 @@ namespace utah {
         return resultCode;
     }
 
+    MessageEmission ExternalEffect::getMessageEmission() {
+        return messageEmission;
+    }
+
     Message ExternalEffect::generateMessage() {
         return messageEmission.makeMessage();
     }
-    const Symbol* ExternalEffect::getPort(){
+
+    const Symbol* ExternalEffect::getPort() {
         return messageEmission.getPort();
     }
 }

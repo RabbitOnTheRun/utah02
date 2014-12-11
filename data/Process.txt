@@ -1,5 +1,5 @@
 { "process" :
-[{"thread" : "threadA", "stateMachine" : ["SM1", "SM2"] },
- {"thread" : "threadB", "stateMachine" : ["SM3", "SM4"] }
+[{"thread" : "threadA", "stateMachine" : ["StateMachine1", "StateMachine2"] },
+ {"thread" : "threadB", "stateMachine" : ["StateMachine1", "StateMachine2"] }
 ]
 }

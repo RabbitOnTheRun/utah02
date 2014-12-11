@@ -23,8 +23,8 @@ namespace jsonMapper {
     StateMachineMapper::~StateMachineMapper() {
     }
 
-    utah::StateMachine* StateMachineMapper::create(std::string stateMachineName_, std::string threadName_) {
-        const picojson::value value = PicoJsonIF::JSONFileToObj("data/" + stateMachineName_ + ".txt");
+    utah::StateMachine* StateMachineMapper::create(std::string stateMachineName_, std::string threadName_, std::string path_) {
+        const picojson::value value = PicoJsonIF::JSONFileToObj(path_ + "/" + stateMachineName_ + ".txt");
 
         utah::StateMachine* stateMachine = new utah::StateMachine(stateMachineName_, threadName_);
 
