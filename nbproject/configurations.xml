@@ -44,6 +44,7 @@
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
       <itemPath>ActionIF.cpp</itemPath>
       <itemPath>ComponentIF.cpp</itemPath>
+      <itemPath>ComponentSample1.cpp</itemPath>
       <itemPath>EventQueue.cpp</itemPath>
       <itemPath>ExternalEffect.cpp</itemPath>
       <itemPath>Guard.cpp</itemPath>
@@ -77,6 +78,7 @@
     <logicalFolder name="HeaderFiles" displayName="ヘッダー・ファイル" projectFiles="true">
       <itemPath>ActionIF.h</itemPath>
       <itemPath>ComponentIF.h</itemPath>
+      <itemPath>ComponentSample1.h</itemPath>
       <itemPath>EventQueue.h</itemPath>
       <itemPath>ExternalEffect.h</itemPath>
       <itemPath>Guard.h</itemPath>
@@ -113,6 +115,14 @@
                    displayName="テスト・ファイル"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f19"
+                     displayName="ActionIF"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/ActionIFtestclass.cpp</itemPath>
+        <itemPath>tests/ActionIFtestclass.h</itemPath>
+        <itemPath>tests/ActionIFtestrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f11"
                      displayName="ExternalEffectMapper"
                      projectFiles="true"
@@ -136,6 +146,14 @@
         <itemPath>tests/GuardMappertestclass.cpp</itemPath>
         <itemPath>tests/GuardMappertestclass.h</itemPath>
         <itemPath>tests/GuardMappertestrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f17"
+                     displayName="MapOfGuardtest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/MapOfGuardtestclass.cpp</itemPath>
+        <itemPath>tests/MapOfGuardtestclass.h</itemPath>
+        <itemPath>tests/MapOfGuardtestrunner.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f10"
                      displayName="MessageEmission"
@@ -225,6 +243,14 @@
         <itemPath>tests/ThreadMappertestclass.h</itemPath>
         <itemPath>tests/ThreadMappertestrunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f20"
+                     displayName="Transition2"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/Transition2testclass.cpp</itemPath>
+        <itemPath>tests/Transition2testclass.h</itemPath>
+        <itemPath>tests/Transition2testrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3"
                      displayName="TransitionMapperTest"
                      projectFiles="true"
@@ -277,6 +303,10 @@
       <item path="ComponentIF.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ComponentIF.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ComponentSample1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ComponentSample1.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="EventQueue.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -519,6 +549,7 @@
           <output>${TESTDIR}/TestFiles/f17</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
       </folder>
@@ -536,6 +567,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f19">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f19</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f2">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -545,6 +590,20 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f20">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f20</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
@@ -748,6 +807,12 @@
       </item>
       <item path="shared_queue.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="tests/ActionIFtestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ActionIFtestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ActionIFtestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="tests/ExternalEffectMappertestclass.cpp"
             ex="false"
             tool="1"
@@ -774,6 +839,12 @@
       <item path="tests/GuardMappertestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/GuardMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MapOfGuardtestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MapOfGuardtestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/MapOfGuardtestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/MessageEmissiontestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -870,6 +941,12 @@
       <item path="tests/ThreadMappertestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/ThreadMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Transition2testclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Transition2testclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/Transition2testrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/TransitionMappertestclass.cpp"
             ex="false"
@@ -933,6 +1010,10 @@
       </item>
       <item path="ComponentIF.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="ComponentSample1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ComponentSample1.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="EventQueue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="EventQueue.h" ex="false" tool="3" flavor2="0">
@@ -1174,6 +1255,7 @@
           <output>${TESTDIR}/TestFiles/f17</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
       </folder>
@@ -1191,6 +1273,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f19">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f19</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f2">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -1200,6 +1296,20 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f20">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f20</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
@@ -1403,6 +1513,12 @@
       </item>
       <item path="shared_queue.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="tests/ActionIFtestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ActionIFtestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ActionIFtestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="tests/ExternalEffectMappertestclass.cpp"
             ex="false"
             tool="1"
@@ -1429,6 +1545,12 @@
       <item path="tests/GuardMappertestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/GuardMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MapOfGuardtestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/MapOfGuardtestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/MapOfGuardtestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/MessageEmissiontestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1525,6 +1647,12 @@
       <item path="tests/ThreadMappertestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/ThreadMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Transition2testclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/Transition2testclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/Transition2testrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/TransitionMappertestclass.cpp"
             ex="false"

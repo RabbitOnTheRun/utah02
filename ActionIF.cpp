@@ -11,7 +11,8 @@ namespace utah {
 
     ActionIF::ActionIF() {
     }
-    ActionIF:: ActionIF(std::string name_) : name(Symbol::create(name_)){
+    ActionIF:: ActionIF(std::string name_,  ActionFunction actionFunction_) : 
+    name(Symbol::create(name_)), actionFunction(actionFunction_) {
     }
     //ActionIF::ActionIF(const ActionIF& orig) {
     //}

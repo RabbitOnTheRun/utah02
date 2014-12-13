@@ -18,7 +18,7 @@ namespace utah {
     MapOfGuard::~MapOfGuard() {
     }
 
-    bool MapOfGuard::judge(Symbol* guardName, Message& message_, std::string& argument_) {
+    bool MapOfGuard::judge(const Symbol* guardName, Message& message_, std::string& argument_) {
         return ( mapOfGuard[guardName].judge(message_, argument_));
     }
 

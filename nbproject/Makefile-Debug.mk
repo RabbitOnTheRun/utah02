@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/ActionIF.o \
 	${OBJECTDIR}/ComponentIF.o \
+	${OBJECTDIR}/ComponentSample1.o \
 	${OBJECTDIR}/EventQueue.o \
 	${OBJECTDIR}/ExternalEffect.o \
 	${OBJECTDIR}/Guard.o \
@@ -91,9 +92,11 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
+	${TESTDIR}/TestFiles/f19 \
 	${TESTDIR}/TestFiles/f11 \
 	${TESTDIR}/TestFiles/f18 \
 	${TESTDIR}/TestFiles/f8 \
+	${TESTDIR}/TestFiles/f17 \
 	${TESTDIR}/TestFiles/f10 \
 	${TESTDIR}/TestFiles/f7 \
 	${TESTDIR}/TestFiles/f9 \
@@ -105,6 +108,7 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f4 \
 	${TESTDIR}/TestFiles/f1 \
 	${TESTDIR}/TestFiles/f15 \
+	${TESTDIR}/TestFiles/f20 \
 	${TESTDIR}/TestFiles/f3 \
 	${TESTDIR}/TestFiles/f14 \
 	${TESTDIR}/TestFiles/f2
@@ -142,6 +146,11 @@ ${OBJECTDIR}/ComponentIF.o: ComponentIF.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ComponentIF.o ComponentIF.cpp
+
+${OBJECTDIR}/ComponentSample1.o: ComponentSample1.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ComponentSample1.o ComponentSample1.cpp
 
 ${OBJECTDIR}/EventQueue.o: EventQueue.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -388,6 +397,10 @@ ${OBJECTDIR}/shared_queue.o: shared_queue.cpp
 
 # Build Test Targets
 .build-tests-conf: .build-conf ${TESTFILES}
+${TESTDIR}/TestFiles/f19: ${TESTDIR}/tests/ActionIFtestclass.o ${TESTDIR}/tests/ActionIFtestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f19 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f11: ${TESTDIR}/tests/ExternalEffectMappertestclass.o ${TESTDIR}/tests/ExternalEffectMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f11 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
@@ -399,6 +412,10 @@ ${TESTDIR}/TestFiles/f18: ${TESTDIR}/tests/GuardIFtestclass1.o ${TESTDIR}/tests/
 ${TESTDIR}/TestFiles/f8: ${TESTDIR}/tests/GuardMappertestclass.o ${TESTDIR}/tests/GuardMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f8 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
+${TESTDIR}/TestFiles/f17: ${TESTDIR}/tests/MapOfGuardtestclass.o ${TESTDIR}/tests/MapOfGuardtestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f17 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f10: ${TESTDIR}/tests/MessageEmissiontestclass.o ${TESTDIR}/tests/MessageEmissiontestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
@@ -444,6 +461,10 @@ ${TESTDIR}/TestFiles/f15: ${TESTDIR}/tests/ThreadMappertestclass.o ${TESTDIR}/te
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f15 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f20: ${TESTDIR}/tests/Transition2testclass.o ${TESTDIR}/tests/Transition2testrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f20 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/TransitionMappertestclass.o ${TESTDIR}/tests/TransitionMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -455,6 +476,18 @@ ${TESTDIR}/TestFiles/f14: ${TESTDIR}/tests/TransitionPartMappertestclass.o ${TES
 ${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/Transitiontestclass.o ${TESTDIR}/tests/Transitiontestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
+
+${TESTDIR}/tests/ActionIFtestclass.o: tests/ActionIFtestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ActionIFtestclass.o tests/ActionIFtestclass.cpp
+
+
+${TESTDIR}/tests/ActionIFtestrunner.o: tests/ActionIFtestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ActionIFtestrunner.o tests/ActionIFtestrunner.cpp
 
 
 ${TESTDIR}/tests/ExternalEffectMappertestclass.o: tests/ExternalEffectMappertestclass.cpp 
@@ -491,6 +524,18 @@ ${TESTDIR}/tests/GuardMappertestrunner.o: tests/GuardMappertestrunner.cpp
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/GuardMappertestrunner.o tests/GuardMappertestrunner.cpp
+
+
+${TESTDIR}/tests/MapOfGuardtestclass.o: tests/MapOfGuardtestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MapOfGuardtestclass.o tests/MapOfGuardtestclass.cpp
+
+
+${TESTDIR}/tests/MapOfGuardtestrunner.o: tests/MapOfGuardtestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MapOfGuardtestrunner.o tests/MapOfGuardtestrunner.cpp
 
 
 ${TESTDIR}/tests/MessageEmissiontestclass.o: tests/MessageEmissiontestclass.cpp 
@@ -625,6 +670,18 @@ ${TESTDIR}/tests/ThreadMappertestrunner.o: tests/ThreadMappertestrunner.cpp
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ThreadMappertestrunner.o tests/ThreadMappertestrunner.cpp
 
 
+${TESTDIR}/tests/Transition2testclass.o: tests/Transition2testclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/Transition2testclass.o tests/Transition2testclass.cpp
+
+
+${TESTDIR}/tests/Transition2testrunner.o: tests/Transition2testrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/Transition2testrunner.o tests/Transition2testrunner.cpp
+
+
 ${TESTDIR}/tests/TransitionMappertestclass.o: tests/TransitionMappertestclass.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
@@ -685,6 +742,19 @@ ${OBJECTDIR}/ComponentIF_nomain.o: ${OBJECTDIR}/ComponentIF.o ComponentIF.cpp
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ComponentIF_nomain.o ComponentIF.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/ComponentIF.o ${OBJECTDIR}/ComponentIF_nomain.o;\
+	fi
+
+${OBJECTDIR}/ComponentSample1_nomain.o: ${OBJECTDIR}/ComponentSample1.o ComponentSample1.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/ComponentSample1.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ComponentSample1_nomain.o ComponentSample1.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/ComponentSample1.o ${OBJECTDIR}/ComponentSample1_nomain.o;\
 	fi
 
 ${OBJECTDIR}/EventQueue_nomain.o: ${OBJECTDIR}/EventQueue.o EventQueue.cpp 
@@ -1315,9 +1385,11 @@ ${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
 	then  \
+	    ${TESTDIR}/TestFiles/f19 || true; \
 	    ${TESTDIR}/TestFiles/f11 || true; \
 	    ${TESTDIR}/TestFiles/f18 || true; \
 	    ${TESTDIR}/TestFiles/f8 || true; \
+	    ${TESTDIR}/TestFiles/f17 || true; \
 	    ${TESTDIR}/TestFiles/f10 || true; \
 	    ${TESTDIR}/TestFiles/f7 || true; \
 	    ${TESTDIR}/TestFiles/f9 || true; \
@@ -1329,6 +1401,7 @@ ${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 	    ${TESTDIR}/TestFiles/f4 || true; \
 	    ${TESTDIR}/TestFiles/f1 || true; \
 	    ${TESTDIR}/TestFiles/f15 || true; \
+	    ${TESTDIR}/TestFiles/f20 || true; \
 	    ${TESTDIR}/TestFiles/f3 || true; \
 	    ${TESTDIR}/TestFiles/f14 || true; \
 	    ${TESTDIR}/TestFiles/f2 || true; \

@@ -23,8 +23,8 @@ namespace utah {
     }
 
     void MapOfAction::addAction(ActionFunction function_, std::string name) {
-        ActionIF actionIF(name);
-        actionIF.setActionFunction(function_);
+        ActionIF actionIF(name, function_);
+        //actionIF.setActionFunction(function_);
         mapOfAction[Symbol::create(name)] = actionIF;
     }
 
