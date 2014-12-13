@@ -92,6 +92,7 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 # Test Files
 TESTFILES= \
 	${TESTDIR}/TestFiles/f11 \
+	${TESTDIR}/TestFiles/f18 \
 	${TESTDIR}/TestFiles/f8 \
 	${TESTDIR}/TestFiles/f10 \
 	${TESTDIR}/TestFiles/f7 \
@@ -391,6 +392,10 @@ ${TESTDIR}/TestFiles/f11: ${TESTDIR}/tests/ExternalEffectMappertestclass.o ${TES
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f11 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f18: ${TESTDIR}/tests/GuardIFtestclass1.o ${TESTDIR}/tests/GuardIFtestrunner1.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f18 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f8: ${TESTDIR}/tests/GuardMappertestclass.o ${TESTDIR}/tests/GuardMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f8 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -462,6 +467,18 @@ ${TESTDIR}/tests/ExternalEffectMappertestrunner.o: tests/ExternalEffectMappertes
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ExternalEffectMappertestrunner.o tests/ExternalEffectMappertestrunner.cpp
+
+
+${TESTDIR}/tests/GuardIFtestclass1.o: tests/GuardIFtestclass1.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/GuardIFtestclass1.o tests/GuardIFtestclass1.cpp
+
+
+${TESTDIR}/tests/GuardIFtestrunner1.o: tests/GuardIFtestrunner1.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/GuardIFtestrunner1.o tests/GuardIFtestrunner1.cpp
 
 
 ${TESTDIR}/tests/GuardMappertestclass.o: tests/GuardMappertestclass.cpp 
@@ -1299,6 +1316,7 @@ ${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 	@if [ "${TEST}" = "" ]; \
 	then  \
 	    ${TESTDIR}/TestFiles/f11 || true; \
+	    ${TESTDIR}/TestFiles/f18 || true; \
 	    ${TESTDIR}/TestFiles/f8 || true; \
 	    ${TESTDIR}/TestFiles/f10 || true; \
 	    ${TESTDIR}/TestFiles/f7 || true; \

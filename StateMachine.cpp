@@ -6,6 +6,7 @@
  */
 #include <assert.h>
 #include <vector>
+#include <algorithm>
 #include "StateMachine.h"
 namespace utah {
 
@@ -33,6 +34,11 @@ namespace utah {
             state = state->getParent();
         } while ((0 == matched.size()) && (NULL != state));
 
+        // try functional
+        auto matched2 = std::remove_if(state->transitions.begin(), state->transitions.end(),
+                [&](Transition* transition) -> bool{return transition->ifMatch(message_, component);} );
+        
+        
         assert(1 == matched.size());
         // execute action
         Result result = matched[0]->execute(message_, component);

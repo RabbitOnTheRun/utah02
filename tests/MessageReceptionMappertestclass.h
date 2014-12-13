@@ -14,6 +14,7 @@ class MessageReceptionMappertestclass : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(MessageReceptionMappertestclass);
 
     CPPUNIT_TEST(testCreate);
+    CPPUNIT_TEST(testIfMatch);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -25,6 +26,7 @@ public:
 
 private:
     void testCreate();
+    void testIfMatch();
 
 };
 

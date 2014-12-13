@@ -121,6 +121,14 @@
         <itemPath>tests/ExternalEffectMappertestclass.h</itemPath>
         <itemPath>tests/ExternalEffectMappertestrunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f18"
+                     displayName="GuardIFtest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/GuardIFtestclass1.cpp</itemPath>
+        <itemPath>tests/GuardIFtestclass1.h</itemPath>
+        <itemPath>tests/GuardIFtestrunner1.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f8"
                      displayName="GuardMapper"
                      projectFiles="true"
@@ -500,6 +508,34 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f17">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f17</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f18">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f18</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f2">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -726,6 +762,12 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="tests/GuardIFtestclass1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/GuardIFtestclass1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/GuardIFtestrunner1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/GuardMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1121,6 +1163,34 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f17">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f17</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f18">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f18</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f2">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -1347,6 +1417,12 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="tests/GuardIFtestclass1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/GuardIFtestclass1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/GuardIFtestrunner1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/GuardMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>

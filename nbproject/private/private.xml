@@ -10,11 +10,13 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Result.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MethodInvocation.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Message.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/ResultHandlingMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MethodInvocation.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/shared_queue.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/StateMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/ThreadMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StateMachineMapper.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MessageReceptionMappertestclass.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MessageReceptionMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Guard.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/InOutPortMapper.cpp</file>
@@ -24,19 +26,23 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/ExternalEffectMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/ThreadMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StateMachineMapper.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/ProcessMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/ResultHandlingtestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StatePartMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/TransitionMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageReception.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/TransitionMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/State.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MessageReceptionMappertestrunner.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ComponentIF.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageWithInPort.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/GuardMappertestclass.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ExternalEffect.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MessageEmissiontestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Sym.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StateMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StatePartMapper.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/ExternalEffectMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/picojson.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/EventQueue.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/GuardIF.h</file>
@@ -46,8 +52,11 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Transition.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/StateMachineMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/Transitiontestclass.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/ProcessMappertestclass.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageEmission.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/Statetestclass.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/GuardMapper.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/GuardMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ResultHandling.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ResultHandling.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/OutPort.h</file>
@@ -68,6 +77,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Thread.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Transition.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageReception.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/MessageReceptionMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/PicoJsonIF.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Symbol.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/StatePartMappertestclass.cpp</file>
