@@ -6,6 +6,7 @@
  */
 
 #include "MapOfGuard.h"
+#include "Sym.h"
 
 namespace utah {
 
@@ -19,7 +20,11 @@ namespace utah {
     }
 
     bool MapOfGuard::judge(const Symbol* guardName, Message& message_, std::string& argument_) {
-        return ( mapOfGuard[guardName].judge(message_, argument_));
+        if (guardName == Sym::Null) {
+            return true;
+        } else {
+            return (mapOfGuard[guardName].judge(message_, argument_));
+        }
     }
 
     void MapOfGuard::addGuard(GuardFunction guardFunction, std::string name) {

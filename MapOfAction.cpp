@@ -4,7 +4,8 @@
  * 
  * Created on 2014/12/09, 0:35
  */
-
+#include <assert.h>
+#include "Sym.h"
 #include "MapOfAction.h"
 
 namespace utah {
@@ -19,6 +20,7 @@ namespace utah {
     }
 
     Result MapOfAction::execute(const Symbol* nameOfAction, Message& message_, const std::string& argument_) {
+        assert(nameOfAction != Sym::Null);
         return (mapOfAction[nameOfAction].execute(message_, argument_));
     }
 

@@ -26,7 +26,7 @@ void StateMachinetestclass::tearDown() {
 }
 
 void StateMachinetestclass::testProcessMessage() {
-    utah::Message message_("a", "b");
+    utah::Message message_("x", "b");
     std::vector<utah::MessageWithOutPort> result;
     //utah::StateMachine stateMachine;
     utah::StateMachine* stateMachine = jsonMapper::StateMachineMapper::create("StateMachine2", "Thread", "data");
@@ -34,7 +34,7 @@ void StateMachinetestclass::testProcessMessage() {
 
     stateMachine->processMessage(message_, result);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT(false);
+        CPPUNIT_ASSERT(result.size() == 0);
     }
 }
 
