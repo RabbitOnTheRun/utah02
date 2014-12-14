@@ -103,6 +103,7 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f16 \
 	${TESTDIR}/TestFiles/f12 \
 	${TESTDIR}/TestFiles/f13 \
+	${TESTDIR}/TestFiles/f21 \
 	${TESTDIR}/TestFiles/f5 \
 	${TESTDIR}/TestFiles/f6 \
 	${TESTDIR}/TestFiles/f4 \
@@ -441,6 +442,10 @@ ${TESTDIR}/TestFiles/f13: ${TESTDIR}/tests/StateMachineMappertestclass.o ${TESTD
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f13 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f21: ${TESTDIR}/tests/StateMachinetestclass.o ${TESTDIR}/tests/StateMachinetestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f21 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f5: ${TESTDIR}/tests/StateMappertestclass.o ${TESTDIR}/tests/StateMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -608,6 +613,18 @@ ${TESTDIR}/tests/StateMachineMappertestrunner.o: tests/StateMachineMappertestrun
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/StateMachineMappertestrunner.o tests/StateMachineMappertestrunner.cpp
+
+
+${TESTDIR}/tests/StateMachinetestclass.o: tests/StateMachinetestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/StateMachinetestclass.o tests/StateMachinetestclass.cpp
+
+
+${TESTDIR}/tests/StateMachinetestrunner.o: tests/StateMachinetestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/StateMachinetestrunner.o tests/StateMachinetestrunner.cpp
 
 
 ${TESTDIR}/tests/StateMappertestclass.o: tests/StateMappertestclass.cpp 
@@ -1396,6 +1413,7 @@ ${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 	    ${TESTDIR}/TestFiles/f16 || true; \
 	    ${TESTDIR}/TestFiles/f12 || true; \
 	    ${TESTDIR}/TestFiles/f13 || true; \
+	    ${TESTDIR}/TestFiles/f21 || true; \
 	    ${TESTDIR}/TestFiles/f5 || true; \
 	    ${TESTDIR}/TestFiles/f6 || true; \
 	    ${TESTDIR}/TestFiles/f4 || true; \

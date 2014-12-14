@@ -38,6 +38,10 @@ namespace utah {
         methodInvocation = methodInvocation_;
     }
 
+    void Transition::setResultHandling(ResultHandling resultHandling_) {
+        resultHandling = resultHandling_;
+    }
+
     void Transition::addExternalEffect(ExternalEffect externalEffect) {
         resultHandling.addExternalEffect(externalEffect);
     }

@@ -30,6 +30,7 @@ namespace utah {
         void setMessageReception(MessageReception messageReception_);
         void setGuard(Guard guard_);
         void setMethodInvocation(MethodInvocation methodInvocation_);
+        void setResultHandling(ResultHandling resultHandling_);
         void addExternalEffect(ExternalEffect externalEffect);
         bool ifMatch(Message& message_, ComponentIF* component_);
         Result execute(Message& message_, ComponentIF* component_);

@@ -35,10 +35,12 @@ namespace utah {
         } while ((0 == matched.size()) && (NULL != state));
 
         // try functional
-        auto matched2 = std::remove_if(state->transitions.begin(), state->transitions.end(),
-                [&](Transition* transition) -> bool{return transition->ifMatch(message_, component);} );
-        
-        
+        /* auto matched2 = std::remove_if(state->transitions.begin(), state->transitions.end(),
+                [&](Transition * transition) -> bool {
+                    return transition->ifMatch(message_, component);
+                }); */
+
+
         assert(1 == matched.size());
         // execute action
         Result result = matched[0]->execute(message_, component);
@@ -50,6 +52,10 @@ namespace utah {
 
     void StateMachine::setCurrent(State* current_) {
         current = current_;
+    }
+
+    void StateMachine::setCurrent(std::string current_) {
+        current = stateMap[Symbol::create(current_)];
     }
 
     void StateMachine::setComponent(ComponentIF* component_) {
@@ -71,7 +77,8 @@ namespace utah {
     void StateMachine::setOutPorts(std::vector<const Symbol*> outPorts_) {
         outPorts = outPorts_;
     }
-    Symbol* StateMachine::getName(){
+
+    Symbol* StateMachine::getName() {
         return name;
     }
 }

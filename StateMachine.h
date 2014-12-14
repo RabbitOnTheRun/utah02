@@ -30,6 +30,7 @@ namespace utah {
                 Message message_,
                 std::vector<MessageWithOutPort>& result);
         void setCurrent(State* current_);
+        void setCurrent(std::string current_);
         void setComponent(ComponentIF* component_);
         void setStateMap(std::map<const Symbol*, State*> stateMap_);
         void setTransitions(std::vector<Transition*> transitions_);
