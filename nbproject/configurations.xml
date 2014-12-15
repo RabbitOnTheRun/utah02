@@ -181,6 +181,14 @@
         <itemPath>tests/MethodInvocationMappertestclass.h</itemPath>
         <itemPath>tests/MethodInvocationMappertestrunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f23"
+                     displayName="PortMapMapper"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/PortMapMappertestclass.cpp</itemPath>
+        <itemPath>tests/PortMapMappertestclass.h</itemPath>
+        <itemPath>tests/PortMapMappertestrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f16"
                      displayName="ProcessMappertest"
                      projectFiles="true"
@@ -655,6 +663,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f23">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f23</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f3">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -934,6 +956,12 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="tests/PortMapMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PortMapMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/PortMapMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/ProcessMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1405,6 +1433,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f23">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f23</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f3">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -1684,6 +1726,12 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="tests/PortMapMappertestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PortMapMappertestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/PortMapMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/ProcessMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -34,10 +34,20 @@ namespace jsonMapper {
     }
 
     utah::InPort PortMapMapper::createInPort(const picojson::value& obj) {
+        std::string port = PicoJsonIF::getString(obj, "port");
+        std::string stateMachine = PicoJsonIF::getString(obj, "stateMachine");
+        std::string thread = PicoJsonIF::getString(obj, "thread");
 
+        utah::InPort inPort(port, stateMachine, thread);
+        return inPort;
     }
 
     utah::OutPort PortMapMapper::createOutPort(const picojson::value& obj) {
+        std::string port = PicoJsonIF::getString(obj, "port");
+        std::string stateMachine = PicoJsonIF::getString(obj, "stateMachine");
+        std::string thread = PicoJsonIF::getString(obj, "thread");
 
+        utah::OutPort outPort(port, stateMachine, thread);
+        return outPort;
     }
 }

@@ -20,10 +20,10 @@ namespace jsonMapper {
         PortMapMapper();
         //PortMapMapper(const PortMapMapper& orig);
         virtual ~PortMapMapper();
-        utah::PortMap create(const picojson::value& obj);
+        static utah::PortMap create(const picojson::value& obj);
 
-        utah::InPort createInPort(const picojson::value& obj);
-        utah::OutPort createOutPort(const picojson::value& obj);
+        static utah::InPort createInPort(const picojson::value& obj);
+        static utah::OutPort createOutPort(const picojson::value& obj);
         //std::pair<utah::OutPort, utah::InPort> createPortMap(const picojson::value& obj);
     private:
     };

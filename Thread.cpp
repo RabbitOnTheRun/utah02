@@ -68,6 +68,9 @@ namespace utah {
                 InPort inPort = this->process->portMap.getConnectedPort(outPort); // accessing process without concurrency control
                 Thread* peerThread = this->process->getThread(inPort.thread);
                 MessageWithInPort messageWithInPort(message, inPort);
+                
+                // sequence chart log comes from here
+                
                 peerThread->push(messageWithInPort);
             }
 
