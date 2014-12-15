@@ -76,6 +76,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/jsonMapper/MessageReceptionMapper.o \
 	${OBJECTDIR}/jsonMapper/MethodInvocationMapper.o \
 	${OBJECTDIR}/jsonMapper/PicoJsonIF.o \
+	${OBJECTDIR}/jsonMapper/PortMapMapper.o \
 	${OBJECTDIR}/jsonMapper/ProcessMapper.o \
 	${OBJECTDIR}/jsonMapper/ResultHandlingMapper.o \
 	${OBJECTDIR}/jsonMapper/StateMachineMapper.o \
@@ -343,6 +344,11 @@ ${OBJECTDIR}/jsonMapper/PicoJsonIF.o: jsonMapper/PicoJsonIF.cpp
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/PicoJsonIF.o jsonMapper/PicoJsonIF.cpp
+
+${OBJECTDIR}/jsonMapper/PortMapMapper.o: jsonMapper/PortMapMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/PortMapMapper.o jsonMapper/PortMapMapper.cpp
 
 ${OBJECTDIR}/jsonMapper/ProcessMapper.o: jsonMapper/ProcessMapper.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
@@ -1283,6 +1289,19 @@ ${OBJECTDIR}/jsonMapper/PicoJsonIF_nomain.o: ${OBJECTDIR}/jsonMapper/PicoJsonIF.
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/PicoJsonIF_nomain.o jsonMapper/PicoJsonIF.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/jsonMapper/PicoJsonIF.o ${OBJECTDIR}/jsonMapper/PicoJsonIF_nomain.o;\
+	fi
+
+${OBJECTDIR}/jsonMapper/PortMapMapper_nomain.o: ${OBJECTDIR}/jsonMapper/PortMapMapper.o jsonMapper/PortMapMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/PortMapMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/PortMapMapper_nomain.o jsonMapper/PortMapMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/PortMapMapper.o ${OBJECTDIR}/jsonMapper/PortMapMapper_nomain.o;\
 	fi
 
 ${OBJECTDIR}/jsonMapper/ProcessMapper_nomain.o: ${OBJECTDIR}/jsonMapper/ProcessMapper.o jsonMapper/ProcessMapper.cpp 

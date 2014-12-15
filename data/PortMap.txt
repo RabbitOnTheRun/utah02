@@ -1,0 +1,7 @@
+[
+{ "outPort" : 
+  {"port" : "z" , "stateMachine" : "StateMachine1" , "thread" : "threadA"} , 
+  "inPort" : 
+  {"port" : "w" , "stateMachine" : "StateMachine2" , "thread" : "threadB"}
+}
+]

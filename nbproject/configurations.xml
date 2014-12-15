@@ -23,6 +23,8 @@
       <itemPath>jsonMapper/MethodInvocationMapper.h</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.cpp</itemPath>
       <itemPath>jsonMapper/PicoJsonIF.h</itemPath>
+      <itemPath>jsonMapper/PortMapMapper.cpp</itemPath>
+      <itemPath>jsonMapper/PortMapMapper.h</itemPath>
       <itemPath>jsonMapper/ProcessMapper.cpp</itemPath>
       <itemPath>ProcessMapper.h</itemPath>
       <itemPath>jsonMapper/ResultHandlingMapper.cpp</itemPath>
@@ -809,6 +811,10 @@
       </item>
       <item path="jsonMapper/PicoJsonIF.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="jsonMapper/PortMapMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/PortMapMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/ProcessMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/ResultHandlingMapper.cpp"
@@ -1554,6 +1560,10 @@
       <item path="jsonMapper/PicoJsonIF.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="jsonMapper/PicoJsonIF.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="jsonMapper/PortMapMapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jsonMapper/PortMapMapper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="jsonMapper/ProcessMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
