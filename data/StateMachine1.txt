@@ -6,10 +6,10 @@
  ["z" , "w" , "x" , "y"] ,
 
 "state" : 
- [[ "a" , [] ] , [ "b" , [] ] , [ "c", [[ "g" , [] ] , [ "h" , [] ] , [ "i" , [] ]] ]] , 
+ [[ "start" , [] ] , [ "b" , [] ] , [ "c", [[ "g" , [] ] , [ "h" , [] ] , [ "i" , [] ]] ]] , 
 
 "transition" : [ 
-{ "from" : "a" ,"to" : "b" ,
+{ "from" : "start" ,"to" : "b" ,
 	"message" : {"name" : "x" ,"type" : "NULL" } , 
 	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
 	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" } ,

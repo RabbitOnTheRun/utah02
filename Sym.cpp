@@ -20,6 +20,7 @@ namespace utah {
     Sym::~Sym() {
     }
 
-     Symbol* Sym::Null(Symbol::create("NULL"));
-     Symbol* Sym::done(Symbol::create("done"));
+    Symbol* Sym::Null(Symbol::create("NULL"));
+    Symbol* Sym::done(Symbol::create("done"));
+    Symbol* Sym::start(Symbol::create("start"));
 }

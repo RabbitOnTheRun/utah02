@@ -8,6 +8,7 @@
 #include <vector>
 #include "StateMachineMapper.h"
 
+#include "../Sym.h"
 #include "PicoJsonIF.h"
 #include "StatePartMapper.h"
 #include "TransitionPartMapper.h"
@@ -46,6 +47,8 @@ namespace jsonMapper {
         stateMachine->setTransitions(transitions);
         stateMachine->setInPorts(inPorts);
         stateMachine->setOutPorts(outPorts);
+        
+        stateMachine->setCurrent("start"); // should use symbol
 
         return stateMachine;
     }
