@@ -43,4 +43,22 @@ namespace utah {
         Thread* thread = getThread(name);
         thread->setComponent(stateMachineName_, component_);
     }
+
+    void Process::done() {
+        for (std::pair<const Symbol*, Thread*> thread_pair : threadMap) {
+            Thread* thread_ = thread_pair.second;
+            Message message("done", "NULL");
+            InPort inPort("NULL", "NULL", "NULL");
+            MessageWithInPort messageWithInPort_(message, inPort);
+            thread_->push(messageWithInPort_);
+        }
+    }
+
+    void Process::join() {
+        for (std::pair<const Symbol*, Thread*> thread_pair : threadMap) {
+            Thread* thread_ = thread_pair.second;
+            thread_->join();
+        }
+
+    }
 }

@@ -20,11 +20,11 @@ namespace utah {
     class ActionIF {
     public:
         ActionIF();
-        ActionIF(std::string name_,  ActionFunction actionFunction_);
+        ActionIF( std::string name_,  ActionFunction actionFunction_);
         //ActionIF(const ActionIF& orig);
         virtual ~ActionIF();
-        Result execute(Message& message_, const std::string& argument_);
-        void setActionFunction(ActionFunction function_);
+        Result execute(Message& message_, const std::string& argument_)  ;
+        //void setActionFunction(ActionFunction function_);
     private:
         Symbol* name;
         ActionFunction actionFunction;

@@ -32,10 +32,13 @@ namespace utah {
         }
     }
 
-    void Log::message(std::string from, Symbol* to, Symbol* event) {
+    void Log::message(const std::string from, const Symbol* to, const Symbol* event) {
         write(from + " -> " + to->getName() + " : " + event->getName() + "\n");
     }
-
+    void Log::message(const Symbol*  from, const Symbol* to, const Symbol* event) {
+        write(from->getName() + " -> " + to->getName() + " : " + event->getName() + "\n");
+    }
+    
     void Log::state(std::string stateMachine, Symbol* state) {
         write("note over " + stateMachine + " : " + state->getName() + "\n");
     }
@@ -50,6 +53,10 @@ namespace utah {
 
     void Log::close() {
         ofs.close();
+    }
+
+    void Log::error(std::string file, std::string errorMessage) {
+        write(file + "::" + errorMessage + " \n");
     }
 
     void Log::write(std::string message) {

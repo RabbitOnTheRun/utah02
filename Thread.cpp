@@ -10,6 +10,7 @@
 #include "MessageWithOutPort.h"
 #include "MessageWithInPort.h"
 #include "Process.h"
+#include "Log.h"
 
 #include <iostream>
 namespace utah {
@@ -71,7 +72,7 @@ namespace utah {
                 MessageWithInPort messageWithInPort(message, inPort);
 
                 // sequence chart log comes from here
-
+                Log::sequence.message(outPort.stateMachine, inPort.stateMachine, message.getMessageName());
                 peerThread->push(messageWithInPort);
             }
 

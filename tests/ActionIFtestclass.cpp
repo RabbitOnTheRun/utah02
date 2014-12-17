@@ -31,8 +31,9 @@ void ActionIFtestclass::testExecute() {
         retResult.resultCode = utah::Symbol::create("success");
         return retResult;
     };
-    utah::ActionIF actionIF;
-    actionIF.setActionFunction(function_);
+    
+    utah::ActionIF actionIF("A", function_);
+    //actionIF.setActionFunction(function_);
 
     utah::Message message_("A", "B");
     const std::string argument_ = "ABC";

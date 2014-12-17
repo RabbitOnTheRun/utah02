@@ -34,24 +34,27 @@ void ProcessMapperPushtestclass::tearDown() {
 void ProcessMapperPushtestclass::testCreate() {
     std::string fileName_ = "Process.txt";
     //jsonMapper::ProcessMapper processMapper;
-    utah::Process* result = jsonMapper::ProcessMapper::create("data", fileName_);
+    utah::Process* processP = jsonMapper::ProcessMapper::create("data", fileName_);
     utah::ComponentIF* component = new utah::ComponentSample1();
     std::string thread = "threadA";
     std::string stateMachine = "StateMachine1";
-    result->setComponent(thread, stateMachine, component);
+    processP->setComponent(thread, stateMachine, component);
 
     utah::InPort inPort("z", "StateMachine1", "threadA"); //{"port" : "z" , "stateMachine" : "StateMachine1" , "thread" : "threadA"} 
     utah::Message message("x", "NULL");
     utah::MessageWithInPort messageWithInPort(message, inPort);
 
-    result->push(messageWithInPort);
+    processP->push(messageWithInPort);
     //void push(MessageWithInPort messageWithInPort_);
 
     utah::Message message2("v", "NULL");
     utah::MessageWithInPort messageWithInPort2(message2, inPort);
-    result->push(messageWithInPort2);
+    processP->push(messageWithInPort2);
     
-    sleep(10);
+    processP->done();
+    processP->join();
+    
+    //sleep(10);
     if (true /*check result*/) {
         CPPUNIT_ASSERT(false);
     }
