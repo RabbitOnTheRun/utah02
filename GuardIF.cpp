@@ -24,7 +24,7 @@ namespace utah {
     GuardIF::~GuardIF() {
     }
 
-    bool GuardIF::judge(Message& message_, std::string& argument_) {
+    bool GuardIF::judge(Message& message_, const std::string& argument_) {
         return guardFunction(message_, argument_);
     }
 

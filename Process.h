@@ -18,17 +18,17 @@ namespace utah {
 
     class Process {
     public:
-        Process();
+        Process(PortMap portMap_);
         //Process(const Process& orig);
         virtual ~Process();
         void addThread(Symbol* threadName, Thread* thread_);
         void addThread(std::string threadName, Thread* thread_);
         void push(MessageWithInPort messageWithInPort_);
         Thread* getThread(const Symbol* threadName);
-        PortMap portMap;
+        const PortMap portMap;
     private:
         std::map<const Symbol*, Thread*> threadMap;
-        std::map<Symbol*, Thread*> stateMachineMap;
+        //std::map<Symbol*, Thread*> stateMachineMap;
        // std::map<Symbol*, std::map<Symbol*, InPort>
     };
 }

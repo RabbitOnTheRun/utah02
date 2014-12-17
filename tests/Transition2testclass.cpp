@@ -31,10 +31,11 @@ void Transition2testclass::tearDown() {
 void Transition2testclass::testExecute() {
     utah::Message message_("invoke", "b");
     utah::ComponentIF* component_ = new utah::ComponentSample1();
-    utah::Transition transition("c", "d");
-
+    utah::MessageReception messageReception("a", "b");
+    utah::Guard guard_("NULL", "NULL");
     utah::MethodInvocation methodInvocation("success", "argNULL");
-    transition.setMethodInvocation(methodInvocation);
+    utah::Transition transition("c", "d", messageReception, guard_, methodInvocation);
+    //transition.setMethodInvocation(methodInvocation);
 
     utah::Result result = transition.execute(message_, component_);
     if (true /*check result*/) {
@@ -45,10 +46,11 @@ void Transition2testclass::testExecute() {
 void Transition2testclass::testGenerateEmission() {
 
     utah::Symbol* threadName_ = utah::Symbol::create("a");
-    
+
     utah::Symbol* stateMachineName_ = utah::Symbol::create("b");
     std::vector< utah::MessageWithOutPort> resultMessage;
-    utah::Transition transition("c", "d");
+    utah::MessageReception messageReception("a", "b");
+    utah::Transition transition("c", "d", messageReception);
 
     const picojson::value& obj = jsonMapper::PicoJsonIF::JSONFileToObj("data/ResultHandling.txt");
     utah::ResultHandling resultHandling_;
@@ -59,23 +61,26 @@ void Transition2testclass::testGenerateEmission() {
     utah::Result result_;
     result_.resultCode = utah::Symbol::create("success");
     result_.value = std::shared_ptr<utah::Value>(new utah::Value());
-    
+
     transition.generateEmission(result_, threadName_, stateMachineName_, resultMessage);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT( "work" == resultMessage[0].getMessage().getMessageName()->getName() );
+        CPPUNIT_ASSERT("work" == resultMessage[0].getMessage().getMessageName()->getName());
     }
 }
 
 void Transition2testclass::testIfMatch() {
     utah::Message message_("a", "b");
     utah::ComponentIF* component_ = new utah::ComponentSample1();
-    utah::Transition transition("c", "d");
-
     utah::MessageReception messageReception_("a", "misc");
-    transition.setMessageReception(messageReception_);
-
     utah::Guard guard_("yes", "x");
-    transition.setGuard(guard_);
+    utah::MethodInvocation methodInvocation_("NULL", "NULL");
+    utah::Transition transition("c", "d", messageReception_, guard_, methodInvocation_);
+
+    //utah::MessageReception messageReception_("a", "misc");
+    //transition.setMessageReception(messageReception_);
+
+    //utah::Guard guard_("yes", "x");
+    //transition.setGuard(guard_);
 
     bool result = transition.ifMatch(message_, component_);
     if (true /*check result*/) {

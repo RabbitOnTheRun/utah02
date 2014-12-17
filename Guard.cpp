@@ -11,8 +11,8 @@
 
 namespace utah {
 
-    Guard::Guard() {
-    }
+    //Guard::Guard() {
+    //}
 
     Guard::Guard(std::string name_, std::string arg_) : name(Symbol::create(name_)), arg(arg_) {
 
@@ -23,17 +23,17 @@ namespace utah {
     Guard::~Guard() {
     }
 
-    bool Guard::ifMatch(Message message_, ComponentIF* component_) {
+    bool Guard::ifMatch(Message message_, ComponentIF* component_) const {
         if (component_->judge(name, message_, arg)) {
             return true;
         }
     }
 
-    Symbol* Guard::getName() {
+    const Symbol* Guard::getName() {
         return name;
     }
 
-    std::string Guard::getArg() {
+    const std::string Guard::getArg() {
         return arg;
     }
 }

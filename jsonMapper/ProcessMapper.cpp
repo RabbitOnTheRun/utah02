@@ -22,19 +22,21 @@ namespace jsonMapper {
     }
 
     utah::Process* ProcessMapper::create(std::string path_, std::string fileName_) {
+        
+        const picojson::value& obj2 = PicoJsonIF::JSONFileToObj(path_ + "/PortMap.txt");
+        // reconsider filename convention
+        utah::PortMap portMap = PortMapMapper::create(obj2);
+        utah::Process* process = new utah::Process(portMap);
+        
         const picojson::value& obj = PicoJsonIF::JSONFileToObj(path_ + "/" + fileName_);
         const picojson::array& threads = PicoJsonIF::getArray(obj, "process");
-
-        utah::Process* process = new utah::Process();
 
         for (const picojson::value& obj3 : threads) {
             utah::Thread* thread = ThreadMapper::create(path_, obj3);
             process->addThread(thread->name->getName()  , thread);
         }
-        const picojson::value& obj2 = PicoJsonIF::JSONFileToObj(path_ + "/PortMap.txt");
-        // reconsider filename convention
-        utah::PortMap portMap = PortMapMapper::create(obj2);
-        process->portMap = portMap;
+
+        //process->portMap = portMap;
         return process;
     }
 }

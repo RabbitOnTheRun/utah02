@@ -8,8 +8,8 @@
 #include "MessageReception.h"
 namespace utah {
 
-    MessageReception::MessageReception() {
-    }
+    //MessageReception::MessageReception() {
+    //}
 
     MessageReception::MessageReception(std::string name_, std::string type_) :
     name(Symbol::create(name_)), type(Symbol::create(type_)) {
@@ -32,7 +32,7 @@ namespace utah {
         return type;
     }
 
-    bool MessageReception::ifMatch(Message& message_) {
+    bool MessageReception::ifMatch(Message& message_) const {
         if (message_.getMessageName() == name) {
             return true;
         } else {

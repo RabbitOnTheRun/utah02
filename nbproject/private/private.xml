@@ -11,6 +11,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Message.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/StateMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/ThreadMappertestclass.cpp</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/PortMapMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StateMachineMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MessageReceptionMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Guard.cpp</file>
@@ -55,6 +56,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/PicoJsonIF.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Symbol.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Port.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/OutPort.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/TransitionPartMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Thread.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/nbproject/Makefile-Release.mk</file>
@@ -81,6 +83,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/StatePartMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/TransitionMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageReception.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Log.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ComponentIF.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ExternalEffect.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/MessageEmissiontestclass.cpp</file>
@@ -91,6 +94,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/picojson.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/EventQueue.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ExternalEffect.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/InPort.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/ProcessMappertestclass.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MessageEmission.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/Statetestclass.cpp</file>

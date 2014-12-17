@@ -16,16 +16,16 @@ namespace utah {
 
     class Guard {
     public:
-        Guard();
+        //Guard();
         Guard(std::string name_, std::string arg_);
         //Guard(const Guard& orig);
         virtual ~Guard();
-        bool ifMatch(Message message_, ComponentIF* component_);
-        Symbol* getName();
-        std::string getArg();
+        bool ifMatch(Message message_, ComponentIF* component_) const;
+        const Symbol* getName();
+        const std::string getArg();
     private:
-        Symbol* name;
-        std::string arg;
+        const Symbol* name;
+        const std::string arg;
     };
 }
 #endif	/* GUARD_H */

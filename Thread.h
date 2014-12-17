@@ -23,7 +23,7 @@ namespace utah {
     
     class Thread {
     public:
-        Thread(std::string name_);
+        Thread(std::string name_, std::shared_ptr<EventQueue> eventQueue_);
         virtual ~Thread();
         const Symbol* name;
         void push(MessageWithInPort messageWithInPort);

@@ -13,7 +13,7 @@
 #include "Message.h"
 namespace utah {
 
-    typedef std::function<bool(Message& message_, std::string argument_) > GuardFunction;
+    typedef std::function<bool(Message& message_, const std::string argument_) > GuardFunction;
 
     class GuardIF {
     public:
@@ -22,7 +22,7 @@ namespace utah {
         GuardIF(Symbol* name_);
         //GuardIF(const GuardIF& orig);
         virtual ~GuardIF();
-        bool judge(Message& message_, std::string& argument_);
+        bool judge(Message& message_, const std::string& argument_);
         void setGuardFunction(GuardFunction function_);
     private:
         Symbol* name;

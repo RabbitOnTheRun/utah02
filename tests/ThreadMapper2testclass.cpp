@@ -7,6 +7,8 @@
 
 #include "ThreadMapper2testclass.h"
 #include "../MessageWithInPort.h"
+#include "../ComponentIF.h"
+#include "../ComponentSample1.h"
 #include "../jsonMapper/ThreadMapper.h"
 #include "../jsonMapper/PicoJsonIF.h"
 
@@ -31,11 +33,13 @@ void ThreadMapper2testclass::testCreate() {
     utah::Thread* result = jsonMapper::ThreadMapper::create(path_, obj);
     utah::Message message_("x", "z");
     utah::InPort inPort_("port1", "StateMachine1", "threadA");
+    
+    utah::ComponentIF* component = new utah::ComponentSample1();
 
     utah::MessageWithInPort messageWithInPort(message_, inPort_);
     result->push(messageWithInPort);
 
-    result->join();
+    //result->join();
     if (true /*check result*/) {
         CPPUNIT_ASSERT(false);
     }

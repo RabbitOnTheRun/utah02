@@ -18,16 +18,16 @@ namespace utah {
 
     class MethodInvocation {
     public:
-        MethodInvocation();
-        MethodInvocation(std::string methodName_, std::string methodArgument_);
+        //MethodInvocation();
+        MethodInvocation(const std::string methodName_, const std::string methodArgument_);
         //MethodInvocation(const MethodInvocation& orig);
         virtual ~MethodInvocation();
-        Result execute(Message& message_, ComponentIF* component_);
-        Symbol* getMethodName();
-        std::string getMethodArgument();
+        Result execute(Message& message_, ComponentIF* component_) const;
+        const Symbol* getMethodName();
+        const std::string getMethodArgument();
     private:
-        Symbol* methodName;
-        std::string methodArgument;
+        const Symbol* methodName;
+        const std::string methodArgument;
     };
 }
 #endif	/* METHODINVOCATION_H */

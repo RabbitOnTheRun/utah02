@@ -22,7 +22,7 @@ namespace utah {
         portMap.push_back(std::make_pair(outPort, inPort));
     }
 
-    InPort PortMap::getConnectedPort(OutPort outPort_) {
+    InPort PortMap::getConnectedPort(OutPort outPort_) const {
         for (std::pair<OutPort,InPort> portPair : portMap) {
             if (portPair.first.eq(outPort_)) {
                 return portPair.second;

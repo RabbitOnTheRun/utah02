@@ -21,7 +21,7 @@ namespace utah {
         virtual ~PortMap();
 
         void addPortPair(OutPort outPort, InPort inPort);
-        InPort getConnectedPort(OutPort);
+        InPort getConnectedPort(OutPort) const ;
         
     private:
         std::vector<std::pair<OutPort, InPort>> portMap;

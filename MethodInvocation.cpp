@@ -12,10 +12,10 @@
 #include "Result.h"
 namespace utah {
 
-    MethodInvocation::MethodInvocation() {
-    }
+    //MethodInvocation::MethodInvocation() {
+    //}
 
-    MethodInvocation::MethodInvocation(std::string methodName_, std::string methodArgument_)
+    MethodInvocation::MethodInvocation(const std::string methodName_, const std::string methodArgument_)
     : methodName(Symbol::create(methodName_)), methodArgument(methodArgument_) {
     }
     //MethodInvocation::MethodInvocation(const MethodInvocation& orig) {
@@ -24,7 +24,7 @@ namespace utah {
     MethodInvocation::~MethodInvocation() {
     }
 
-    Result MethodInvocation::execute(Message& message_, ComponentIF* component_) {
+    Result MethodInvocation::execute(Message& message_, ComponentIF* component_) const{
         if (methodName == Sym::Null) {
             Result result;
             result.resultCode = Symbol::create("NULL");
@@ -34,11 +34,11 @@ namespace utah {
         }
     }
 
-    Symbol* MethodInvocation::getMethodName() {
+    const Symbol* MethodInvocation::getMethodName() {
         return methodName;
     }
 
-    std::string MethodInvocation::getMethodArgument() {
+    const std::string MethodInvocation::getMethodArgument() {
         return methodArgument;
     }
 }

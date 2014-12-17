@@ -18,7 +18,7 @@ namespace utah {
         MapOfGuard();
         //MapOfGuard(const MapOfGuard& orig);
         virtual ~MapOfGuard();
-        bool judge(const Symbol* guardName, Message& message_, std::string& argument_);
+        bool judge(const Symbol* guardName, Message& message_, const std::string& argument_);
         void addGuard(GuardFunction function_, std::string argument_);
     private:
         std::map<const Symbol*, GuardIF> mapOfGuard;

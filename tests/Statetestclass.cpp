@@ -45,7 +45,8 @@ void Statetestclass::testState2() {
 }
 
 void Statetestclass::testAddTranstion() {
-    Transition* transition = new Transition("z", "v");
+    utah::MessageReception messageReception("a", "b");
+    Transition* transition = new Transition("z", "v", messageReception);
     utah::State state("a");
     state.addTranstion(transition);
     if (true /*check result*/) {

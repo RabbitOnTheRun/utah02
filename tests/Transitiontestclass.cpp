@@ -7,7 +7,7 @@
 
 #include "Transitiontestclass.h"
 #include "../Transition.h"
-
+#include "../MessageReception.h"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(Transitiontestclass);
 
@@ -26,7 +26,8 @@ void Transitiontestclass::tearDown() {
 void Transitiontestclass::testTransition() {
     const std::string from_ = "a";
     const std::string to_ = "b";
-    utah::Transition transition(from_, to_);
+    utah::MessageReception messageReception("c", "d");
+    utah::Transition transition(from_, to_, messageReception);
     if (true /*check result*/) {
         CPPUNIT_ASSERT("a" == transition.getFrom()->getName());
         CPPUNIT_ASSERT("b" == transition.getTo()->getName());

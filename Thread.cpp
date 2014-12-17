@@ -17,7 +17,8 @@ namespace utah {
     Thread::Thread() {
     }
 
-    Thread::Thread(std::string name_) : name(Symbol::create(name_)) {
+    Thread::Thread(std::string name_, std::shared_ptr<EventQueue> eventQueue_) :
+    name(Symbol::create(name_)), eventQueue(eventQueue_) {
     }
     //Thread::Thread(const Thread& orig) {
     //}

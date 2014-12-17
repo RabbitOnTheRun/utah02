@@ -9,7 +9,7 @@
 
 namespace utah {
 
-    Process::Process() {
+    Process::Process(PortMap portMap_) : portMap(portMap_){
     }
 
     //Process::Process(const Process& orig) {
