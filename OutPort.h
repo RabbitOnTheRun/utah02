@@ -18,7 +18,7 @@ namespace utah {
     class OutPort : public Port {
     public:
         // OutPort();
-        OutPort(std::string portName_, std::string stateMachine, std::string thread_);
+        OutPort(std::string portName_, std::string stateMachine_, std::string thread_);
         OutPort(const Symbol* portName_, const Symbol* stateMachine_, const Symbol* thread_);
         //OutPort(const OutPort& orig);
         virtual ~OutPort();

@@ -24,7 +24,7 @@ namespace utah {
     }
 
     void StateMachine::processMessage(Message message_, std::vector<MessageWithOutPort>& result_) {
-
+        LOGFUNC;
         std::vector<Transition*> matched;
         State* state = current;
         do {
@@ -50,11 +50,7 @@ namespace utah {
         matched[0]->generateEmission(result, threadName, name, result_);
         const Symbol* nextState = matched[0]->getNextState();
         current = stateMap[nextState];
-        LOGVALUE("current", current->getName()->getName());
-        //std::cout << "*** current = ";
-        //std::cout << current->getName()->getName();
-        //std::cout << " ***\n";
-        
+        LOGVALUE("current state", current->getName()->getName());
     }
 
     void StateMachine::setCurrent(State* current_) {

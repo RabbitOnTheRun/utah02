@@ -28,7 +28,7 @@ void ProcessMappertestclass::tearDown() {
 void ProcessMappertestclass::testCreate() {
     std::string fileName_ = "Process.txt";
     //jsonMapper::ProcessMapper processMapper;
-    utah::Process* result = jsonMapper::ProcessMapper::create("data", fileName_);
+    utah::Process* result = jsonMapper::ProcessMapper::create("data", fileName_, "PortMap.txt");
     utah::ComponentIF* component = new utah::ComponentSample1();
     std::string thread = "threadA";
     std::string stateMachine = "StateMachine1";

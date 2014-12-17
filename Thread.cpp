@@ -28,6 +28,7 @@ namespace utah {
     }
 
     void Thread::push(MessageWithInPort messageWithInPort) {
+        LOGFUNC;
         //std::cout << "Thread::push " + eventWithDest.event.symbol->getName() + "\n" ;
         eventQueue->push(messageWithInPort);
     }
@@ -62,17 +63,26 @@ namespace utah {
 
             std::vector<MessageWithOutPort> result;
             stateMachineMap[stateMachineName]->processMessage(messageWithInPort.getMessage(), result); // sendMessage
-
+            LOGFUNC;
+            if (result.size() == 1) {
+                LOGVALUE("result = ", result[0].getMessage().getMessageName()->getName());
+            }
             for (MessageWithOutPort messageWithOutPort : result) {
                 Message message = messageWithOutPort.getMessage();
                 OutPort outPort = messageWithOutPort.getOutPort();
 
                 InPort inPort = this->process->portMap.getConnectedPort(outPort); // accessing process without concurrency control
+                LOGFUNC;
+                LOGVALUE("outSM", outPort.stateMachine->getName());
+                LOGVALUE("inSM", inPort.stateMachine->getName());
+                LOGVALUE("messageName", message.getMessageName()->getName());
+
                 Thread* peerThread = this->process->getThread(inPort.thread);
                 MessageWithInPort messageWithInPort(message, inPort);
 
                 // sequence chart log comes from here
                 Log::sequence.message(outPort.stateMachine, inPort.stateMachine, message.getMessageName());
+
                 peerThread->push(messageWithInPort);
             }
 
@@ -92,5 +102,8 @@ namespace utah {
         const Symbol* name = Symbol::create(stateMachineName_);
         StateMachine* stateMachine = stateMachineMap[name];
         stateMachine->setComponent(component_);
+    }
+    void Thread::setProcess(Process* process_){
+        process = process_;
     }
 }

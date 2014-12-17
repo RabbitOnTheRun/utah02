@@ -19,10 +19,10 @@
 { "from" : "b" ,"to" : "c" ,
 	"message" : {"name" : "v" ,"type" : "NULL" } , 
 	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
-	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "yama" } ,
+	"methodInvocation" : {"methodName" : "success" , "methodArgument" : "yama" } ,
 	"resultHandling" : [ 
 		{"resultCode" : "success", "messageEmission" : 
-			{"port" : "z" ,"messageName" : "work" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+			{"port" : "z" ,"messageName" : "x" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
 		} ,
 		{"resultCode" : "fail", "messageEmission" : 
 			{"port" : "w" ,"messageName" : "joy" ,"argType" : "NULL" ,"givenArgument" : "NULL" }

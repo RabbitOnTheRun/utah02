@@ -7,6 +7,7 @@
 
 #include "Transition.h"
 #include "Message.h"
+#include "Log.h"
 
 namespace utah {
 
@@ -41,6 +42,7 @@ namespace utah {
     }
 
     bool Transition::ifMatch(Message& message_, ComponentIF* component_) {
+        LOGFUNC;
         if (messageReception.ifMatch(message_) && guard.ifMatch(message_, component_)) {
             return true;
         } else {
@@ -49,14 +51,17 @@ namespace utah {
     }
 
     Result Transition::execute(Message& message_, ComponentIF* component_) {
+        LOGFUNC;
         return methodInvocation.execute(message_, component_);
     }
 
     void Transition::generateEmission(Result result_, Symbol* threadName_, Symbol* stateMachineName_, std::vector<MessageWithOutPort>& resultMessage) {
+        LOGFUNC;
         resultHandling.generateEmission(result_, threadName_, stateMachineName_, resultMessage);
     }
 
     const Symbol* Transition::getNextState() {
+        LOGFUNC;
         return to;
     }
 

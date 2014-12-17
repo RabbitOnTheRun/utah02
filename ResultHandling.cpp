@@ -30,7 +30,9 @@ namespace utah {
 
                 Message message(externalEffect.generateMessage());
                 message.setValue(result_.value);
-                OutPort outPort(threadName_, stateMachineName_, externalEffect.getPort());
+                OutPort outPort(externalEffect.getPort() , stateMachineName_, threadName_);
+                
+                //    Port(const Symbol* portName_, const Symbol* stateMachine, const Symbol* thread_);
                 MessageWithOutPort messageWithOutPort(message, outPort);
                 resultMessage.push_back(messageWithOutPort);
             }

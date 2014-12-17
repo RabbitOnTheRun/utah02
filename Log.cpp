@@ -7,6 +7,7 @@
  */
 
 #include <string>
+#include <iostream>
 #include <mutex>
 #include "Log.h"
 #include "jsonMapper/FileIOException.h"
@@ -35,16 +36,21 @@ namespace utah {
     void Log::message(const std::string from, const Symbol* to, const Symbol* event) {
         write(from + " -> " + to->getName() + " : " + event->getName() + "\n");
     }
-    void Log::message(const Symbol*  from, const Symbol* to, const Symbol* event) {
+
+    void Log::message(const Symbol* from, const Symbol* to, const Symbol* event) {
         write(from->getName() + " -> " + to->getName() + " : " + event->getName() + "\n");
     }
-    
+
     void Log::state(std::string stateMachine, Symbol* state) {
         write("note over " + stateMachine + " : " + state->getName() + "\n");
     }
 
     void Log::methodCall(std::string file, std::string functionName) {
         write(file + "::" + functionName + " called\n");
+    }
+
+    void Log::line(std::string file, std::string functionName, int lineNum) {
+        write(file + "::" + functionName + "::" + /*std::to_string(lineNum) + */ " visited\n");
     }
 
     void Log::value(std::string file, std::string functionName, std::string valueName, std::string value) {

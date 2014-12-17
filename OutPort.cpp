@@ -12,12 +12,12 @@ namespace utah {
     //    OutPort::OutPort() {
     //  }
 
-    OutPort::OutPort(std::string portName_, std::string stateMachine, std::string thread_) :
-    Port(portName_, stateMachine, thread_) {
+    OutPort::OutPort(std::string portName_, std::string stateMachine_, std::string thread_) :
+    Port(portName_, stateMachine_, thread_) {
     }
 
     OutPort::OutPort(const Symbol* portName_, const Symbol* stateMachine_, const Symbol* thread_) :
-    Port(portName_, stateMachine, thread_) {
+    Port(portName_, stateMachine_, thread_) {
     }
 
     //OutPort::OutPort(const OutPort& orig) {

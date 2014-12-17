@@ -32,6 +32,7 @@ namespace utah {
         void setEventQueue(std::shared_ptr<EventQueue> eventQueue);
         void addStateMachine(std::string& stateMachineName_, StateMachine* stateMachine_);
         void setComponent(std::string& stateMachineName_, ComponentIF* component_);
+        void setProcess(Process* process_);
     private:
         Thread();
         std::thread thread_;

@@ -16,8 +16,8 @@ namespace utah {
     class InPort : public Port {
     public:
         InPort();
-        InPort(std::string portName_, std::string stateMachine, std::string thread_);
-        InPort(Symbol* portName_, Symbol* stateMachine, Symbol* thread_);
+        InPort(std::string portName_, std::string stateMachine_, std::string thread_);
+        InPort(Symbol* portName_, Symbol* stateMachine_, Symbol* thread_);
         //InPort(const InPort& orig);
         virtual ~InPort();
     private:

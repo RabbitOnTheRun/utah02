@@ -10,7 +10,6 @@
       <itemPath>jsonMapper/GuardMapper.h</itemPath>
       <itemPath>jsonMapper/InOutPortMapper.cpp</itemPath>
       <itemPath>jsonMapper/InOutPortMapper.h</itemPath>
-      <itemPath>InPort.cpp</itemPath>
       <itemPath>jsonMapper/JsonFormatException.cpp</itemPath>
       <itemPath>jsonMapper/JsonFormatException.h</itemPath>
       <itemPath>jsonMapper/JsonMapper.cpp</itemPath>
@@ -51,6 +50,7 @@
       <itemPath>ExternalEffect.cpp</itemPath>
       <itemPath>Guard.cpp</itemPath>
       <itemPath>GuardIF.cpp</itemPath>
+      <itemPath>InPort.cpp</itemPath>
       <itemPath>Log.cpp</itemPath>
       <itemPath>MapOfAction.cpp</itemPath>
       <itemPath>MapOfGuard.cpp</itemPath>
@@ -695,6 +695,21 @@
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f25">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f25</output>
         </linkerTool>
       </folder>
       <folder path="TestFiles/f3">
@@ -1491,6 +1506,21 @@
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f25">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f25</output>
         </linkerTool>
       </folder>
       <folder path="TestFiles/f3">

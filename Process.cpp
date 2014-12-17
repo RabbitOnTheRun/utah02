@@ -6,7 +6,7 @@
  */
 
 #include "Process.h"
-
+#include "Log.h"
 namespace utah {
 
     Process::Process(PortMap portMap_) : portMap(portMap_) {
@@ -19,22 +19,32 @@ namespace utah {
     }
 
     void Process::addThread(Symbol* threadName, Thread* thread_) {
+        LOGFUNC;
+        LOGVALUE("threadName", threadName->getName());
         threadMap[threadName] = thread_;
 
     }
 
     void Process::addThread(std::string threadName, Thread* thread_) {
+        LOGFUNC;
+        LOGVALUE("threadName", threadName);
         threadMap[Symbol::create(threadName)] = thread_;
     }
 
     void Process::push(MessageWithInPort messageWithInPort_) {
+        LOGFUNC;
+        LOGVALUE("methodName", messageWithInPort_.getMessage().getMessageName()->getName());
+
         InPort inPort = messageWithInPort_.getInPort();
         const Symbol* threadName = inPort.thread;
+        LOGVALUE("threadName", threadName->getName())
         Thread* thread = threadMap[threadName];
         thread->push(messageWithInPort_);
     }
 
     Thread* Process::getThread(const Symbol* threadName) {
+        LOGFUNC;
+        LOGVALUE("threadName", threadName->getName());
         return threadMap[threadName];
     }
 

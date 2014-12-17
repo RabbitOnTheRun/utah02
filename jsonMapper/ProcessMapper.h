@@ -17,7 +17,7 @@ namespace jsonMapper {
         ProcessMapper();
         //ProcessMapper(const ProcessMapper& orig);
        virtual ~ProcessMapper();
-        static utah::Process* create(std::string path_, std::string fileName_);
+        static utah::Process* create(std::string path_, std::string processFileName_, std::string portMapFileName_);
     private:
 
     };
