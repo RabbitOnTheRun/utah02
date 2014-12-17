@@ -11,9 +11,6 @@
 
 namespace utah {
 
-    //Guard::Guard() {
-    //}
-
     Guard::Guard(std::string name_, std::string arg_) : name(Symbol::create(name_)), arg(arg_) {
 
     }

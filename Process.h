@@ -13,6 +13,7 @@
 #include "Thread.h"
 #include "MessageWithInPort.h"
 #include "PortMap.h"
+#include "ComponentIF.h"
 
 namespace utah {
 
@@ -26,10 +27,11 @@ namespace utah {
         void push(MessageWithInPort messageWithInPort_);
         Thread* getThread(const Symbol* threadName);
         const PortMap portMap;
+        void setComponent(std::string& threadName_, std::string& stateMachineName_, ComponentIF* component_);
     private:
         std::map<const Symbol*, Thread*> threadMap;
         //std::map<Symbol*, Thread*> stateMachineMap;
-       // std::map<Symbol*, std::map<Symbol*, InPort>
+        // std::map<Symbol*, std::map<Symbol*, InPort>
     };
 }
 #endif	/* PROCESS_H */

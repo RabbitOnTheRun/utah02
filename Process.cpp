@@ -9,7 +9,7 @@
 
 namespace utah {
 
-    Process::Process(PortMap portMap_) : portMap(portMap_){
+    Process::Process(PortMap portMap_) : portMap(portMap_) {
     }
 
     //Process::Process(const Process& orig) {
@@ -17,20 +17,30 @@ namespace utah {
 
     Process::~Process() {
     }
-    void Process::addThread(Symbol* threadName, Thread* thread_){
+
+    void Process::addThread(Symbol* threadName, Thread* thread_) {
         threadMap[threadName] = thread_;
-                
+
     }
-    void Process::addThread(std::string threadName, Thread* thread_){
-        threadMap[Symbol::create(threadName)] = thread_;        
+
+    void Process::addThread(std::string threadName, Thread* thread_) {
+        threadMap[Symbol::create(threadName)] = thread_;
     }
-    void Process::push(MessageWithInPort messageWithInPort_){
+
+    void Process::push(MessageWithInPort messageWithInPort_) {
         InPort inPort = messageWithInPort_.getInPort();
         const Symbol* threadName = inPort.thread;
         Thread* thread = threadMap[threadName];
         thread->push(messageWithInPort_);
     }
-    Thread* Process::getThread(const Symbol* threadName){
+
+    Thread* Process::getThread(const Symbol* threadName) {
         return threadMap[threadName];
+    }
+
+    void Process::setComponent(std::string& threadName_, std::string& stateMachineName_, ComponentIF* component_) {
+        const Symbol* name = Symbol::create(threadName_);
+        Thread* thread = getThread(name);
+        thread->setComponent(stateMachineName_, component_);
     }
 }

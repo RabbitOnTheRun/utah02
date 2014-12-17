@@ -18,8 +18,8 @@ namespace jsonMapper {
     GuardMapper::~GuardMapper() {
     }
 
-     utah::Guard GuardMapper::create(const picojson::value& obj) {
-       std::string name = PicoJsonIF::getString(obj, "name");
+    utah::Guard GuardMapper::create(const picojson::value& obj) {
+        std::string name = PicoJsonIF::getString(obj, "name");
         std::string arg = PicoJsonIF::getString(obj, "arg");
         utah::Guard result(name, arg);
         return result;

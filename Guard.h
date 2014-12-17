@@ -16,7 +16,6 @@ namespace utah {
 
     class Guard {
     public:
-        //Guard();
         Guard(std::string name_, std::string arg_);
         //Guard(const Guard& orig);
         virtual ~Guard();

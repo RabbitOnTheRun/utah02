@@ -1,0 +1,2 @@
+StateMachine.cpp::processMessage::current = b
+StateMachine.cpp::processMessage::current = c

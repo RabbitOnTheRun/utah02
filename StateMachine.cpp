@@ -4,10 +4,12 @@
  * 
  * Created on 2014/12/07, 0:56
  */
+#include <iostream>
 #include <assert.h>
 #include <vector>
 #include <algorithm>
 #include "StateMachine.h"
+#include "Log.h"
 namespace utah {
 
     StateMachine::StateMachine(std::string name_, std::string threadName_) :
@@ -48,6 +50,11 @@ namespace utah {
         matched[0]->generateEmission(result, threadName, name, result_);
         const Symbol* nextState = matched[0]->getNextState();
         current = stateMap[nextState];
+        LOGVALUE("current", current->getName()->getName());
+        //std::cout << "*** current = ";
+        //std::cout << current->getName()->getName();
+        //std::cout << " ***\n";
+        
     }
 
     void StateMachine::setCurrent(State* current_) {

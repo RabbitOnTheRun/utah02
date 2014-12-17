@@ -16,10 +16,10 @@
     "resultHandling" : [] 
  } , 
 
-{ "from" : "b" ,"to" : "c" ,
+{ "from" : "b" ,"to" : "g" ,
 	"message" : {"name" : "v" ,"type" : "NULL" } , 
-	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
-	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "yama" } ,
+	"guard" : {"name" : "L", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "jjj" , "methodArgument" : "yama" } ,
 	"resultHandling" : [ 
 		{"resultCode" : "success", "messageEmission" : 
 			{"port" : "z" ,"messageName" : "work" ,"argType" : "NULL" ,"givenArgument" : "NULL" }

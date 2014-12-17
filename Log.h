@@ -15,8 +15,8 @@
 
 namespace utah {
 
-#define LOGFUNC Log::func.methodCall(__FILE__, __FUNCTION__)
-#define LOGVALUE(name_, value_) Log::func.value(__FILE__, __FUNCTION__, name_, (value_));
+#define LOGFUNC Log::function.methodCall(__FILE__, __FUNCTION__)
+#define LOGVALUE(name_, value_) Log::function.value(__FILE__, __FUNCTION__, name_, (value_));
 
     class Log {
     public:

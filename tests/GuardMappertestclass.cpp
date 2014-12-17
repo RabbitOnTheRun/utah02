@@ -23,9 +23,7 @@ void GuardMappertestclass::tearDown() {
 }
 
 void GuardMappertestclass::testCreate() {
-    //const picojson::value& obj;
     const picojson::value& obj = jsonMapper::PicoJsonIF::JSONFileToObj("data/Guard.txt");
-    //jsonMapper::GuardMapper guardMapper;
     utah::Guard result = jsonMapper::GuardMapper::create(obj);
     if (true /*check result*/) {
         CPPUNIT_ASSERT("L" == result.getName()->getName());

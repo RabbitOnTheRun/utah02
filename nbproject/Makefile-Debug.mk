@@ -102,6 +102,7 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f7 \
 	${TESTDIR}/TestFiles/f9 \
 	${TESTDIR}/TestFiles/f23 \
+	${TESTDIR}/TestFiles/f24 \
 	${TESTDIR}/TestFiles/f16 \
 	${TESTDIR}/TestFiles/f12 \
 	${TESTDIR}/TestFiles/f13 \
@@ -442,6 +443,10 @@ ${TESTDIR}/TestFiles/f23: ${TESTDIR}/tests/PortMapMappertestclass.o ${TESTDIR}/t
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f23 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f24: ${TESTDIR}/tests/ProcessMapperPushtestclass.o ${TESTDIR}/tests/ProcessMapperPushtestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f24 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f16: ${TESTDIR}/tests/ProcessMappertestclass.o ${TESTDIR}/tests/ProcessMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f16 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -605,6 +610,18 @@ ${TESTDIR}/tests/PortMapMappertestrunner.o: tests/PortMapMappertestrunner.cpp
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/PortMapMappertestrunner.o tests/PortMapMappertestrunner.cpp
+
+
+${TESTDIR}/tests/ProcessMapperPushtestclass.o: tests/ProcessMapperPushtestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ProcessMapperPushtestclass.o tests/ProcessMapperPushtestclass.cpp
+
+
+${TESTDIR}/tests/ProcessMapperPushtestrunner.o: tests/ProcessMapperPushtestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ProcessMapperPushtestrunner.o tests/ProcessMapperPushtestrunner.cpp
 
 
 ${TESTDIR}/tests/ProcessMappertestclass.o: tests/ProcessMappertestclass.cpp 
@@ -1464,6 +1481,7 @@ ${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 	    ${TESTDIR}/TestFiles/f7 || true; \
 	    ${TESTDIR}/TestFiles/f9 || true; \
 	    ${TESTDIR}/TestFiles/f23 || true; \
+	    ${TESTDIR}/TestFiles/f24 || true; \
 	    ${TESTDIR}/TestFiles/f16 || true; \
 	    ${TESTDIR}/TestFiles/f12 || true; \
 	    ${TESTDIR}/TestFiles/f13 || true; \

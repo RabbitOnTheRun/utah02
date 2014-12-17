@@ -35,7 +35,6 @@ void Transition2testclass::testExecute() {
     utah::Guard guard_("NULL", "NULL");
     utah::MethodInvocation methodInvocation("success", "argNULL");
     utah::Transition transition("c", "d", messageReception, guard_, methodInvocation);
-    //transition.setMethodInvocation(methodInvocation);
 
     utah::Result result = transition.execute(message_, component_);
     if (true /*check result*/) {
@@ -75,12 +74,6 @@ void Transition2testclass::testIfMatch() {
     utah::Guard guard_("yes", "x");
     utah::MethodInvocation methodInvocation_("NULL", "NULL");
     utah::Transition transition("c", "d", messageReception_, guard_, methodInvocation_);
-
-    //utah::MessageReception messageReception_("a", "misc");
-    //transition.setMessageReception(messageReception_);
-
-    //utah::Guard guard_("yes", "x");
-    //transition.setGuard(guard_);
 
     bool result = transition.ifMatch(message_, component_);
     if (true /*check result*/) {

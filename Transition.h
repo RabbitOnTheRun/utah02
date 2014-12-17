@@ -22,17 +22,13 @@ namespace utah {
 
     class Transition {
     public:
-        //Transition(const std::string from_, const std::string to_);
         Transition(const Symbol* from_, const Symbol* to_, MessageReception messageReception_);
         Transition(const std::string from_, const std::string to_, MessageReception messageReception_);
         Transition(const Symbol* from_, const Symbol* to_, MessageReception messageReception_, Guard guard_, MethodInvocation methodInvocation_);
         Transition(const std::string from_, const std::string to_, MessageReception messageReception_, Guard guard_, MethodInvocation methodInvocation_);
-        //const MessageReception& messageReception_);
-        //Transition(const Transition& orig);
+
         virtual ~Transition();
-        //void setMessageReception(MessageReception messageReception_);
-        //void setGuard(Guard guard_);
-        //void setMethodInvocation(MethodInvocation methodInvocation_);
+
         void setResultHandling(ResultHandling resultHandling_);
         void addExternalEffect(ExternalEffect externalEffect);
         bool ifMatch(Message& message_, ComponentIF* component_);
@@ -49,7 +45,6 @@ namespace utah {
         const Guard guard;
         const MethodInvocation methodInvocation;
         ResultHandling resultHandling;
-        //message
     };
 }
 #endif	/* TRANSITION_H */

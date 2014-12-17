@@ -26,7 +26,7 @@
       <itemPath>jsonMapper/PortMapMapper.cpp</itemPath>
       <itemPath>jsonMapper/PortMapMapper.h</itemPath>
       <itemPath>jsonMapper/ProcessMapper.cpp</itemPath>
-      <itemPath>ProcessMapper.h</itemPath>
+      <itemPath>jsonMapper/ProcessMapper.h</itemPath>
       <itemPath>jsonMapper/ResultHandlingMapper.cpp</itemPath>
       <itemPath>jsonMapper/ResultHandlingMapper.h</itemPath>
       <itemPath>jsonMapper/StateMachineMapper.cpp</itemPath>
@@ -188,6 +188,14 @@
         <itemPath>tests/PortMapMappertestclass.cpp</itemPath>
         <itemPath>tests/PortMapMappertestclass.h</itemPath>
         <itemPath>tests/PortMapMappertestrunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f24"
+                     displayName="ProcessMapperPush"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/ProcessMapperPushtestclass.cpp</itemPath>
+        <itemPath>tests/ProcessMapperPushtestclass.h</itemPath>
+        <itemPath>tests/ProcessMapperPushtestrunner.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f16"
                      displayName="ProcessMappertest"
@@ -410,8 +418,6 @@
       </item>
       <item path="Process.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="ProcessMapper.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Result.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Result.h" ex="false" tool="3" flavor2="0">
@@ -677,6 +683,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f24">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f24</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f3">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -839,6 +859,8 @@
       </item>
       <item path="jsonMapper/ProcessMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="jsonMapper/ProcessMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/ResultHandlingMapper.cpp"
             ex="false"
             tool="1"
@@ -962,6 +984,18 @@
       <item path="tests/PortMapMappertestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/PortMapMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ProcessMapperPushtestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/ProcessMapperPushtestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ProcessMapperPushtestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="tests/ProcessMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1180,8 +1214,6 @@
       </item>
       <item path="Process.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="ProcessMapper.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Result.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Result.h" ex="false" tool="3" flavor2="0">
@@ -1447,6 +1479,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f24">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f24</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f3">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -1609,6 +1655,8 @@
       </item>
       <item path="jsonMapper/ProcessMapper.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="jsonMapper/ProcessMapper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="jsonMapper/ResultHandlingMapper.cpp"
             ex="false"
             tool="1"
@@ -1732,6 +1780,18 @@
       <item path="tests/PortMapMappertestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/PortMapMappertestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/ProcessMapperPushtestclass.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/ProcessMapperPushtestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/ProcessMapperPushtestrunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="tests/ProcessMappertestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>

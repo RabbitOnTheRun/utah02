@@ -10,14 +10,7 @@
 
 namespace utah {
 
-    //Transition::Transition(const std::string from_, const std::string to_) :
-    //const MessageReception& messageReception_) :
-    //from(Symbol::create(from_)), to(Symbol::create(to_)) {
-    //messageReception(messageReception_) {
-    //}
-
     Transition::Transition(const std::string from_, const std::string to_, MessageReception messageReception_) :
-    //const MessageReception& messageReception_) :
     from(Symbol::create(from_)), to(Symbol::create(to_)), messageReception(messageReception_), guard(Guard("NULL", "NULL")), methodInvocation(MethodInvocation("NULL", "NULL")) {
     }
 
@@ -26,7 +19,6 @@ namespace utah {
     }
 
     Transition::Transition(const std::string from_, const std::string to_, MessageReception messageReception_ , Guard guard_, MethodInvocation methodInvocation_) :
-    //const MessageReception& messageReception_) :
     from(Symbol::create(from_)), to(Symbol::create(to_)), messageReception(messageReception_), guard(guard_), methodInvocation(methodInvocation_) {
     }
 
@@ -39,18 +31,6 @@ namespace utah {
 
     Transition::~Transition() {
     }
-
-    /*void Transition::setMessageReception(MessageReception messageReception_) {
-        messageReception = messageReception_;
-    } */
-
-    //void Transition::setGuard(Guard guard_) {
-    //    guard = guard_;
-    //}
-
-    //void Transition::setMethodInvocation(MethodInvocation methodInvocation_) {
-    //    methodInvocation = methodInvocation_;
-    //}
 
     void Transition::setResultHandling(ResultHandling resultHandling_) {
         resultHandling = resultHandling_;
