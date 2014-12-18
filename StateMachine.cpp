@@ -53,6 +53,7 @@ namespace utah {
         matched[0]->generateEmission(result, threadName, name, result_);
         const Symbol* nextState = matched[0]->getNextState();
         current = stateMap[nextState];
+        Log::sequence.state(this->name->getName(), current->getName());
         LOGVALUE("current state", current->getName()->getName());
     }
 

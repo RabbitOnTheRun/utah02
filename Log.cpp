@@ -23,6 +23,7 @@ namespace utah {
     //}
 
     Log::~Log() {
+        write("\n@enduml\n");
     }
 
     Log::Log(const std::string fileName) {
@@ -31,6 +32,7 @@ namespace utah {
             throw jsonMapper::FileIOException(" (NOT JSON Exception) Log::Log() : cannot open file, fileName = " + fileName);
             // should be avoid dual direction dependency
         }
+        write("@startuml\n");
     }
 
     void Log::message(const std::string from, const Symbol* to, const Symbol* event) {
@@ -41,7 +43,7 @@ namespace utah {
         write(from->getName() + " -> " + to->getName() + " : " + event->getName() + "\n");
     }
 
-    void Log::state(std::string stateMachine, Symbol* state) {
+    void Log::state(std::string stateMachine, const Symbol* state) {
         write("note over " + stateMachine + " : " + state->getName() + "\n");
     }
 

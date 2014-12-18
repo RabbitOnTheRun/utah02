@@ -14,6 +14,7 @@
 #include "jsonMapper/ProcessMapper.h"
 #include "ComponentSample1.h"
 #include "MessageWithInPort.h"
+#include "Log.h"
 
 using namespace std;
 
@@ -35,6 +36,7 @@ int main(int argc, char** argv) {
         utah::Message message("start", "NULL");
         utah::MessageWithInPort messageWithInPort(message, inPort);
 
+        utah::Log::sequence.message("main", inPort.stateMachine, message.getMessageName());
         processP->push(messageWithInPort);
     }
     //void push(MessageWithInPort messageWithInPort_);
@@ -47,18 +49,21 @@ int main(int argc, char** argv) {
     utah::InPort inPort2("CRUISECONTROLLER", "CRUISECONTROLLER", "CRUISECONTROLLER");
     utah::Message message2("engineOn", "NULL");
     utah::MessageWithInPort messageWithInPort2(message2, inPort2);
+    utah::Log::sequence.message("main", inPort2.stateMachine, message2.getMessageName());
     processP->push(messageWithInPort2);
     sleep(1); // ugly
 
     utah::InPort inPort3("CRUISECONTROLLER", "CRUISECONTROLLER", "CRUISECONTROLLER");
     utah::Message message3("on", "NULL");
     utah::MessageWithInPort messageWithInPort3(message3, inPort3);
+    utah::Log::sequence.message("main", inPort3.stateMachine, message3.getMessageName());
     processP->push(messageWithInPort3);
     sleep(1); // ugly
 
     utah::InPort inPort4("CRUISECONTROLLER", "CRUISECONTROLLER", "CRUISECONTROLLER");
     utah::Message message4("off", "NULL");
     utah::MessageWithInPort messageWithInPort4(message4, inPort4);
+    utah::Log::sequence.message("main", inPort4.stateMachine, message4.getMessageName());
     processP->push(messageWithInPort4);
     sleep(1); // ugly
 

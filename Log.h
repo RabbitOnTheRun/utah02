@@ -33,7 +33,7 @@ namespace utah {
 
         void message(const std::string from, const Symbol* to, const Symbol* event);
         void message(const Symbol* from, const Symbol* to, const Symbol* event);
-        void state(std::string stateMachine, Symbol* state);
+        void state(std::string stateMachine, const Symbol* state);
         void methodCall(std::string file, std::string functionName);
         void line(std::string file, std::string functionName, int lineNum);
         void value(std::string file, std::string functionName, std::string valueName, std::string value);

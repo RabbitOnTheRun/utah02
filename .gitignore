@@ -1,3 +1,8 @@
 /build/*
 /dist/*
 *.stackdump
+plantuml.jar
+sequenceLog.png
+sequenceLog.txt
+functionCallLog.png
+functionCallLog.txt
