@@ -1,0 +1,53 @@
+[
+{ "outPort" : 
+  {"port" : "SPEC" , "stateMachine" : "CRUISECONTROLLER" , "thread" : "CRUISECONTROLLER"} , 
+  "inPort" : 
+  {"port" : "SPEC" , "stateMachine" : "SPEC" , "thread" : "SPEC"}
+},
+
+{ "outPort" : 
+  {"port" : "SENSORSCAN" , "stateMachine" : "CRUISECONTROLLER" , "thread" : "CRUISECONTROLLER"} , 
+  "inPort" : 
+  {"port" : "SENSORSCAN" , "stateMachine" : "SENSORSCAN" , "thread" : "SENSORSCAN"}
+},
+{ "outPort" : 
+  {"port" : "SPEEDCONTROL" , "stateMachine" : "CRUISECONTROLLER" , "thread" : "CRUISECONTROLLER"} , 
+  "inPort" : 
+  {"port" : "SPEEDCONTROL" , "stateMachine" : "SPEEDCONTROL" , "thread" : "SPEEDCONTROL"}
+},
+{ "outPort" : 
+  {"port" : "INPUTSPEED" , "stateMachine" : "CRUISECONTROLLER" , "thread" : "CRUISECONTROLLER"} , 
+  "inPort" : 
+  {"port" : "INPUTSPEED" , "stateMachine" : "INPUTSPEED" , "thread" : "INPUTSPEED"}
+},
+
+{ "outPort" : 
+  {"port" : "SPEEDCONTROL" , "stateMachine" : "INPUTSPEED" , "thread" : "INPUTSPEED"} , 
+  "inPort" : 
+  {"port" : "SPEEDCONTROL" , "stateMachine" : "SPEEDCONTROL" , "thread" : "SPEEDCONTROL"}
+},
+{ "outPort" : 
+  {"port" : "SPEC" , "stateMachine" : "SENSORSCAN" , "thread" : "SENSORSCAN"} , 
+  "inPort" : 
+  {"port" : "SPEC" , "stateMachine" : "SPEC" , "thread" : "SPEC"}
+},
+{ "outPort" : 
+  {"port" : "INPUTSPEED" , "stateMachine" : "SENSORSCAN" , "thread" : "SENSORSCAN"} , 
+  "inPort" : 
+  {"port" : "INPUTSPEED" , "stateMachine" : "INPUTSPEED" , "thread" : "INPUTSPEED"}
+},
+{ "outPort" : 
+  {"port" : "CRUISECONTROLLER" , "stateMachine" : "SENSORSCAN" , "thread" : "SENSORSCAN"} , 
+  "inPort" : 
+  {"port" : "CRUISECONTROLLER" , "stateMachine" : "SPEC" , "thread" : "CRUISECONTROLLER"}
+},
+{ "outPort" : 
+  {"port" : "INPUTSPEED" , "stateMachine" : "SPEEDCONTROL" , "thread" : "SPEEDCONTROL"} , 
+  "inPort" : 
+  {"port" : "INPUTSPEED" , "stateMachine" : "INPUTSPEED" , "thread" : "INPUTSPEED"}
+}
+
+
+
+
+]

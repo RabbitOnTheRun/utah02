@@ -1,0 +1,8 @@
+{ "process" :
+[{"thread" : "CRUISECONTROLLER", "stateMachine" : ["CRUISECONTROLLER"] },
+ {"thread" : "INPUTSPEED", "stateMachine" : ["INPUTSPEED"] },
+ {"thread" : "SENSORSCAN", "stateMachine" : ["SENSORSCAN"] },
+ {"thread" : "SPEC", "stateMachine" : ["SPEC"] },
+ {"thread" : "SPEEDCONTROL", "stateMachine" : ["SPEEDCONTROL"] }
+]
+}

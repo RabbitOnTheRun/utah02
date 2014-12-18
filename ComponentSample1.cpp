@@ -40,5 +40,7 @@ namespace utah {
         };
 
         this->addAction(function_, "success");
+        this->addAction(function_, "getSpeedFunction");
+        this->addAction(function_, "setThrottle");
     }
 }

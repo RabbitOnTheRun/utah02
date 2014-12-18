@@ -43,7 +43,10 @@ namespace utah {
                 }); */
 
 
-        assert(1 == matched.size());
+        if (1 != matched.size()) {
+            assert(1 == matched.size());
+        }
+        //assert(1 == matched.size());
         // execute action
         Result result = matched[0]->execute(message_, component);
         // resultHandling

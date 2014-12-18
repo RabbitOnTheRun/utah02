@@ -7,6 +7,7 @@
 
 #include "ResultHandling.h"
 #include "Result.h"
+#include "Sym.h"
 
 namespace utah {
 
@@ -26,7 +27,8 @@ namespace utah {
     void ResultHandling::generateEmission(Result result_, Symbol* threadName_, Symbol* stateMachineName_, std::vector<MessageWithOutPort>& resultMessage) {
         //std::vector<MessageWithOutPort> out;
         for (ExternalEffect externalEffect : externalEffects) {
-            if (result_.resultCode == externalEffect.getResultCode()) {
+            if (result_.resultCode == externalEffect.getResultCode() ||
+                    result_.resultCode == Sym::Null) {
 
                 Message message(externalEffect.generateMessage());
                 message.setValue(result_.value);
