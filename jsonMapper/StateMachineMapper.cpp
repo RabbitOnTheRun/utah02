@@ -13,6 +13,7 @@
 #include "StatePartMapper.h"
 #include "TransitionPartMapper.h"
 #include "InOutPortMapper.h"
+#include "AcceptableMessageMapper.h"
 namespace jsonMapper {
 
     StateMachineMapper::StateMachineMapper() {
@@ -43,19 +44,23 @@ namespace jsonMapper {
         std::vector<const utah::Symbol*> outPorts;
         InOutPortMapper::create(value.get("outPort"), outPorts);
 
+        std::vector<const utah::Symbol*> acceptableMessage;
+        AcceptableMessageMapper::create(value.get("acceptableMessage"), acceptableMessage);
+
         stateMachine->setStateMap(stateMap);
         stateMachine->setTransitions(transitions);
         stateMachine->setInPorts(inPorts);
         stateMachine->setOutPorts(outPorts);
-        
+        stateMachine->setAcceptableMessage(acceptableMessage);
+
         stateMachine->setCurrent("start"); // should use symbol
 
         return stateMachine;
     }
 
     void StateMachineMapper::setTransitionToState(
-        std::vector<utah::Transition*>& transitions_, 
-        std::map<const utah::Symbol*, utah::State*>& stateMap_) {
+            std::vector<utah::Transition*>& transitions_,
+            std::map<const utah::Symbol*, utah::State*>& stateMap_) {
 
         for (utah::Transition* transition : transitions_) {
             const utah::Symbol* from = transition->getFrom();

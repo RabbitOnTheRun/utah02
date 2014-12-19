@@ -36,4 +36,9 @@
  } 
 ] , 
 
-"name" : "SPEC" }
+
+"acceptableMessage" : ["engineOff" , "engineOn" , "start" , "clearSpeed" ] 
+, 
+
+"name" : "SPEC" 
+}

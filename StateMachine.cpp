@@ -85,6 +85,10 @@ namespace utah {
         outPorts = outPorts_;
     }
 
+    void StateMachine::setAcceptableMessage(std::vector<const Symbol*> acceptableMessage_) {
+        acceptableMessage = acceptableMessage_;
+    }
+
     Symbol* StateMachine::getName() {
         return name;
     }

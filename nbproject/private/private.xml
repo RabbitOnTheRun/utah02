@@ -10,6 +10,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/MethodInvocation.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Port.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/Message.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/AcceptableMessageMapper.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/StateMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/ThreadMappertestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/PortMapMappertestclass.cpp</file>
@@ -40,6 +41,7 @@
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/Transitiontestclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/Transition2testclass.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/GuardMapper.h</file>
+            <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/jsonMapper/AcceptableMessageMapper.cpp</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/ResultHandling.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/GuardIFtestclass1.h</file>
             <file>file:/C:/Users/ntanaka/Desktop/src/NetBeans/utah02/tests/ThreadMapper2testclass.cpp</file>

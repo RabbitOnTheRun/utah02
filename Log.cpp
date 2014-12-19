@@ -44,7 +44,7 @@ namespace utah {
     }
 
     void Log::state(std::string stateMachine, const Symbol* state) {
-        write("note over " + stateMachine + " : " + state->getName() + "\n");
+        write("hnote over " + stateMachine + " : " + state->getName() + "\n");
     }
 
     void Log::methodCall(std::string file, std::string functionName) {

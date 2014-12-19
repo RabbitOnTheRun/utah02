@@ -66,6 +66,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Thread.o \
 	${OBJECTDIR}/Transition.o \
 	${OBJECTDIR}/Value.o \
+	${OBJECTDIR}/jsonMapper/AcceptableMessageMapper.o \
 	${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o \
 	${OBJECTDIR}/jsonMapper/FileIOException.o \
 	${OBJECTDIR}/jsonMapper/GuardMapper.o \
@@ -296,6 +297,11 @@ ${OBJECTDIR}/Value.o: Value.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Value.o Value.cpp
+
+${OBJECTDIR}/jsonMapper/AcceptableMessageMapper.o: jsonMapper/AcceptableMessageMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/AcceptableMessageMapper.o jsonMapper/AcceptableMessageMapper.cpp
 
 ${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o: jsonMapper/ExternalEffectMapper.cpp 
 	${MKDIR} -p ${OBJECTDIR}/jsonMapper
@@ -1193,6 +1199,19 @@ ${OBJECTDIR}/Value_nomain.o: ${OBJECTDIR}/Value.o Value.cpp
 	    $(COMPILE.cc) -O2 -I. -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Value_nomain.o Value.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Value.o ${OBJECTDIR}/Value_nomain.o;\
+	fi
+
+${OBJECTDIR}/jsonMapper/AcceptableMessageMapper_nomain.o: ${OBJECTDIR}/jsonMapper/AcceptableMessageMapper.o jsonMapper/AcceptableMessageMapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/jsonMapper
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/jsonMapper/AcceptableMessageMapper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -I. -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/jsonMapper/AcceptableMessageMapper_nomain.o jsonMapper/AcceptableMessageMapper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/jsonMapper/AcceptableMessageMapper.o ${OBJECTDIR}/jsonMapper/AcceptableMessageMapper_nomain.o;\
 	fi
 
 ${OBJECTDIR}/jsonMapper/ExternalEffectMapper_nomain.o: ${OBJECTDIR}/jsonMapper/ExternalEffectMapper.o jsonMapper/ExternalEffectMapper.cpp 

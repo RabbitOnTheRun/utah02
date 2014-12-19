@@ -40,4 +40,9 @@
  } 
 ] , 
 
-"name" : "INPUTSPEED" }
+
+"acceptableMessage" : ["engineOff" , "engineOn" , "getSpeed" , "start" ] 
+, 
+
+"name" : "INPUTSPEED" 
+}

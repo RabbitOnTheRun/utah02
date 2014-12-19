@@ -101,4 +101,9 @@
  } 
 ] , 
 
-"name" : "SENSORSCAN" }
+
+"acceptableMessage" : ["engineOff_" , "on_" , "engineOn_" , "off_" , "accelerator_" , "start" , "resume_" , "brake_" , "clearSpeed" ] 
+, 
+
+"name" : "SENSORSCAN" 
+}

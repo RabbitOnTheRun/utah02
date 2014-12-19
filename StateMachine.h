@@ -36,6 +36,7 @@ namespace utah {
         void setTransitions(std::vector<Transition*> transitions_);
         void setInPorts(std::vector<const Symbol*> inPorts_);
         void setOutPorts(std::vector<const Symbol*> outPorts_);
+        void setAcceptableMessage(std::vector<const Symbol*> acceptableMessage_);
         Symbol* getName();
     private:
         //std::map<Symbol*, OutPort*> outPortMap;
@@ -44,6 +45,7 @@ namespace utah {
         State* current;
         std::map<const Symbol*, State*> stateMap;
         std::vector<Transition*> transitions;
+        std::vector<const Symbol*> acceptableMessage;
         ComponentIF* component;
         std::vector<const Symbol*> inPorts;
         std::vector<const Symbol*> outPorts;

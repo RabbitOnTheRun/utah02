@@ -82,4 +82,9 @@
  } 
 ] , 
 
-"name" : "SPEEDCONTROL" }
+
+"acceptableMessage" : ["start" , "returnSpeed" , "enableControl" , "clearSpeed" , "recordSpeed" , "disableControl" , "speed" ] 
+, 
+
+"name" : "SPEEDCONTROL" 
+}

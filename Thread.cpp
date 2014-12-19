@@ -5,6 +5,9 @@
  * Created on 2014/12/03, 13:22
  */
 
+#include <unistd.h>
+#include <iostream>
+
 #include "Sym.h"
 #include "Thread.h"
 #include "MessageWithOutPort.h"
@@ -12,7 +15,6 @@
 #include "Process.h"
 #include "Log.h"
 
-#include <iostream>
 namespace utah {
 
     Thread::Thread() {
@@ -84,6 +86,7 @@ namespace utah {
                 Log::sequence.message(outPort.stateMachine, inPort.stateMachine, message.getMessageName());
 
                 peerThread->push(messageWithInPort);
+                sleep(1); // for clean sequence diagram
             }
 
         }
