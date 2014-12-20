@@ -1,0 +1,72 @@
+{"inPort" : 
+ ["A"] , 
+"outPort" : 
+ ["B" , "C" , "D" , "E" , "actor"] , 
+
+"state" : 
+ [[ "start" , [] ] , [ "waitB" , [] ] , [ "waitC" , [] ] , [ "waitD" , [] ] , [ "waitE" , [] ]] , 
+
+"transition" : [ 
+{ "from" : "start" ,"to" : "waitB" ,
+	"message" : {"name" : "start" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [ 
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "B" ,"messageName" : "start" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		} ,
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "C" ,"messageName" : "start" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		} ,
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "D" ,"messageName" : "start" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		} ,
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "E" ,"messageName" : "start" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		}
+	 ] 
+ } , 
+
+{ "from" : "waitB" ,"to" : "waitC" ,
+	"message" : {"name" : "responseB" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [] 
+ } , 
+
+{ "from" : "waitC" ,"to" : "waitD" ,
+	"message" : {"name" : "responseC" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [] 
+ } , 
+
+{ "from" : "waitD" ,"to" : "waitE" ,
+	"message" : {"name" : "responseD" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [] 
+ } , 
+
+{ "from" : "waitE" ,"to" : "start" ,
+	"message" : {"name" : "responseE" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [ 
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "actor" ,"messageName" : "end" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		}
+	 ] 
+ } 
+] , 
+
+
+"acceptableMessage" : ["start" , "responseD" , "responseC" , "responseB" , "responseE" ] 
+, 
+
+
+"emitMessage" : [{"port" : "B" , "messageName" : "start" } , {"port" : "C" , "messageName" : "start" } , {"port" : "D" , "messageName" : "start" } , {"port" : "E" , "messageName" : "start" } , {"port" : "actor" , "messageName" : "end" } ] 
+, 
+
+"name" : "A" 
+}

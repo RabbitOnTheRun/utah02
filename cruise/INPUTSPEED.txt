@@ -44,5 +44,9 @@
 "acceptableMessage" : ["engineOff" , "engineOn" , "getSpeed" , "start" ] 
 , 
 
+
+"emitMessage" : [{"port" : "SPEEDCONTROL" , "messageName" : "returnSpeed" } ] 
+, 
+
 "name" : "INPUTSPEED" 
 }

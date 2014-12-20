@@ -95,6 +95,7 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 # Test Files
 TESTFILES= \
 	${TESTDIR}/TestFiles/f19 \
+	${TESTDIR}/TestFiles/f25 \
 	${TESTDIR}/TestFiles/f11 \
 	${TESTDIR}/TestFiles/f18 \
 	${TESTDIR}/TestFiles/f8 \
@@ -417,6 +418,10 @@ ${TESTDIR}/TestFiles/f19: ${TESTDIR}/tests/ActionIFtestclass.o ${TESTDIR}/tests/
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f19 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f25: ${TESTDIR}/tests/CruiseControltestclass.o ${TESTDIR}/tests/CruiseControltestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f25 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f11: ${TESTDIR}/tests/ExternalEffectMappertestclass.o ${TESTDIR}/tests/ExternalEffectMappertestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f11 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
@@ -520,6 +525,18 @@ ${TESTDIR}/tests/ActionIFtestrunner.o: tests/ActionIFtestrunner.cpp
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ActionIFtestrunner.o tests/ActionIFtestrunner.cpp
+
+
+${TESTDIR}/tests/CruiseControltestclass.o: tests/CruiseControltestclass.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/CruiseControltestclass.o tests/CruiseControltestclass.cpp
+
+
+${TESTDIR}/tests/CruiseControltestrunner.o: tests/CruiseControltestrunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/CruiseControltestrunner.o tests/CruiseControltestrunner.cpp
 
 
 ${TESTDIR}/tests/ExternalEffectMappertestclass.o: tests/ExternalEffectMappertestclass.cpp 
@@ -1492,6 +1509,7 @@ ${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 	@if [ "${TEST}" = "" ]; \
 	then  \
 	    ${TESTDIR}/TestFiles/f19 || true; \
+	    ${TESTDIR}/TestFiles/f25 || true; \
 	    ${TESTDIR}/TestFiles/f11 || true; \
 	    ${TESTDIR}/TestFiles/f18 || true; \
 	    ${TESTDIR}/TestFiles/f8 || true; \

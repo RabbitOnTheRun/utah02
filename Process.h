@@ -28,6 +28,7 @@ namespace utah {
         Thread* getThread(const Symbol* threadName);
         const PortMap portMap;
         void setComponent(std::string& threadName_, std::string& stateMachineName_, ComponentIF* component_);
+        std::map<const Symbol*, Thread*> getThreadMap();
         void done();
         void join();
     private:

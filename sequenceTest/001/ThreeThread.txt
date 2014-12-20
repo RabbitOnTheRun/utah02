@@ -1,0 +1,97 @@
+activeElement {
+	inPort{A}
+	outPort { B, C, D, E , actor}
+	state { start, waitB, waitC, waitD, waitE}
+
+	transition {
+		start -> waitB : 
+			start / emits {
+				B -> start();
+				C -> start();
+				D -> start();
+				E -> start();
+			};
+		waitB -> waitC : responseB;
+		waitC -> waitD : responseC;
+		waitD -> waitE : responseD;
+		waitE -> start : 
+			responseE / emits {
+				actor -> end();
+			};
+	}
+} A;
+
+
+activeElement {
+	inPort{B}
+	outPort { A }
+	state { start, END }
+
+	transition {
+		start -> END : 
+			start / emits {
+				A -> responseB();
+			};
+	}
+} B;
+
+activeElement {
+	inPort{C}
+	outPort { A }
+	state { start, END }
+
+	transition {
+		start -> END : 
+			start / emits {
+				A -> responseC();
+			};
+	}
+} C;
+
+activeElement {
+	inPort{D}
+	outPort { A }
+	state { start, END }
+
+	transition {
+		start -> END : 
+			start / emits {
+				A -> responseD();
+			};
+	}
+} D;
+
+activeElement {
+	inPort{E}
+	outPort { A }
+	state { start, END }
+
+	transition {
+		start -> END : 
+			start / emits {
+				A -> responseE();
+			};
+	}
+} E;
+
+activeElement {
+	inPort{ actor }
+	outPort { A, B, C, D, E, actor }
+	state { start, waitEND, END }
+
+	transition {
+		start -> waitEND : start / emits {
+				A -> start();
+			};
+		waitEND -> END : 
+			end / emits {
+				A -> done();
+				B -> done();
+				C -> done();
+				D -> done();
+				E -> done();
+				actor -> done();
+			};
+	}
+} actor;
+

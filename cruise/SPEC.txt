@@ -40,5 +40,9 @@
 "acceptableMessage" : ["engineOff" , "engineOn" , "start" , "clearSpeed" ] 
 , 
 
+
+"emitMessage" : [ ] 
+, 
+
 "name" : "SPEC" 
 }

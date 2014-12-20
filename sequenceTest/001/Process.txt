@@ -1,0 +1,9 @@
+{ "process" :
+[{"thread" : "A", "stateMachine" : ["A"] },
+ {"thread" : "B", "stateMachine" : ["B"] },
+ {"thread" : "C", "stateMachine" : ["C"] },
+ {"thread" : "D", "stateMachine" : ["D"] },
+ {"thread" : "E", "stateMachine" : ["E"] },
+ {"thread" : "actor", "stateMachine" : ["actor"] }
+]
+}

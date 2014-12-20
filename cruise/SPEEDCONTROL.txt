@@ -86,5 +86,9 @@
 "acceptableMessage" : ["start" , "returnSpeed" , "enableControl" , "clearSpeed" , "recordSpeed" , "disableControl" , "speed" ] 
 , 
 
+
+"emitMessage" : [{"port" : "INPUTSPEED" , "messageName" : "getSpeed" } ] 
+, 
+
 "name" : "SPEEDCONTROL" 
 }

@@ -15,10 +15,10 @@
 
 namespace utah {
 
-#define LOGFUNC Log::function.methodCall(__FILE__, __FUNCTION__)
-#define LOGLINE Log::function.line(__FILE__, __FUNCTION__, __LINE__)
-#define LOGVALUE(name_, value_) Log::function.value(__FILE__, __FUNCTION__, name_, (value_));
-#define LOGERROR(error_) Log::function.error(__FILE__,(error_));
+#define LOGFUNC Log::function->methodCall(__FILE__, __FUNCTION__)
+#define LOGLINE Log::function->line(__FILE__, __FUNCTION__, __LINE__)
+#define LOGVALUE(name_, value_) Log::function->value(__FILE__, __FUNCTION__, name_, (value_));
+#define LOGERROR(error_) Log::function->error(__FILE__,(error_));
 
     class Log {
     public:
@@ -27,8 +27,8 @@ namespace utah {
         //Log(const Log& orig);
         virtual ~Log();
 
-        static Log sequence;
-        static Log function;
+        static Log* sequence;
+        static Log* function;
 
 
         void message(const std::string from, const Symbol* to, const Symbol* event);

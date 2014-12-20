@@ -1,0 +1,22 @@
+@startuml
+hnote over actor : END
+actor -> A : start
+hnote over A : waitB
+A -> B : start
+A -> C : start
+A -> D : start
+A -> E : start
+hnote over B : END
+B -> A : responseB
+hnote over C : END
+C -> A : responseC
+hnote over D : END
+D -> A : responseD
+hnote over E : END
+E -> A : responseE
+hnote over A : waitC
+hnote over A : waitD
+hnote over A : waitE
+hnote over A : start
+
+@enduml

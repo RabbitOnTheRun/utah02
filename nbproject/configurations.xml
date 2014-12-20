@@ -127,6 +127,14 @@
         <itemPath>tests/ActionIFtestclass.h</itemPath>
         <itemPath>tests/ActionIFtestrunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f25"
+                     displayName="CruiseControlSample"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/CruiseControltestclass.cpp</itemPath>
+        <itemPath>tests/CruiseControltestclass.h</itemPath>
+        <itemPath>tests/CruiseControltestrunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f11"
                      displayName="ExternalEffectMapper"
                      projectFiles="true"
@@ -710,6 +718,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f25">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f25</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f3">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -929,6 +951,12 @@
       <item path="tests/ActionIFtestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/ActionIFtestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/CruiseControltestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/CruiseControltestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/CruiseControltestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/ExternalEffectMappertestclass.cpp"
             ex="false"
@@ -1525,6 +1553,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f25">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f25</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f3">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -1744,6 +1786,12 @@
       <item path="tests/ActionIFtestclass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/ActionIFtestrunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/CruiseControltestclass.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/CruiseControltestclass.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/CruiseControltestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/ExternalEffectMappertestclass.cpp"
             ex="false"

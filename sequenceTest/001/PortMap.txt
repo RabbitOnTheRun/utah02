@@ -1,0 +1,91 @@
+[
+{ "outPort" : 
+  {"port" : "B" , "stateMachine" : "A" , "thread" : "A"} , 
+  "inPort" : 
+  {"port" : "B" , "stateMachine" : "B" , "thread" : "B"}
+},
+
+{ "outPort" : 
+  {"port" : "C" , "stateMachine" : "A" , "thread" : "A"} , 
+  "inPort" : 
+  {"port" : "C" , "stateMachine" : "C" , "thread" : "C"}
+},
+
+{ "outPort" : 
+  {"port" : "D" , "stateMachine" : "A" , "thread" : "A"} , 
+  "inPort" : 
+  {"port" : "D" , "stateMachine" : "D" , "thread" : "D"}
+},
+
+{ "outPort" : 
+  {"port" : "E" , "stateMachine" : "A" , "thread" : "A"} , 
+  "inPort" : 
+  {"port" : "E" , "stateMachine" : "E" , "thread" : "E"}
+},
+
+{ "outPort" : 
+  {"port" : "actor" , "stateMachine" : "A" , "thread" : "A"} , 
+  "inPort" : 
+  {"port" : "actor" , "stateMachine" : "actor" , "thread" : "actor"}
+},
+
+
+{ "outPort" : 
+  {"port" : "A" , "stateMachine" : "B" , "thread" : "B"} , 
+  "inPort" : 
+  {"port" : "A" , "stateMachine" : "A" , "thread" : "A"}
+},
+
+{ "outPort" : 
+  {"port" : "A" , "stateMachine" : "C" , "thread" : "C"} , 
+  "inPort" : 
+  {"port" : "A" , "stateMachine" : "A" , "thread" : "A"}
+},
+
+{ "outPort" : 
+  {"port" : "A" , "stateMachine" : "D" , "thread" : "D"} , 
+  "inPort" : 
+  {"port" : "A" , "stateMachine" : "A" , "thread" : "A"}
+},
+
+{ "outPort" : 
+  {"port" : "A" , "stateMachine" : "E" , "thread" : "E"} , 
+  "inPort" : 
+  {"port" : "A" , "stateMachine" : "A" , "thread" : "A"}
+},
+
+
+{ "outPort" : 
+  {"port" : "A" , "stateMachine" : "actor" , "thread" : "actor"} , 
+  "inPort" : 
+  {"port" : "A" , "stateMachine" : "A" , "thread" : "A"}
+},
+
+{ "outPort" : 
+  {"port" : "B" , "stateMachine" : "actor" , "thread" : "actor"} , 
+  "inPort" : 
+  {"port" : "B" , "stateMachine" : "B" , "thread" : "B"}
+},
+
+{ "outPort" : 
+  {"port" : "C" , "stateMachine" : "actor" , "thread" : "actor"} , 
+  "inPort" : 
+  {"port" : "C" , "stateMachine" : "C" , "thread" : "C"}
+},
+
+{ "outPort" : 
+  {"port" : "D" , "stateMachine" : "actor" , "thread" : "actor"} , 
+  "inPort" : 
+  {"port" : "D" , "stateMachine" : "D" , "thread" : "D"}
+},
+{ "outPort" : 
+  {"port" : "E" , "stateMachine" : "actor" , "thread" : "actor"} , 
+  "inPort" : 
+  {"port" : "E" , "stateMachine" : "E" , "thread" : "E"}
+},
+{ "outPort" : 
+  {"port" : "actor" , "stateMachine" : "actor" , "thread" : "actor"} , 
+  "inPort" : 
+  {"port" : "actor" , "stateMachine" : "actor" , "thread" : "actor"}
+}
+]

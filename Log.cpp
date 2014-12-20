@@ -13,9 +13,12 @@
 #include "jsonMapper/FileIOException.h"
 namespace utah {
 
-    Log Log::sequence("sequenceLog.txt");
-    Log Log::function("functionCallLog.txt");
+    Log* Log::sequence = new Log("sequenceLog.txt");
+    Log* Log::function = new Log("functionCallLog.txt");
 
+    //Log Log::sequence;
+    //Log Log::function;
+    
     Log::Log() {
     }
 

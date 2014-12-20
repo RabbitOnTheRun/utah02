@@ -105,5 +105,9 @@
 "acceptableMessage" : ["engineOff_" , "on_" , "engineOn_" , "off_" , "accelerator_" , "start" , "resume_" , "brake_" , "clearSpeed" ] 
 , 
 
+
+"emitMessage" : [{"port" : "SPEC" , "messageName" : "engineOff" } , {"port" : "INPUTSPEED" , "messageName" : "engineOff" } , {"port" : "CRUISECONTROLLER" , "messageName" : "engineOff" } , {"port" : "CRUISECONTROLLER" , "messageName" : "on" } , {"port" : "CRUISECONTROLLER" , "messageName" : "off" } , {"port" : "CRUISECONTROLLER" , "messageName" : "resume" } , {"port" : "CRUISECONTROLLER" , "messageName" : "brake" } , {"port" : "CRUISECONTROLLER" , "messageName" : "accelerator" } ] 
+, 
+
 "name" : "SENSORSCAN" 
 }

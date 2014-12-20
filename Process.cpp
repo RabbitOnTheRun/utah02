@@ -71,4 +71,8 @@ namespace utah {
         }
 
     }
+
+    std::map<const Symbol*, Thread*> Process::getThreadMap() {
+        return threadMap;
+    }
 }

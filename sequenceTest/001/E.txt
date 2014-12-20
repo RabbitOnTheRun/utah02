@@ -1,0 +1,31 @@
+{"inPort" : 
+ ["E"] , 
+"outPort" : 
+ ["A"] , 
+
+"state" : 
+ [[ "start" , [] ] , [ "END" , [] ]] , 
+
+"transition" : [ 
+{ "from" : "start" ,"to" : "END" ,
+	"message" : {"name" : "start" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [ 
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "A" ,"messageName" : "responseE" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		}
+	 ] 
+ } 
+] , 
+
+
+"acceptableMessage" : ["start" ] 
+, 
+
+
+"emitMessage" : [{"port" : "A" , "messageName" : "responseE" } ] 
+, 
+
+"name" : "E" 
+}

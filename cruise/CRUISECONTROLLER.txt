@@ -187,5 +187,9 @@
 "acceptableMessage" : ["resume" , "brake" , "accelerator" , "engineOff" , "engineOn" , "start" , "off" , "on" ] 
 , 
 
+
+"emitMessage" : [{"port" : "SPEC" , "messageName" : "engineOn" } , {"port" : "SPEC" , "messageName" : "clearSpeed" } , {"port" : "SENSORSCAN" , "messageName" : "engineOn_" } , {"port" : "SENSORSCAN" , "messageName" : "clearSpeed" } , {"port" : "SPEEDCONTROL" , "messageName" : "clearSpeed" } , {"port" : "INPUTSPEED" , "messageName" : "engineOn" } , {"port" : "SPEEDCONTROL" , "messageName" : "recordSpeed" } , {"port" : "SPEEDCONTROL" , "messageName" : "enableControl" } , {"port" : "SPEEDCONTROL" , "messageName" : "disableControl" } , {"port" : "SPEEDCONTROL" , "messageName" : "disableControl" } , {"port" : "SPEEDCONTROL" , "messageName" : "disableControl" } , {"port" : "SPEEDCONTROL" , "messageName" : "recordSpeed" } , {"port" : "SPEEDCONTROL" , "messageName" : "enableControl" } , {"port" : "SPEEDCONTROL" , "messageName" : "enableControl" } , {"port" : "SPEEDCONTROL" , "messageName" : "recordSpeed" } , {"port" : "SPEEDCONTROL" , "messageName" : "enableControl" } ] 
+, 
+
 "name" : "CRUISECONTROLLER" 
 }
