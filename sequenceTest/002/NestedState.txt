@@ -4,7 +4,8 @@ activeElement {
 	state { start, A {B, C}, D}
 
 	transition {
-		start -> B : start ;
+		start -> B : 
+			start / receiveValue() ;
 		A -> D : error;
 		D -> start : 
 			end / emits { actor->end();	};
@@ -21,7 +22,7 @@ activeElement {
 
 	transition {
 		start -> waitEND : 
-			start / emits {
+			start / createValue() emits {
 				A -> start();
 				A -> error();
 				A -> end();

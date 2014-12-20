@@ -5,9 +5,14 @@
  * Created on 2014/12/13, 23:57
  */
 
+#include <iostream>
 #include "ComponentSample1.h"
+#include "Log.h"
+#include "ValuePair.h"
 
 namespace utah {
+
+    typedef std::function<bool(ComponentSample1&, Message&, const std::string&) > ActionFunction2;
 
     ComponentSample1::ComponentSample1() {
         setupGuard();
@@ -42,5 +47,32 @@ namespace utah {
         this->addAction(function_, "success");
         this->addAction(function_, "getSpeedFunction");
         this->addAction(function_, "setThrottle");
+        ActionFunction func2 = [this](Message& message_, const std::string & argument_) -> Result {
+            return ComponentSample1::createValue(message_, argument_);
+        };
+        this->addAction(func2, "createValue");
+        ActionFunction func3 = [this](Message& message_, const std::string & argument_) -> Result {
+            return ComponentSample1::receiveValue(message_, argument_);
+        };
+        this->addAction(func3, "receiveValue");
+    }
+
+    Result ComponentSample1::createValue(Message& message_, std::string argument_) {
+        Result retResult;
+        retResult.resultCode = Symbol::create("success");
+        retResult.value = std::shared_ptr<Value>(new ValuePair("abc", "efg"));
+        return retResult;
+    }
+
+    Result ComponentSample1::receiveValue(Message& message_, std::string argument_) {
+        LOGVALUE("message ", message_.getMessageName()->getName());
+
+        Result retResult;
+        retResult.resultCode = Symbol::create("success");
+        //retResult.value = std::shared_ptr<Value>(new Value());
+        std::shared_ptr<ValuePair> vp = std::dynamic_pointer_cast<ValuePair>(message_.getValue());
+        LOGVALUE("value first ", vp->value.first);
+        LOGVALUE("value second ", vp->value.second);
+        return retResult;
     }
 }

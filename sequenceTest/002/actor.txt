@@ -10,7 +10,7 @@
 { "from" : "start" ,"to" : "waitEND" ,
 	"message" : {"name" : "start" ,"type" : "NULL" } , 
 	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
-	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"methodInvocation" : {"methodName" : "createValue" , "methodArgument" : "NULL" } ,
 	"resultHandling" : [ 
 		{"resultCode" : "NULL", "messageEmission" : 
 			{"port" : "A" ,"messageName" : "start" ,"argType" : "NULL" ,"givenArgument" : "NULL" }

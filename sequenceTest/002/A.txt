@@ -10,7 +10,7 @@
 { "from" : "start" ,"to" : "B" ,
 	"message" : {"name" : "start" ,"type" : "NULL" } , 
 	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
-	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"methodInvocation" : {"methodName" : "receiveValue" , "methodArgument" : "NULL" } ,
 	"resultHandling" : [] 
  } , 
 

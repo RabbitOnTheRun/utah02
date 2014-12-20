@@ -9,6 +9,8 @@
 #define	COMPONENTSAMPLE1_H
 
 #include "ComponentIF.h"
+#include "Result.h"
+
 namespace utah {
 
     class ComponentSample1 : public ComponentIF {
@@ -16,9 +18,12 @@ namespace utah {
         ComponentSample1();
         //ComponentSample1(const ComponentSample1& orig);
         virtual ~ComponentSample1();
+
     private:
         void setupGuard();
         void setupAction();
+        Result createValue(Message& message_, std::string argument_);
+        Result receiveValue(Message& message_, std::string argument_);
     };
 }
 #endif	/* COMPONENTSAMPLE1_H */
