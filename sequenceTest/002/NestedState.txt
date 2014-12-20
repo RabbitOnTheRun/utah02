@@ -1,0 +1,36 @@
+activeElement {
+	inPort{A}
+	outPort {actor}
+	state { start, A {B, C}, D}
+
+	transition {
+		start -> B : start ;
+		A -> D : error;
+		D -> start : 
+			end / emits { actor->end();	};
+	}
+} A;
+
+
+
+
+activeElement {
+	inPort{ actor }
+	outPort { A, actor }
+	state { start, waitEND, END }
+
+	transition {
+		start -> waitEND : 
+			start / emits {
+				A -> start();
+				A -> error();
+				A -> end();
+			};
+		waitEND -> END : 
+			end / emits {
+				A -> done();
+				actor -> done();
+			};
+	}
+} actor;
+

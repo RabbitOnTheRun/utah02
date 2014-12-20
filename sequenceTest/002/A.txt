@@ -1,0 +1,45 @@
+{"inPort" : 
+ ["A"] , 
+"outPort" : 
+ ["actor"] , 
+
+"state" : 
+ [[ "start" , [] ] , [ "A", [[ "B" , [] ] , [ "C" , [] ]] ] , [ "D" , [] ]] , 
+
+"transition" : [ 
+{ "from" : "start" ,"to" : "B" ,
+	"message" : {"name" : "start" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [] 
+ } , 
+
+{ "from" : "A" ,"to" : "D" ,
+	"message" : {"name" : "error" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [] 
+ } , 
+
+{ "from" : "D" ,"to" : "start" ,
+	"message" : {"name" : "end" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [ 
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "actor" ,"messageName" : "end" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		}
+	 ] 
+ } 
+] , 
+
+
+"acceptableMessage" : ["start" , "end" , "error" ] 
+, 
+
+
+"emitMessage" : [{"port" : "actor" , "messageName" : "end" } ] 
+, 
+
+"name" : "A" 
+}

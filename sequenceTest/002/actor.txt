@@ -1,0 +1,51 @@
+{"inPort" : 
+ ["actor"] , 
+"outPort" : 
+ ["A" , "actor"] , 
+
+"state" : 
+ [[ "start" , [] ] , [ "waitEND" , [] ] , [ "END" , [] ]] , 
+
+"transition" : [ 
+{ "from" : "start" ,"to" : "waitEND" ,
+	"message" : {"name" : "start" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [ 
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "A" ,"messageName" : "start" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		} ,
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "A" ,"messageName" : "error" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		} ,
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "A" ,"messageName" : "end" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		}
+	 ] 
+ } , 
+
+{ "from" : "waitEND" ,"to" : "END" ,
+	"message" : {"name" : "end" ,"type" : "NULL" } , 
+	"guard" : {"name" : "NULL", "arg" : "NULL" } , 
+	"methodInvocation" : {"methodName" : "NULL" , "methodArgument" : "NULL" }, 
+	"resultHandling" : [ 
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "A" ,"messageName" : "done" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		} ,
+		{"resultCode" : "NULL", "messageEmission" : 
+			{"port" : "actor" ,"messageName" : "done" ,"argType" : "NULL" ,"givenArgument" : "NULL" }
+		}
+	 ] 
+ } 
+] , 
+
+
+"acceptableMessage" : ["start" , "end" ] 
+, 
+
+
+"emitMessage" : [{"port" : "A" , "messageName" : "start" } , {"port" : "A" , "messageName" : "error" } , {"port" : "A" , "messageName" : "end" } , {"port" : "A" , "messageName" : "done" } , {"port" : "actor" , "messageName" : "done" } ] 
+, 
+
+"name" : "actor" 
+}

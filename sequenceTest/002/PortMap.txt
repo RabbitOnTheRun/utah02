@@ -1,0 +1,21 @@
+[
+
+{ "outPort" : 
+  {"port" : "actor" , "stateMachine" : "A" , "thread" : "A"} , 
+  "inPort" : 
+  {"port" : "actor" , "stateMachine" : "actor" , "thread" : "actor"}
+},
+
+
+{ "outPort" : 
+  {"port" : "A" , "stateMachine" : "actor" , "thread" : "actor"} , 
+  "inPort" : 
+  {"port" : "A" , "stateMachine" : "A" , "thread" : "A"}
+},
+
+{ "outPort" : 
+  {"port" : "actor" , "stateMachine" : "actor" , "thread" : "actor"} , 
+  "inPort" : 
+  {"port" : "actor" , "stateMachine" : "actor" , "thread" : "actor"}
+}
+]

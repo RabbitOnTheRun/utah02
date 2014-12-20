@@ -65,7 +65,7 @@ namespace utah {
 
             std::vector<MessageWithOutPort> result;
             stateMachineMap[stateMachineName]->processMessage(messageWithInPort.getMessage(), result); // sendMessage
-            //LOGFUNC;
+            LOGFUNC;
             if (result.size() == 1) {
                 LOGVALUE("result = ", result[0].getMessage().getMessageName()->getName());
             }
@@ -74,10 +74,10 @@ namespace utah {
                 OutPort outPort = messageWithOutPort.getOutPort();
 
                 InPort inPort = this->process->portMap.getConnectedPort(outPort); // accessing process without concurrency control
-            //    LOGFUNC;
-            //    LOGVALUE("outSM", outPort.stateMachine->getName());
-            //    LOGVALUE("inSM", inPort.stateMachine->getName());
-            //    LOGVALUE("messageName", message.getMessageName()->getName());
+                LOGFUNC;
+                LOGVALUE("outSM", outPort.stateMachine->getName());
+                LOGVALUE("inSM", inPort.stateMachine->getName());
+                LOGVALUE("messageName", message.getMessageName()->getName());
 
                 Thread* peerThread = this->process->getThread(inPort.thread);
                 MessageWithInPort messageWithInPort(message, inPort);
