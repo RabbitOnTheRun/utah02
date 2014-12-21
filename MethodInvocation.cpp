@@ -30,7 +30,8 @@ namespace utah {
             result.resultCode = Symbol::create("NULL");
             return result;
         } else {
-            return component_->execute(methodName, message_, methodArgument);
+            //return component_->execute(methodName, message_, methodArgument);
+            return component_->execute2(methodName, message_, methodArgument);
         }
     }
 

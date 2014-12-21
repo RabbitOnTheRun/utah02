@@ -14,13 +14,18 @@
 #include "Message.h"
 #include "Result.h"
 
-namespace utah {
-    typedef std::function<Result(Message&, const std::string&) > ActionFunction;
 
+namespace utah {
+
+    class ComponentIF;
+    typedef std::function<Result(Message&, const std::string&) > ActionFunction;
+   // typedef std::function<Result(ComponentIF&, Message&, const std::string&) > ActionFunction2;
+    
     class ActionIF {
     public:
         ActionIF();
         ActionIF( std::string name_,  ActionFunction actionFunction_);
+       // ActionIF( std::string name_,  ActionFunction2 actionFunction2_);
         //ActionIF(const ActionIF& orig);
         virtual ~ActionIF();
         Result execute(Message& message_, const std::string& argument_)  ;
@@ -28,6 +33,7 @@ namespace utah {
     private:
         Symbol* name;
         ActionFunction actionFunction;
+      //  ActionFunction2 actionFunction2;
     };
 }
 #endif	/* ACTIONIF_H */
