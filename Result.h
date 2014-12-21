@@ -8,6 +8,7 @@
 #ifndef RESULT_H
 #define	RESULT_H
 
+#include <string>
 #include <memory>
 #include "Symbol.h"
 #include "Value.h"
@@ -15,11 +16,16 @@ namespace utah {
 
     class Result {
     public:
-        Result();
+        Result(const Symbol* resultCode_);
+        Result(const std::string resultCode_);
         //Result(const Result& orig);
         virtual ~Result();
-        Symbol* resultCode;
+        const Symbol* resultCode;
         std::shared_ptr<Value> value;
+
+        static Result success;
+        static Result error;
+        static Result null;
     private:
 
     };

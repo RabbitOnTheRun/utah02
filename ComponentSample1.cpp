@@ -12,8 +12,6 @@
 
 namespace utah {
 
-    //typedef std::function<Result(ComponentSample1&, Message&, const std::string&) > ActionFunction2;
-
     ComponentSample1::ComponentSample1() {
         setupGuard();
         setupAction();
@@ -38,7 +36,6 @@ namespace utah {
     }
 
     void ComponentSample1::setupAction() {
-        //ActionFunction2 func4 = &ComponentSample1::receiveValue;
         this->addAction("success", &ComponentSample1::success);
         this->addAction("getSpeedFunction", &ComponentSample1::success);
         this->addAction("setThrottle", &ComponentSample1::success);
@@ -49,37 +46,30 @@ namespace utah {
 
     Result ComponentSample1::success(Message& message_, std::string argument_) {
         LOGFUNC;
-        Result retResult;
-        retResult.resultCode = Symbol::create("success");
-        return retResult;
+        return Result::success;
     }
 
     Result ComponentSample1::createValue(Message& message_, std::string argument_) {
         LOGFUNC;
-        Result retResult;
-        retResult.resultCode = Symbol::create("success");
-        retResult.value = std::shared_ptr<Value>(new ValuePair("xyz", "lmn"));
-
+        Result retResult = Result::success;
+        retResult.value = std::shared_ptr<ValuePair>(new ValuePair("xyz", "lmn"));
         return retResult;
     }
 
     Result ComponentSample1::receiveValue(Message& message_, std::string argument_) {
         LOGVALUE("message ", message_.getMessageName()->getName());
-
-        Result retResult;
-        retResult.resultCode = Symbol::create("success");
         std::shared_ptr<ValuePair> vp = std::dynamic_pointer_cast<ValuePair>(message_.getValue());
         LOGVALUE("value first ", vp->value.first);
         LOGVALUE("value second ", vp->value.second);
-        return retResult;
+        return Result::success;
     }
 
     Result ComponentSample1::execute(const Symbol* nameOfAction, Message& message_, const std::string& argument_) {
-        ActionFunction2 func = actionMap[nameOfAction];
+        ActionFunction func = actionMap[nameOfAction];
         return func(*this, message_, argument_);
     }
 
-    void ComponentSample1::addAction(const std::string& name_, ActionFunction2 func_) {
+    void ComponentSample1::addAction(const std::string& name_, ActionFunction func_) {
         actionMap[Symbol::create(name_)] = func_;
     }
 }

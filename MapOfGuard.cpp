@@ -20,7 +20,7 @@ namespace utah {
     }
 
     bool MapOfGuard::judge(const Symbol* guardName, Message& message_, const std::string& argument_) {
-        if (guardName == Sym::Null) {
+        if (guardName == Sym::null) {
             return true;
         } else {
             return (mapOfGuard[guardName].judge(message_, argument_));

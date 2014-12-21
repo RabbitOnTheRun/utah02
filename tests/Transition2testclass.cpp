@@ -57,8 +57,8 @@ void Transition2testclass::testGenerateEmission() {
 
     transition.setResultHandling(resultHandling_);
 
-    utah::Result result_;
-    result_.resultCode = utah::Symbol::create("success");
+    utah::Result result_("success");
+    //result_.resultCode = utah::Symbol::create("success");
     result_.value = std::shared_ptr<utah::Value>(new utah::Value());
 
     transition.generateEmission(result_, threadName_, stateMachineName_, resultMessage);

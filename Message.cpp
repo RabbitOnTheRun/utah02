@@ -11,6 +11,7 @@ namespace utah {
 
     Message::Message() :
     messageName(Symbol::create("NULL")), valueType(Symbol::create("NULL")) {
+        // This constructor should not be used
     }
 
     Message::Message(const Symbol* messageName_, const Symbol* argType_) :

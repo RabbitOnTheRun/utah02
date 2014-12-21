@@ -18,7 +18,7 @@ namespace utah {
         //Sym(const Sym& orig);
         virtual ~Sym();
 
-        static Symbol* Null;
+        static Symbol* null;
         static Symbol* done;
         static Symbol* start;
     private:

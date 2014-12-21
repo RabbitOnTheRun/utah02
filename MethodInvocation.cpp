@@ -25,12 +25,9 @@ namespace utah {
     }
 
     Result MethodInvocation::execute(Message& message_, ComponentIF* component_) const{
-        if (methodName == Sym::Null) {
-            Result result;
-            result.resultCode = Symbol::create("NULL");
-            return result;
+        if (methodName == Sym::null) {
+            return Result::null;
         } else {
-            //return component_->execute(methodName, message_, methodArgument);
             return component_->execute(methodName, message_, methodArgument);
         }
     }

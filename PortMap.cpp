@@ -28,7 +28,7 @@ namespace utah {
                 return portPair.second;
             }
         }
-        InPort inPort_(Sym::Null, Sym::Null, Sym::Null);
+        InPort inPort_(Sym::null, Sym::null, Sym::null);
         // should throw exception
         return inPort_;
     }

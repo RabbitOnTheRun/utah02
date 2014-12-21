@@ -9,16 +9,16 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=build/Debug/Cygwin_4.x-Windows/tests/TestFiles
-CND_ARTIFACT_NAME_Debug=f25
-CND_ARTIFACT_PATH_Debug=build/Debug/Cygwin_4.x-Windows/tests/TestFiles/f25
+CND_ARTIFACT_NAME_Debug=f19
+CND_ARTIFACT_PATH_Debug=build/Debug/Cygwin_4.x-Windows/tests/TestFiles/f19
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
 CND_PACKAGE_NAME_Debug=utah02.tar
 CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/utah02.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=build/Release/Cygwin_4.x-Windows/tests/TestFiles
-CND_ARTIFACT_NAME_Release=f25
-CND_ARTIFACT_PATH_Release=build/Release/Cygwin_4.x-Windows/tests/TestFiles/f25
+CND_ARTIFACT_NAME_Release=f19
+CND_ARTIFACT_PATH_Release=build/Release/Cygwin_4.x-Windows/tests/TestFiles/f19
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
 CND_PACKAGE_NAME_Release=utah02.tar
 CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/utah02.tar

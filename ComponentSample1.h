@@ -15,7 +15,7 @@
 
 namespace utah {
     class ComponentSample1;
-    typedef std::function<Result(ComponentSample1&, Message&, const std::string&) > ActionFunction2;
+    typedef std::function<Result(ComponentSample1&, Message&, const std::string&) > ActionFunction;
 
     class ComponentSample1 : public ComponentIF {
     public:
@@ -30,11 +30,11 @@ namespace utah {
         Result success(Message& message_, std::string argument_);
         Result createValue(Message& message_, std::string argument_);
         Result receiveValue(Message& message_, std::string argument_);
-        void addAction(const std::string& name_, ActionFunction2 func_);
-        std::map<const Symbol*, ActionFunction2> actionMap;
+        void addAction(const std::string& name_, ActionFunction func_);
+        std::map<const Symbol*, ActionFunction> actionMap;
     };
 
-    typedef std::function<Result(ComponentSample1&, Message&, const std::string&) > ActionFunction2;
+    //typedef std::function<Result(ComponentSample1&, Message&, const std::string&) > ActionFunction2;
 }
 #endif	/* COMPONENTSAMPLE1_H */
 

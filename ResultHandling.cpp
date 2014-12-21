@@ -28,8 +28,8 @@ namespace utah {
         //std::vector<MessageWithOutPort> out;
         for (ExternalEffect externalEffect : externalEffects) {
             if (result_.resultCode == externalEffect.getResultCode() ||
-                    result_.resultCode == Sym::Null ||
-                    Sym::Null == externalEffect.getResultCode()) {
+                    result_.resultCode == Sym::null ||
+                    Sym::null == externalEffect.getResultCode()) {
 
                 Message message(externalEffect.generateMessage());
                 message.setValue(result_.value);

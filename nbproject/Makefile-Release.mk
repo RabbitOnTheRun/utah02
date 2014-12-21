@@ -119,11 +119,11 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f2
 
 # C Compiler Flags
-CFLAGS=
+CFLAGS=`cppunit-config --cflags` 
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=`cppunit-config --cflags` 
+CXXFLAGS=`cppunit-config --cflags` 
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -132,15 +132,15 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=`cppunit-config --libs`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${TESTDIR}/TestFiles/f25.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${TESTDIR}/TestFiles/f19.exe
 
-${TESTDIR}/TestFiles/f25.exe: ${OBJECTFILES}
+${TESTDIR}/TestFiles/f19.exe: ${OBJECTFILES}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc} -o ${TESTDIR}/TestFiles/f25 ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f19 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/ComponentIF.o: ComponentIF.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -1503,7 +1503,7 @@ ${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${TESTDIR}/TestFiles/f25.exe
+	${RM} ${TESTDIR}/TestFiles/f19.exe
 
 # Subprojects
 .clean-subprojects:
