@@ -25,11 +25,11 @@ void StatePartMappertestclass::tearDown() {
 
 void StatePartMappertestclass::testCreate() {
     const picojson::value& obj = jsonMapper::PicoJsonIF::JSONFileToObj("data/StatePart.txt");
-    std::map<std::string, utah::State*> stateMap;
+    std::map<const utah::Symbol*, utah::State*> stateMap;
     //jsonMapper::StatePartMapper statePartMapper;
-     jsonMapper::StatePartMapper::create2(obj, stateMap);
+     jsonMapper::StatePartMapper::create(obj, stateMap);
     if (true /*check result*/) {
-        CPPUNIT_ASSERT(stateMap["b"]->getName()->getName() == "b");
+        CPPUNIT_ASSERT(stateMap[utah::Symbol::create("b")]->getName()->getName() == "b");
     }
 }
 

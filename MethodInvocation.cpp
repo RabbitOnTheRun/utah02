@@ -8,7 +8,7 @@
 #include <assert.h>
 #include "Sym.h"
 #include "MethodInvocation.h"
-#include "MapOfAction.h"
+//#include "MapOfAction.h"
 #include "Result.h"
 namespace utah {
 
@@ -31,7 +31,7 @@ namespace utah {
             return result;
         } else {
             //return component_->execute(methodName, message_, methodArgument);
-            return component_->execute2(methodName, message_, methodArgument);
+            return component_->execute(methodName, message_, methodArgument);
         }
     }
 

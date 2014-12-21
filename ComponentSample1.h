@@ -22,7 +22,7 @@ namespace utah {
         ComponentSample1();
         //ComponentSample1(const ComponentSample1& orig);
         virtual ~ComponentSample1();
-        Result execute2(const Symbol* nameOfAction, Message& message_, const std::string& argument_);
+        Result execute(const Symbol* nameOfAction, Message& message_, const std::string& argument_);
 
     private:
         void setupGuard();
@@ -30,8 +30,8 @@ namespace utah {
         Result success(Message& message_, std::string argument_);
         Result createValue(Message& message_, std::string argument_);
         Result receiveValue(Message& message_, std::string argument_);
-        void addAction2(const std::string& name_, ActionFunction2 func_);
-        std::map<const Symbol*, ActionFunction2> actionMap2;
+        void addAction(const std::string& name_, ActionFunction2 func_);
+        std::map<const Symbol*, ActionFunction2> actionMap;
     };
 
     typedef std::function<Result(ComponentSample1&, Message&, const std::string&) > ActionFunction2;

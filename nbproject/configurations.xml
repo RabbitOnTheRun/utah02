@@ -45,7 +45,6 @@
       <itemPath>jsonMapper/picojson.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
-      <itemPath>ActionIF.cpp</itemPath>
       <itemPath>ComponentIF.cpp</itemPath>
       <itemPath>ComponentSample1.cpp</itemPath>
       <itemPath>EventQueue.cpp</itemPath>
@@ -54,7 +53,6 @@
       <itemPath>GuardIF.cpp</itemPath>
       <itemPath>InPort.cpp</itemPath>
       <itemPath>Log.cpp</itemPath>
-      <itemPath>MapOfAction.cpp</itemPath>
       <itemPath>MapOfGuard.cpp</itemPath>
       <itemPath>Message.cpp</itemPath>
       <itemPath>MessageEmission.cpp</itemPath>
@@ -81,7 +79,6 @@
       <itemPath>shared_queue.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles" displayName="ヘッダー・ファイル" projectFiles="true">
-      <itemPath>ActionIF.h</itemPath>
       <itemPath>ComponentIF.h</itemPath>
       <itemPath>ComponentSample1.h</itemPath>
       <itemPath>EventQueue.h</itemPath>
@@ -90,7 +87,6 @@
       <itemPath>GuardIF.h</itemPath>
       <itemPath>InPort.h</itemPath>
       <itemPath>Log.h</itemPath>
-      <itemPath>MapOfAction.h</itemPath>
       <itemPath>MapOfGuard.h</itemPath>
       <itemPath>Message.h</itemPath>
       <itemPath>MessageEmission.h</itemPath>
@@ -121,14 +117,6 @@
                    displayName="テスト・ファイル"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
-      <logicalFolder name="f19"
-                     displayName="ActionIF"
-                     projectFiles="true"
-                     kind="TEST">
-        <itemPath>tests/ActionIFtestclass.cpp</itemPath>
-        <itemPath>tests/ActionIFtestclass.h</itemPath>
-        <itemPath>tests/ActionIFtestrunner.cpp</itemPath>
-      </logicalFolder>
       <logicalFolder name="f25"
                      displayName="CruiseControlSample"
                      projectFiles="true"
@@ -353,10 +341,6 @@
           <output>${TESTDIR}/TestFiles/f25</output>
         </linkerTool>
       </compileType>
-      <item path="ActionIF.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ActionIF.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="ComponentIF.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ComponentIF.h" ex="false" tool="3" flavor2="0">
@@ -388,10 +372,6 @@
       <item path="Log.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Log.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MapOfAction.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MapOfAction.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MapOfGuard.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -951,12 +931,6 @@
       <item path="shared_queue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="shared_queue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tests/ActionIFtestclass.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/ActionIFtestclass.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tests/ActionIFtestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/CruiseControltestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1192,10 +1166,6 @@
           <output>${TESTDIR}/TestFiles/f25</output>
         </linkerTool>
       </compileType>
-      <item path="ActionIF.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ActionIF.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="ComponentIF.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ComponentIF.h" ex="false" tool="3" flavor2="0">
@@ -1227,10 +1197,6 @@
       <item path="Log.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Log.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MapOfAction.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MapOfAction.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MapOfGuard.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1790,12 +1756,6 @@
       <item path="shared_queue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="shared_queue.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tests/ActionIFtestclass.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/ActionIFtestclass.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tests/ActionIFtestrunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/CruiseControltestclass.cpp" ex="false" tool="1" flavor2="0">
       </item>

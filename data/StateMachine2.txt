@@ -31,4 +31,12 @@
  } 
 ] , 
 
+"acceptableMessage" : ["dummy" , "responseD" , "responseC" , "responseB" , "responseE" ] 
+, 
+
+
+"emitMessage" : [{"port" : "dummy" , "messageName" : "start" } , {"port" : "C" , "messageName" : "start" } , {"port" : "D" , "messageName" : "start" } , {"port" : "E" , "messageName" : "start" } , {"port" : "actor" , "messageName" : "end" } ] 
+, 
+
+
 "name" : "StateMachine2" }

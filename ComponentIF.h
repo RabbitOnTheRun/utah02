@@ -8,14 +8,16 @@
 #ifndef COMPONENTIF_H
 #define	COMPONENTIF_H
 #include "MapOfGuard.h"
-#include "MapOfAction.h"
+#include "Result.h"
+//#include "MapOfAction.h"
 namespace utah {
 
-    class ComponentIF : public MapOfGuard, public MapOfAction {
+    class ComponentIF : public MapOfGuard {
     public:
         ComponentIF();
         //ComponentIF(const ComponentIF& orig);
         virtual ~ComponentIF();
+        virtual Result execute(const Symbol* nameOfAction, Message& message_, const std::string& argument_) = 0;
     private:
 
     };

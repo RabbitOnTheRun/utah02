@@ -38,43 +38,24 @@ namespace utah {
     }
 
     void ComponentSample1::setupAction() {
-        ActionFunction function_ = [](Message&, const std::string&)-> Result {
-            Result retResult;
-            retResult.resultCode = Symbol::create("success");
-            return retResult;
-        };
-
-        this->addAction(function_, "success");
-        this->addAction(function_, "getSpeedFunction");
-        this->addAction(function_, "setThrottle");
-        //ActionFunction func2 = [this](Message& message_, const std::string & argument_) -> Result {
-        //  return ComponentSample1::createValue(message_, argument_);
-        //};
-        ActionFunction func2 = [this](Message& message_, const std::string & argument_)
-                -> Result {
-                    return createValue(message_, argument_);
-                };
-        this->addAction(func2, "createValue");
-
-        ActionFunction func3 = [this](Message& message_, const std::string & argument_) -> Result {
-            return ComponentSample1::receiveValue(message_, argument_);
-        };
-        this->addAction(func3, "receiveValue");
-
         //ActionFunction2 func4 = &ComponentSample1::receiveValue;
-        this->addAction2("success", &ComponentSample1::success);
-        this->addAction2("createValue", &ComponentSample1::createValue);
-        this->addAction2("receiveValue", &ComponentSample1::receiveValue);
+        this->addAction("success", &ComponentSample1::success);
+        this->addAction("getSpeedFunction", &ComponentSample1::success);
+        this->addAction("setThrottle", &ComponentSample1::success);
 
+        this->addAction("createValue", &ComponentSample1::createValue);
+        this->addAction("receiveValue", &ComponentSample1::receiveValue);
     }
 
     Result ComponentSample1::success(Message& message_, std::string argument_) {
+        LOGFUNC;
         Result retResult;
         retResult.resultCode = Symbol::create("success");
         return retResult;
     }
 
     Result ComponentSample1::createValue(Message& message_, std::string argument_) {
+        LOGFUNC;
         Result retResult;
         retResult.resultCode = Symbol::create("success");
         retResult.value = std::shared_ptr<Value>(new ValuePair("xyz", "lmn"));
@@ -87,19 +68,18 @@ namespace utah {
 
         Result retResult;
         retResult.resultCode = Symbol::create("success");
-        //retResult.value = std::shared_ptr<Value>(new Value());
         std::shared_ptr<ValuePair> vp = std::dynamic_pointer_cast<ValuePair>(message_.getValue());
         LOGVALUE("value first ", vp->value.first);
         LOGVALUE("value second ", vp->value.second);
         return retResult;
     }
 
-    Result ComponentSample1::execute2(const Symbol* nameOfAction, Message& message_, const std::string& argument_) {
-        ActionFunction2 func = actionMap2[nameOfAction];
+    Result ComponentSample1::execute(const Symbol* nameOfAction, Message& message_, const std::string& argument_) {
+        ActionFunction2 func = actionMap[nameOfAction];
         return func(*this, message_, argument_);
     }
 
-    void ComponentSample1::addAction2(const std::string& name_, ActionFunction2 func_) {
-        actionMap2[Symbol::create(name_)] = func_;
+    void ComponentSample1::addAction(const std::string& name_, ActionFunction2 func_) {
+        actionMap[Symbol::create(name_)] = func_;
     }
 }

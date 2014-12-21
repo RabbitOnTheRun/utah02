@@ -35,7 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/ActionIF.o \
 	${OBJECTDIR}/ComponentIF.o \
 	${OBJECTDIR}/ComponentSample1.o \
 	${OBJECTDIR}/EventQueue.o \
@@ -44,7 +43,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/GuardIF.o \
 	${OBJECTDIR}/InPort.o \
 	${OBJECTDIR}/Log.o \
-	${OBJECTDIR}/MapOfAction.o \
 	${OBJECTDIR}/MapOfGuard.o \
 	${OBJECTDIR}/Message.o \
 	${OBJECTDIR}/MessageEmission.o \
@@ -95,7 +93,6 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
-	${TESTDIR}/TestFiles/f19 \
 	${TESTDIR}/TestFiles/f25 \
 	${TESTDIR}/TestFiles/f11 \
 	${TESTDIR}/TestFiles/f18 \
@@ -145,11 +142,6 @@ ${TESTDIR}/TestFiles/f25.exe: ${OBJECTFILES}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc} -o ${TESTDIR}/TestFiles/f25 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/ActionIF.o: ActionIF.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ActionIF.o ActionIF.cpp
-
 ${OBJECTDIR}/ComponentIF.o: ComponentIF.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -189,11 +181,6 @@ ${OBJECTDIR}/Log.o: Log.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Log.o Log.cpp
-
-${OBJECTDIR}/MapOfAction.o: MapOfAction.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MapOfAction.o MapOfAction.cpp
 
 ${OBJECTDIR}/MapOfGuard.o: MapOfGuard.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -420,10 +407,6 @@ ${OBJECTDIR}/shared_queue.o: shared_queue.cpp
 
 # Build Test Targets
 .build-tests-conf: .build-conf ${TESTFILES}
-${TESTDIR}/TestFiles/f19: ${TESTDIR}/tests/ActionIFtestclass.o ${TESTDIR}/tests/ActionIFtestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
-	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f19 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
-
 ${TESTDIR}/TestFiles/f25: ${TESTDIR}/tests/CruiseControltestclass.o ${TESTDIR}/tests/CruiseControltestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f25 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -519,18 +502,6 @@ ${TESTDIR}/TestFiles/f14: ${TESTDIR}/tests/TransitionPartMappertestclass.o ${TES
 ${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/Transitiontestclass.o ${TESTDIR}/tests/Transitiontestrunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
-
-
-${TESTDIR}/tests/ActionIFtestclass.o: tests/ActionIFtestclass.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ActionIFtestclass.o tests/ActionIFtestclass.cpp
-
-
-${TESTDIR}/tests/ActionIFtestrunner.o: tests/ActionIFtestrunner.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/ActionIFtestrunner.o tests/ActionIFtestrunner.cpp
 
 
 ${TESTDIR}/tests/CruiseControltestclass.o: tests/CruiseControltestclass.cpp 
@@ -821,19 +792,6 @@ ${TESTDIR}/tests/Transitiontestrunner.o: tests/Transitiontestrunner.cpp
 	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/Transitiontestrunner.o tests/Transitiontestrunner.cpp
 
 
-${OBJECTDIR}/ActionIF_nomain.o: ${OBJECTDIR}/ActionIF.o ActionIF.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/ActionIF.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -I. -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ActionIF_nomain.o ActionIF.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/ActionIF.o ${OBJECTDIR}/ActionIF_nomain.o;\
-	fi
-
 ${OBJECTDIR}/ComponentIF_nomain.o: ${OBJECTDIR}/ComponentIF.o ComponentIF.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/ComponentIF.o`; \
@@ -936,19 +894,6 @@ ${OBJECTDIR}/Log_nomain.o: ${OBJECTDIR}/Log.o Log.cpp
 	    $(COMPILE.cc) -O2 -I. -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Log_nomain.o Log.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Log.o ${OBJECTDIR}/Log_nomain.o;\
-	fi
-
-${OBJECTDIR}/MapOfAction_nomain.o: ${OBJECTDIR}/MapOfAction.o MapOfAction.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/MapOfAction.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -I. -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MapOfAction_nomain.o MapOfAction.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/MapOfAction.o ${OBJECTDIR}/MapOfAction_nomain.o;\
 	fi
 
 ${OBJECTDIR}/MapOfGuard_nomain.o: ${OBJECTDIR}/MapOfGuard.o MapOfGuard.cpp 
@@ -1527,7 +1472,6 @@ ${OBJECTDIR}/shared_queue_nomain.o: ${OBJECTDIR}/shared_queue.o shared_queue.cpp
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
 	then  \
-	    ${TESTDIR}/TestFiles/f19 || true; \
 	    ${TESTDIR}/TestFiles/f25 || true; \
 	    ${TESTDIR}/TestFiles/f11 || true; \
 	    ${TESTDIR}/TestFiles/f18 || true; \

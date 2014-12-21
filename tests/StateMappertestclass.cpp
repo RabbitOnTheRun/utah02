@@ -25,9 +25,9 @@ void StateMappertestclass::tearDown() {
 
 void StateMappertestclass::testCreate() {
     const picojson::value& obj = jsonMapper::PicoJsonIF::JSONFileToObj("data/State.txt");
-
+    std::map<const utah::Symbol*, utah::State*> stateMap;
     //jsonMapper::StateMapper stateMapper;
-    utah::State* result = jsonMapper::StateMapper::create(obj);
+    utah::State* result = jsonMapper::StateMapper::create(obj, stateMap);
     if (true /*check result*/) {
         CPPUNIT_ASSERT(result->getName()->getName() == "c");
         CPPUNIT_ASSERT(result->getChild(0)->getName()->getName() == "g");
